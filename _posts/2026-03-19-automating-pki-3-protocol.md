@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Automating PKI at Scale: An Architectural Perspective"
-subtitle: "Part 3: Protocol Is Not an Operating Model
+subtitle: "Part 3: Protocol Is Not an Operating Model"
 date: 2026-03-19
 author: "Penuel Lascano"
 categories: [pki, automation, architecture]
