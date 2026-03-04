@@ -11,8 +11,8 @@ series_number: 6
 permalink: /automating-pki-at-scale/part-6-tls-inspection/
 ---
 
-# Automating PKI at Scale — Part 6  
-### Part 6: TLS Inspection Is an Issuing Authority Inside Your Network
+# Part 6: TLS Inspection Is an Issuing Authority Inside Your Network
+### Automating PKI at Scale: An Architectural Perspective
 
 A TLS inspection proxy is not simply a traffic control.
 
