@@ -12,7 +12,7 @@ permalink: /automating-pki-at-scale/part-1-countdown/
 ---
 
 # Part 1: The Countdown Has Started
-## Automating PKI at Scale: An Architectural Perspective  
+### Automating PKI at Scale: An Architectural Perspective  
 
 Today, March 15, 2026, the certificate lifetime reduction schedule enters its next phase.
 
@@ -28,6 +28,8 @@ The remaining reductions are already scheduled:
 This is not advisory guidance. It is enforced industry policy.
 The constraint has changed.
 
+##
+
 Under 398-day certificates, renewal typically occurred once per year.
 
 At 200 days, that becomes twice per year.
@@ -40,6 +42,8 @@ The dependency graph does not shrink.
 
 If renewal is still manual, workload multiplies directly with frequency.
 Manual renewal will become unsustainable.
+
+##
 
 There is a second constraint that receives less attention.
 
@@ -54,6 +58,8 @@ If DNS ownership, routing control, or change discipline spans teams, each renewa
 Frequency increases.
 Interaction increases.
 Slack decreases.
+
+##
 
 Many environments rely on expiry monitoring.
 
@@ -72,7 +78,7 @@ At annual cadence, this is manageable.
 At quarterly cadence, it becomes friction.
 At sub-quarter cadence, it becomes structural load.
 
-### Structural Reality
+## Structural Reality
 
 Most renewal processes were designed when certificates lasted years.
 
@@ -81,6 +87,8 @@ Change tickets were occasional.
 Institutional memory filled the gaps.
 
 The constraint changed. → The process did not.
+
+##
 
 Over the next several posts, I’ll explore key considerations for operating in this new reality:
 
