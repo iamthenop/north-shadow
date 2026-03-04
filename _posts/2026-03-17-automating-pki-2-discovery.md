@@ -2,7 +2,7 @@
 layout: post
 title: "Automating PKI at Scale: An Architectural Perspective"
 subtitle: "Part 2: Discovery Without Creating a Governance Silo"
-date: 2026-03-15
+date: 2026-03-17
 author: "Penuel Lascano"
 categories: [pki, automation, architecture]
 tags: [tls, certificate-lifecycle]
