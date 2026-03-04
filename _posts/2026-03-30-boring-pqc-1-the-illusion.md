@@ -11,7 +11,7 @@ series_number: 1
 permalink: /pqc-readiness-the-boring-way/part-1-illusion/
 ---
 
-#Part 1: The Illusion of the Big Switch
+# Part 1: The Illusion of the Big Switch
 ### PQC Readiness the Boring Way: Sustainable Migration Without Heroics
 
 When new cryptographic standards are published, the instinct is to imagine a decisive transition. A coordinated migration. A moment when old primitives are retired and new ones take their place.
