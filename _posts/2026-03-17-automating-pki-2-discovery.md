@@ -12,7 +12,7 @@ permalink: /automating-pki-at-scale/part-2-discovery/
 ---
 
 # Part 2: Discovery Without Creating a Governance Silo
-## Automating PKI at Scale: An Architectural Perspective
+### Automating PKI at Scale: An Architectural Perspective
 
 Automation begins with visibility.
 
@@ -29,7 +29,7 @@ Most organizations respond to certificate sprawl with scanning:
 
 Necessary. → Not sufficient.
 
-### Discovery Is Not Ownership
+## Discovery Is Not Ownership
 
 Discovery tells you a certificate exists.
 
@@ -43,7 +43,7 @@ An inventory without ownership is a list of liabilities.
 
 Automation built on unidentified assets cannot be trusted.
 
-### The CMDB Cannot Be Bypassed
+## The CMDB Cannot Be Bypassed
 
 Building a parallel “PKI inventory” feels efficient.
 It avoids legacy data issues. It avoids reconciliation work.
@@ -59,7 +59,7 @@ Automation layered on top of conflicting data will stall at change control.
 
 Discovery should reconcile the CMDB — not replace it.
 
-### Frequency Exposes Drift
+## Frequency Exposes Drift
 
 Under annual renewal cycles, stale records hide.
 
@@ -73,7 +73,7 @@ Decommissioned services linger. DNS zones move. Application owners change.
 
 Shorter lifetimes compress tolerance for inaccuracy.
 
-### Authority Precedes Automation
+## Authority Precedes Automation
 
 Before enabling automated renewal, the system must be able to answer:
 
@@ -88,7 +88,7 @@ Authority is organizational.
 
 Both are required.
 
-### Structural Reality
+## Structural Reality
 
 Certificate lifetime reduction increases frequency.
 Frequency increases interaction.
@@ -98,6 +98,6 @@ Discovery without alignment amplifies it.
 
 Automation cannot compensate for unclear ownership.
 
----
+##
 
 Next: why protocol-level automation alone does not solve change-discipline environments.

@@ -12,7 +12,7 @@ permalink: /automating-pki-at-scale/part-5-high-assurance/
 ---
 
 # Part 5: Automation in High-Assurance Environments
-## Automating PKI at Scale: An Architectural Perspective
+### Automating PKI at Scale: An Architectural Perspective
 
 Automation becomes more complex when private keys are not files.
 
@@ -26,9 +26,7 @@ In high-assurance environments, keys may be:
 The automation model must adapt.
 The constraint changes again.
 
----
-
-### Key Strategy Is Not an Implementation Detail
+## Key Strategy Is Not an Implementation Detail
 
 In software-only environments, key rotation is often straightforward.
 
@@ -45,9 +43,7 @@ Those are separate risk domains.
 
 Confusing them creates unnecessary operational load.
 
----
-
-### The HSM Is a Boundary
+## The HSM Is a Boundary
 
 When keys are generated and stored inside an HSM:
 
@@ -63,9 +59,7 @@ Protocol-level automation must respect hardware boundaries.
 The HSM is not a performance detail.
 It is a control plane.
 
----
-
-### Dual Control and CI/CD Can Coexist
+## Dual Control and CI/CD Can Coexist
 
 High-assurance does not prohibit automation.
 It requires deliberate automation.
@@ -81,9 +75,7 @@ Control shifts from individual transactions to system design.
 
 That is stronger governance — not weaker.
 
----
-
-### Certificate Cadence and Key Cadence Are Related — But Not Identical
+## Certificate Cadence and Key Cadence Are Related — But Not Identical
 
 Shorter certificate lifetimes reduce exposure in environments where private key protection is variable or widely distributed.
 That is part of the rationale behind the 47-day trajectory.
@@ -107,6 +99,6 @@ Conflating the two leads either to excessive churn — or unjustified stasis.
 
 Both are architectural errors.
 
----
+##
 
 Next: TLS inspection — the lifecycle dependency most teams forget until it fails.

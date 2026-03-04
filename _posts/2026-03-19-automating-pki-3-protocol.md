@@ -12,7 +12,7 @@ permalink: /automating-pki-at-scale/part-3-protocol/
 ---
 
 # Part 3: Protocol Is Not an Operating Model
-## Automating PKI at Scale: An Architectural Perspective
+### Automating PKI at Scale: An Architectural Perspective
 
 ACME is necessary.
 It is not sufficient.
@@ -24,7 +24,7 @@ As certificate lifetimes shrink, many conversations default to:
 Protocol-level automation is an important piece of the solution.
 It is not the entire system.
 
-### Different Certificate Classes, Different Lifecycles
+## Different Certificate Classes, Different Lifecycles
 
 Not all certificates behave the same way.
 
@@ -39,7 +39,7 @@ These do not share identical ownership models, renewal triggers, or governance b
 
 Conflating them leads to architectural confusion.
 
-### ACME Solves Issuance. It Does Not Define Authority.
+## ACME Solves Issuance. It Does Not Define Authority.
 
 ACME automates:
 
@@ -58,7 +58,7 @@ It does not answer:
 Protocol handles transaction.
 Operating model handles accountability.
 
-### Kubernetes Is Not the Entire Estate
+## Kubernetes Is Not the Entire Estate
 
 In Kubernetes environments, certificate automation often feels “solved.”
 
@@ -77,7 +77,7 @@ They include:
 
 Automation strategies that assume homogeneous orchestration collapse under heterogeneity.
 
-### Device Enrollment Is a Different Plane
+## Device Enrollment Is a Different Plane
 
 Dynamic SCEP for MDM platforms or auto-enrollment via Active Directory addresses device identity.
 
@@ -92,7 +92,7 @@ The control planes are different.
 
 Blurring them introduces ownership ambiguity.
 
-### Structural Reality
+## Structural Reality
 
 ACME is an important mechanism.
 It is not a lifecycle strategy.
@@ -108,6 +108,6 @@ Protocol without operating model is partial automation.
 
 And partial automation is where friction accumulates.
 
----
+##
 
 Next: deployment is where most automation strategies silently fail.

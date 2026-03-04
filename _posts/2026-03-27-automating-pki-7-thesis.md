@@ -12,7 +12,7 @@ permalink: /automating-pki-at-scale/part-7-agility/
 ---
 
 # Part 7: Automation Is a Prerequisite for Cryptographic Agility
-## Automating PKI at Scale: An Architectural Perspective
+### Automating PKI at Scale: An Architectural Perspective
 
 Certificate lifetime reduction forces renewal to happen more often.
 
@@ -35,9 +35,7 @@ It will be:
 
 > “Can we change cryptography across the estate without breaking production?”
 
----
-
-### Changing Algorithms Is an Infrastructure Event
+## Changing Algorithms Is an Infrastructure Event
 
 Changing a key algorithm is not a checkbox in a CA console.
 
@@ -57,9 +55,7 @@ Algorithm shifts increase structural complexity.
 
 Those pressures compound.
 
----
-
-### Renewal Automation Is the Rehearsal
+## Renewal Automation Is the Rehearsal
 
 If your environment can:
 
@@ -75,9 +71,7 @@ If renewal still requires coordination and ceremony, algorithm change will ampli
 Renewal cadence is rehearsal.
 Agility is the performance.
 
----
-
-### Boundaries Determine Blast Radius
+## Boundaries Determine Blast Radius
 
 Flat authority models concentrate risk.
 Root-coupled systems expand blast radius.
@@ -93,9 +87,7 @@ The same principles apply whether the change is:
 Frequency revealed operational weaknesses.
 Algorithm change will test architectural ones.
 
----
-
-### Structural Reality
+## Structural Reality
 
 Certificate lifetime reduction is not the destination.
 It is pressure.

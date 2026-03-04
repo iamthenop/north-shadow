@@ -11,7 +11,7 @@ series_number: 6
 permalink: /automating-pki-at-scale/part-6-tls-inspection/
 ---
 
-## Automating PKI at Scale — Part 6  
+# Automating PKI at Scale — Part 6  
 ### Part 6: TLS Inspection Is an Issuing Authority Inside Your Network
 
 A TLS inspection proxy is not simply a traffic control.
@@ -30,8 +30,6 @@ That second function makes it an issuing authority.
 
 Whether it is modeled that way determines how it behaves over time.
 
----
-
 ### Role 1: The Proxy as Web Client
 
 To establish outbound TLS, the proxy must trust the public WebPKI.
@@ -46,8 +44,6 @@ This is a trust hygiene problem.
 
 It is not governed by the 200 → 100 → 47-day public certificate reduction schedule.
 
----
-
 ### Role 2: The Proxy as Web Server
 
 When the proxy presents a generated certificate for `www.a.com` to an internal browser, it signs that certificate using an internal authority.
@@ -56,9 +52,7 @@ This is enterprise PKI territory.
 
 This is where authority design matters.
 
----
-
-### The Real Question: What Assurance Boundary Does the Proxy Operate Within?
+## The Real Question: What Assurance Boundary Does the Proxy Operate Within?
 
 Inspection devices dynamically issue certificates at scale.
 
@@ -76,9 +70,7 @@ The inspection proxy often falls into that category.
 
 That risk is architectural — not compliance-driven.
 
----
-
-### Inspection Authority Models
+## Inspection Authority Models
 
 Most enterprises operate one of three models.
 
@@ -151,9 +143,7 @@ This introduces authority separation.
 Boundaries are defined.
 Boundaries enable automation.
 
----
-
-### Structural Reality
+## Structural Reality
 
 Public certificate lifetime reduction does not directly impact TLS inspection hierarchies.
 

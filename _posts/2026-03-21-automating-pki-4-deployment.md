@@ -12,7 +12,7 @@ permalink: /automating-pki-at-scale/part-4-deployment/
 ---
 
 # Part 4: Issuance Is Not Deployment
-## Automating PKI at Scale: An Architectural Perspective
+### Automating PKI at Scale: An Architectural Perspective
 
 Issuing a certificate is a transaction.
 Deploying it is a change.
@@ -28,9 +28,7 @@ And the service can still present the old certificate.
 Issuance without verified deployment is not automation.
 It is optimistic scripting.
 
----
-
-### Deployment Is a Control Plane
+## Deployment Is a Control Plane
 
 Certificate renewal touches:
 
@@ -51,9 +49,7 @@ Some fail silently.
 Automation that stops at file write assumes behavior.
 Change management exists because assumptions fail.
 
----
-
-### Change Discipline Does Not Disappear
+## Change Discipline Does Not Disappear
 
 There is a common belief that automation eliminates change management.
 
@@ -72,9 +68,7 @@ Once approved, renewals can execute within that guardrail.
 Without that discipline, automated deployment becomes untracked configuration drift.
 With it, renewal becomes predictable infrastructure behavior.
 
----
-
-### Post-Install Validation Is Mandatory
+## Post-Install Validation Is Mandatory
 
 A certificate that exists in a directory is not necessarily active.
 
@@ -90,9 +84,7 @@ At 47-day cadence, failure accumulates quietly.
 
 If validation is not automated, friction returns.
 
----
-
-### Partial Automation Compounds Risk
+## Partial Automation Compounds Risk
 
 If issuance is automated but deployment requires:
 
@@ -110,9 +102,7 @@ Variance increases.
 
 At scale, variance becomes outage probability.
 
----
-
-### Structural Reality
+## Structural Reality
 
 Issuance answers:
 > “Can we obtain a certificate?”
@@ -133,6 +123,6 @@ Verify deployment. → Verify activation. → Verify behavior.
 
 Anything less is ceremony with better tooling.
 
----
+##
 
 Next: high-assurance environments and why HSM-backed deployments change the equation again.
