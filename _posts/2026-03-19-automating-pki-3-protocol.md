@@ -10,6 +10,7 @@ series: "Automating PKI at Scale"
 series_number: 3
 permalink: /automating-pki-at-scale/part-3-protocol/
 ---
+
 # Part 3: Protocol Is Not an Operating Model
 ## Automating PKI at Scale: An Architectural Perspective
 
