@@ -30,7 +30,7 @@ That second function makes it an issuing authority.
 
 Whether it is modeled that way determines how it behaves over time.
 
-### Role 1: The Proxy as Web Client
+#### Role 1: The Proxy as Web Client
 
 To establish outbound TLS, the proxy must trust the public WebPKI.
 
@@ -44,7 +44,7 @@ This is a trust hygiene problem.
 
 It is not governed by the 200 → 100 → 47-day public certificate reduction schedule.
 
-### Role 2: The Proxy as Web Server
+#### Role 2: The Proxy as Web Server
 
 When the proxy presents a generated certificate for `www.a.com` to an internal browser, it signs that certificate using an internal authority.
 
@@ -74,8 +74,7 @@ That risk is architectural — not compliance-driven.
 
 Most enterprises operate one of three models.
 
----
-
+##
 #### Model A — Self-Signed Proxy (Flat Authority)
 
 ```
@@ -98,8 +97,7 @@ In heterogeneous environments, that assumption rarely holds.
 
 It is structurally fragile.
 
----
-
+##
 #### Model B — Direct Enterprise Signing
 
 ```
@@ -121,8 +119,7 @@ But it tightly couples the proxy to the offline root.
 It improves authority.
 It concentrates control.
 
----
-
+##
 #### Model C — Layered Issuance
 
 ```
