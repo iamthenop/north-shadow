@@ -1,21 +1,18 @@
 ---
-copyright: "© 2026 Penuel Lascano. All rights reserved."
 layout: post
-title: "The Countdown Has Started"
-subtitle: "Automating PKI at Scale - Part 1"
+title: "Automating PKI at Scale: An Architectural Perspective"
+subtitle: "Part 1: The Countdown Has Started"
+date: 2026-03-15
 author: "Penuel Lascano"
-publication: "North Shadow"
-first_draft: 2026-02-22
-first_published: 2026-03-15
-version: 1.0
-categories: [pki, security-architecture]
-tags: []
-series: "Automating PKI at Scale: An Architectural Perspective"
+categories: [pki, automation, architecture]
+tags: [tls, certificate-lifecycle]
+series: "Automating PKI at Scale"
 series_number: 1
+permalink: /automating-pki-at-scale/part-1-countdown/
 ---
 
-# Automating PKI at Scale — Part 1  
-## Part 1: The Countdown Has Started
+# Part 1: The Countdown Has Started
+## Automating PKI at Scale: An Architectural Perspective  
 
 Today, March 15, 2026, the certificate lifetime reduction schedule enters its next phase.
 

@@ -1,21 +1,17 @@
 ---
-copyright: "© 2026 Penuel Lascano. All rights reserved."
 layout: post
-title: "Discovery Without Creating a Governance Silo"
-subtitle: "Automating PKI at Scale - Part 2"
+title: "Automating PKI at Scale: An Architectural Perspective"
+subtitle: "Part 2: Discovery Without Creating a Governance Silo"
+date: 2026-03-15
 author: "Penuel Lascano"
-publication: "North Shadow"
-first_draft: 2026-02-22
-first_published: 2026-03-17
-version: 1.0
-categories: [pki, security-architecture]
-tags: []
-series: "Automating PKI at Scale: An Architectural Perspective"
-series_number: 2
+categories: [pki, automation, architecture]
+tags: [tls, certificate-lifecycle]
+series: "Automating PKI at Scale"
+series_number: 1
+permalink: /automating-pki-at-scale/part-2-discovery/
 ---
-
-## Automating PKI at Scale — Part 2  
-### Part 2: Discovery Without Creating a Governance Silo
+# Part 2: Discovery Without Creating a Governance Silo
+## Automating PKI at Scale: An Architectural Perspective
 
 Automation begins with visibility.
 
