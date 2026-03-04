@@ -8,7 +8,7 @@ categories: [security-architecture, cryptography]
 tags: [post-quantum-cryptography, pqc, crypto-agility, lifecycle-management, governance, automation, risk-management, migration-strategy]
 series: "PQC Readiness the Boring Way"
 series_number: 1
-permalink: /pqc-readiness-the-boring-way/part-1-illusion/
+permalink: /pqc-the-boring-way/part-1-illusion/
 ---
 
 # Part 1: The Illusion of the Big Switch
