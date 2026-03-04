@@ -55,7 +55,6 @@ The question is whether change is absorbed through routine lifecycle events.
 
 Those are your service intervals.
 
-There is no midnight transformation.
-There is gradual wear.
+There is no midnight transformation. → There is gradual wear.
 
 Responsible operators plan accordingly.
