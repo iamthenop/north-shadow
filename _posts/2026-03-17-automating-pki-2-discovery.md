@@ -7,9 +7,10 @@ author: "Penuel Lascano"
 categories: [pki, automation, architecture]
 tags: [tls, certificate-lifecycle]
 series: "Automating PKI at Scale"
-series_number: 1
+series_number: 2
 permalink: /automating-pki-at-scale/part-2-discovery/
 ---
+
 # Part 2: Discovery Without Creating a Governance Silo
 ## Automating PKI at Scale: An Architectural Perspective
 
