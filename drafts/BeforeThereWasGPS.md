@@ -116,9 +116,10 @@ They are called *wargames*.
 These systems contain intentionally vulnerable programs meant to be explored, not abused.
 If you've never seen the trick yourself, a wargame is the safest place to learn it.
 
-```ssh level1@io.netgarage.org
-password: level1```
-
+```bash
+ssh level1@io.netgarage.org
+password: level1
+```
 You connect.
 You examine a program.
 You try to understand why it behaves the way it does.
