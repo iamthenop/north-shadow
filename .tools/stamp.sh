@@ -2,8 +2,8 @@
 set -euo pipefail
 
 # ---- config (edit these) ----
-SIGNER_CERT="${SIGNER_CERT:-$HOME/.sign/lascanop.crt}"   # signer cert (PEM)
-SIGNER_KEY="${SIGNER_KEY:-$HOME/.sign/lascanop.key}"    # signer private key (PEM)
+SIGNER_CERT="${SIGNER_CERT:-$HOME/.sign/sign.crt}"   # signer cert (PEM)
+SIGNER_KEY="${SIGNER_KEY:-$HOME/.sign/sign.key}"    # signer private key (PEM)
 TSA_URL="${TSA_URL:-https://freetsa.org/tsr}"               # RFC3161 TSA endpoint
 HASH="${HASH:-sha256}"                                      # sha256 recommended
 
