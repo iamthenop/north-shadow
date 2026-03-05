@@ -1,0 +1,26 @@
+title: North Shadow
+description: Essays on security architecture, PKI, automation, and cryptographic systems.
+author: Penuel Lascano
+
+url: "https://iamthenop.github.io"
+baseurl: "/north-shadow"
+
+markdown: kramdown
+theme: minima
+
+permalink: /:categories/:title/
+
+collections:
+  posts:
+    output: true
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
