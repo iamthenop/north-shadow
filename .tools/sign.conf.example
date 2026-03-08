@@ -1,0 +1,33 @@
+# .tools/sign.conf.example
+# Local defaults for sign.sh
+#
+# This file is sourced by the shell.
+# Keep values quoted where appropriate.
+# Do not store PINs, passphrases, or other secrets here.
+#
+# Copy to:
+#   .tools/sign.conf
+#
+# Then adjust the values for your environment.
+
+# General
+SIGNING_PROVIDER="file"
+HASH_ALGORITHM="sha256"
+TSA_URL="https://freetsa.org/tsr"
+
+# Provider: file
+# Active today.
+FILE_CERT="$HOME/.sign/sign.crt"
+FILE_KEY="$HOME/.sign/sign.key"
+
+# Provider: pkcs11
+# Uncomment and switch SIGNING_PROVIDER to "pkcs11" when needed.
+#PKCS11_MODULE="/usr/local/lib/opensc-pkcs11.so"
+#PKCS11_URI="pkcs11:token=YubiKey%20PIV;object=SIGN%20key;type=private"
+#PKCS11_CERT="$HOME/.sign/sign.crt"
+
+# Provider: command
+# Uncomment and switch SIGNING_PROVIDER to "command" when signing is delegated
+# to an external tool or wrapper.
+#SIGN_COMMAND="/usr/local/bin/sign-with-hsm"
+#SIGN_CERT="$HOME/.sign/sign.crt"
