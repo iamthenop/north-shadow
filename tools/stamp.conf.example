@@ -6,7 +6,7 @@
 # Do not store PINs, passphrases, or other secrets here.
 #
 # Copy to:
-#   .tools/sign.conf
+#   tools/sign.conf
 #
 # Then adjust the values for your environment.
 

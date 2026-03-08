@@ -37,7 +37,7 @@ def main() -> None:
         print(f"Error: file not found: {path}", file=sys.stderr)
         raise SystemExit(1)
 
-    text = path.read_text(encoding="utf-8", newline="")
+    text = path.read_text(encoding="utf-8")
 
     result: dict[str, str] = {}
 

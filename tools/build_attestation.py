@@ -79,7 +79,7 @@ def main() -> None:
             "signature": {
                 "type": "cms",
                 "encoding": "pem",
-                "value": signature_bytes,
+                "value": signature_bytes.decode(),
             },
             "timestamp": {
                 "query": {
