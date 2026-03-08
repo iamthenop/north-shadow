@@ -3,9 +3,7 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 TOOLS_DIR="$ROOT_DIR/tools"
-
-POSTS_DIR="${POSTS_DIR:-_posts}"
-OUT_DIR="${OUT_DIR:-_timestamps}"
+TIMESTAMPS_DIR="${TIMESTAMPS_DIR:-$ROOT_DIR/_timestamps}"
 
 die() { echo "Error: $*" >&2; exit 3; }
 need() { command -v "$1" >/dev/null 2>&1 || die "Missing dependency: $1"; }
@@ -13,8 +11,13 @@ need() { command -v "$1" >/dev/null 2>&1 || die "Missing dependency: $1"; }
 usage() {
   cat <<EOF
 Usage:
-  $0 _posts/file.md
-  $0 --proof _timestamps/file.md.proof.json
+  $0 --proof _timestamps/file.proof.json
+  $0 --proof _timestamps/file.proof.json --input path/to/file.md
+
+Notes:
+  --proof is the canonical validation target.
+  --input is optional and is only used to compare external file bytes
+  against the embedded content in the proof bundle.
 
 Exit codes:
   0 = valid
@@ -24,60 +27,64 @@ Exit codes:
 EOF
 }
 
-proof_path_for_post() {
-  local in_file="$1"
-  local base
-  base="$(basename "$in_file")"
-  printf '%s\n' "$OUT_DIR/$base.proof.json"
-}
+resolve_proof_path() {
+  local proof="$1"
 
-validate_proof_json_only() {
-  local proof_json="$1"
-  [[ -f "$proof_json" ]] || { echo "Missing proof bundle: $proof_json" >&2; exit 1; }
+  if [[ -f "$proof" ]]; then
+    printf '%s\n' "$proof"
+    return 0
+  fi
 
-  python3 "$TOOLS_DIR/validate_attestation.py" --proof "$proof_json"
-}
+  if [[ -f "$TIMESTAMPS_DIR/$proof" ]]; then
+    printf '%s\n' "$TIMESTAMPS_DIR/$proof"
+    return 0
+  fi
 
-validate_post_against_proof() {
-  local in_file="$1"
-  [[ -f "$in_file" ]] || die "File not found: $in_file"
-
-  case "$in_file" in
-    "$POSTS_DIR"/*.md|"$ROOT_DIR"/"$POSTS_DIR"/*.md) ;;
-    *)
-      die "Input must be a markdown file under $POSTS_DIR/"
-      ;;
-  esac
-
-  local proof_json
-  proof_json="$(proof_path_for_post "$in_file")"
-
-  [[ -f "$proof_json" ]] || {
-    echo "Missing proof bundle for $in_file: $proof_json" >&2
-    exit 1
-  }
-
-  python3 "$TOOLS_DIR/validate_attestation.py" --input "$in_file" --proof "$proof_json"
+  return 1
 }
 
 main() {
   need python3
 
-  [[ $# -ge 1 ]] || { usage; exit 3; }
+  local proof=""
+  local input=""
 
-  case "${1:-}" in
-    --proof)
-      [[ $# -eq 2 ]] || { usage; exit 3; }
-      validate_proof_json_only "$2"
-      ;;
-    -h|--help)
-      usage
-      ;;
-    *)
-      [[ $# -eq 1 ]] || { usage; exit 3; }
-      validate_post_against_proof "$1"
-      ;;
-  esac
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --proof)
+        [[ $# -ge 2 ]] || { usage; exit 3; }
+        proof="$2"
+        shift 2
+        ;;
+      --input)
+        [[ $# -ge 2 ]] || { usage; exit 3; }
+        input="$2"
+        shift 2
+        ;;
+      -h|--help)
+        usage
+        exit 0
+        ;;
+      *)
+        usage
+        exit 3
+        ;;
+    esac
+  done
+
+  [[ -n "$proof" ]] || { usage; exit 3; }
+
+  local resolved_proof
+  if ! resolved_proof="$(resolve_proof_path "$proof")"; then
+    echo "Missing proof bundle: $proof" >&2
+    exit 1
+  fi
+
+  if [[ -n "$input" ]]; then
+    python3 "$TOOLS_DIR/validate_attestation.py" --proof "$resolved_proof" --input "$input"
+  else
+    python3 "$TOOLS_DIR/validate_attestation.py" --proof "$resolved_proof"
+  fi
 }
 
 main "$@"
