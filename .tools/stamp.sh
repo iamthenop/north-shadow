@@ -1,98 +1,81 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# ---- config (edit these) ----
-SIGNER_CERT="${SIGNER_CERT:-$HOME/.sign/sign.crt}"   # signer cert (PEM)
-SIGNER_KEY="${SIGNER_KEY:-$HOME/.sign/sign.key}"    # signer private key (PEM)
-TSA_URL="${TSA_URL:-https://freetsa.org/tsr}"               # RFC3161 TSA endpoint
-HASH="${HASH:-sha256}"                                      # sha256 recommended
-
 POSTS_DIR="${POSTS_DIR:-_posts}"
 OUT_DIR="${OUT_DIR:-_timestamps}"
+CERT="${CERT:-$HOME/.sign/sign.crt}"
+KEY="${KEY:-$HOME/.sign/sign.key}"
+TSA_URL="${TSA_URL:-https://freetsa.org/tsr}"
+HASH="${HASH:-sha256}"
 
-# ---- helpers ----
 die() { echo "Error: $*" >&2; exit 1; }
-
 need() { command -v "$1" >/dev/null 2>&1 || die "Missing dependency: $1"; }
 
 usage() {
   cat <<EOF
 Usage:
-  ./stamp.sh <path-to-md> [more-md-files...]
-  ./stamp.sh --all
+  ./.tools/stamp.sh _posts/file.md
 
 Environment overrides:
-  SIGNER_CERT=/path/to/cert.pem
-  SIGNER_KEY=/path/to/key.pem
-  TSA_URL=https://example.com/tsa
-  HASH=sha256
   POSTS_DIR=_posts
   OUT_DIR=_timestamps
+  CERT=~/.sign/sign.crt
+  KEY=~/.sign/sign.key
+  TSA_URL=https://freetsa.org/tsr
+  HASH=sha256
 EOF
 }
 
-# ---- checks ----
 need openssl
 need curl
 
-[[ -f "$SIGNER_CERT" ]] || die "Signer cert not found: $SIGNER_CERT"
-[[ -f "$SIGNER_KEY"  ]] || die "Signer key not found:  $SIGNER_KEY"
+[[ $# -eq 1 ]] || { usage; exit 1; }
+
+IN_FILE="$1"
+[[ -f "$IN_FILE" ]] || die "File not found: $IN_FILE"
+
+case "$IN_FILE" in
+  "$POSTS_DIR"/*.md) ;;
+  *)
+    die "Input must be a markdown file under $POSTS_DIR/"
+    ;;
+esac
+
+[[ -f "$CERT" ]] || die "Certificate not found: $CERT"
+[[ -f "$KEY" ]] || die "Key not found: $KEY"
 
 mkdir -p "$OUT_DIR"
 
-# ---- build file list ----
-files=()
-if [[ $# -eq 0 ]]; then
-  usage; exit 1
-elif [[ "${1:-}" == "--all" ]]; then
-  while IFS= read -r -d '' f; do files+=("$f"); done < <(find "$POSTS_DIR" -type f -name "*.md" -print0)
-else
-  for f in "$@"; do
-    [[ -f "$f" ]] || die "File not found: $f"
-    files+=("$f")
-  done
-fi
+BASE="$(basename "$IN_FILE")"
+P7S="$OUT_DIR/$BASE.p7s"
+TSQ="$OUT_DIR/$BASE.p7s.tsq"
+TSR="$OUT_DIR/$BASE.p7s.tsr"
 
-[[ ${#files[@]} -gt 0 ]] || die "No markdown files found."
+echo "Signing: $IN_FILE"
+openssl cms -sign \
+  -binary \
+  -in "$IN_FILE" \
+  -signer "$CERT" \
+  -inkey "$KEY" \
+  -outform PEM \
+  -out "$P7S" \
+  -nodetach
 
-# ---- main ----
-for in_file in "${files[@]}"; do
-  base="$(basename "$in_file")"
-  stem="${base%.*}"                      # filename without extension
+echo "Creating timestamp query: $TSQ"
+openssl ts -query \
+  -data "$P7S" \
+  -"$HASH" \
+  -cert \
+  -out "$TSQ"
 
-  p7s="$OUT_DIR/$stem.md.p7s"
-  tsq="$OUT_DIR/$stem.md.p7s.tsq"
-  tsr="$OUT_DIR/$stem.md.p7s.tsr"
+echo "Requesting timestamp response: $TSR"
+curl --fail --silent --show-error \
+  -H 'Content-Type: application/timestamp-query' \
+  --data-binary "@$TSQ" \
+  "$TSA_URL" \
+  -o "$TSR"
 
-  echo "==> Signing: $in_file"
-  openssl cms -sign \
-    -in "$in_file" \
-    -signer "$SIGNER_CERT" \
-    -inkey "$SIGNER_KEY" \
-    -outform PEM \
-    -binary \
-    -nosmimecap \
-    -cades \
-    -md "$HASH" \
-    -out "$p7s"
-
-  echo "==> Building timestamp query: $tsq"
-  openssl ts -query \
-    -data "$p7s" \
-    -"${HASH}" \
-    -cert \
-    -out "$tsq"
-
-  echo "==> Requesting TSA timestamp: $tsr"
-  curl -fsS \
-    -H "Content-Type: application/timestamp-query" \
-    --data-binary @"$tsq" \
-    "$TSA_URL" \
-    -o "$tsr"
-
-  echo "==> Done:"
-  echo "    $p7s"
-  echo "    $tsq"
-  echo "    $tsr"
-  echo
-done
+echo "Wrote:"
+echo "  $P7S"
+echo "  $TSQ"
+echo "  $TSR"
