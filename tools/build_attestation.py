@@ -78,8 +78,8 @@ def main() -> None:
         "proof": {
             "signature": {
                 "type": "cms",
-                "encoding": "base64",
-                "value": b64_bytes(signature_bytes),
+                "encoding": "pem",
+                "value": signature_bytes,
             },
             "timestamp": {
                 "query": {
