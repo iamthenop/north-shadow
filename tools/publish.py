@@ -10,7 +10,7 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-TOOLS_DIR = REPO_ROOT / ".tools"
+TOOLS_DIR = REPO_ROOT / "tools"
 DRAFTS_DIR = REPO_ROOT / "_drafts"
 POSTS_DIR = REPO_ROOT / "_posts"
 TIMESTAMPS_DIR = REPO_ROOT / "_timestamps"

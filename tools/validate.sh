@@ -10,7 +10,7 @@ need() { command -v "$1" >/dev/null 2>&1 || die "Missing dependency: $1"; }
 usage() {
   cat <<EOF
 Usage:
-  ./.tools/validate.sh _posts/file.md
+  ./tools/validate.sh _posts/file.md
 EOF
 }
 
