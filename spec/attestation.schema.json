@@ -1,0 +1,36 @@
+{
+  "schema": "north-shadow.attestation",
+  "version": 1,
+  "content": {
+    "media_type": "text/markdown",
+    "encoding": "base64",
+    "hash": {
+      "algorithm": "sha256",
+      "value": "..."
+    },
+    "value": "..."
+  },
+  "metadata": {
+    "series": "optional",
+    "title": "optional"
+  },
+  "proof": {
+    "signature": {
+      "type": "cms",
+      "encoding": "base64",
+      "value": "..."
+    },
+    "timestamp": {
+      "query": {
+        "type": "rfc3161-tsq",
+        "encoding": "base64",
+        "value": "..."
+      },
+      "response": {
+        "type": "rfc3161-tsr",
+        "encoding": "base64",
+        "value": "..."
+      }
+    }
+  }
+}
