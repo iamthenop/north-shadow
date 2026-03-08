@@ -17,7 +17,7 @@
   "proof": {
     "signature": {
       "type": "cms",
-      "encoding": "base64",
+      "encoding": "pem",
       "value": "..."
     },
     "timestamp": {
