@@ -11,7 +11,6 @@ import tempfile
 from pathlib import Path
 from typing import Any
 
-
 EXIT_VALID = 0
 EXIT_MISSING = 1
 EXIT_INVALID = 2
@@ -32,6 +31,13 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--proof", required=True, help="Path to attestation proof JSON")
     parser.add_argument("--input", help="Optional path to markdown file to compare with embedded content")
+
+    # TSA trust inputs: require at least one for timestamp verification
+    parser.add_argument("--tsa-ca-file", help="PEM bundle of trusted TSA roots")
+    parser.add_argument("--tsa-untrusted-file", help="Optional PEM bundle of TSA intermediates")
+    parser.add_argument("--tsa-ca-path", help="OpenSSL hashed cert directory for TSA trust")
+    parser.add_argument("--tsa-ca-store", help="OpenSSL CAstore URI for TSA trust")
+
     return parser.parse_args()
 
 
@@ -43,6 +49,7 @@ def load_json(path: Path) -> dict[str, Any]:
         raise SystemExit(EXIT_MISSING)
     except json.JSONDecodeError as exc:
         die(f"Invalid JSON in proof bundle: {path}: {exc}")
+
     if not isinstance(data, dict):
         die("Proof bundle must be a JSON object")
     return data
@@ -77,12 +84,72 @@ def compute_hash(data: bytes, algorithm: str) -> str:
     return h.hexdigest()
 
 
-def run_openssl_verify(content: bytes, signature_bytes: bytes) -> None:
+def signer_fingerprint_sha256(signature_bytes: bytes) -> str:
+    with tempfile.TemporaryDirectory() as td:
+        td_path = Path(td)
+        sig_path = td_path / "signature.p7s"
+        certs_path = td_path / "certs.pem"
+        sig_path.write_bytes(signature_bytes)
+
+        extract = subprocess.run(
+            [
+                "openssl", "cms", "-cmsout", "-print",
+                "-inform", "PEM",
+                "-in", str(sig_path),
+            ],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            check=False,
+        )
+        # Fallback path below is more reliable for getting cert material:
+        export = subprocess.run(
+            [
+                "openssl", "pkcs7", "-inform", "PEM", "-in", str(sig_path), "-print_certs", "-out", str(certs_path)
+            ],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            check=False,
+        )
+        if export.returncode != 0 or not certs_path.exists():
+            die("Unable to extract signer certificate from CMS signature")
+
+        cert_pem = certs_path.read_text(encoding="utf-8")
+        blocks = cert_pem.split("-----END CERTIFICATE-----")
+        first_cert = None
+        for block in blocks:
+            if "-----BEGIN CERTIFICATE-----" in block:
+                first_cert = block + "-----END CERTIFICATE-----\n"
+                break
+        if first_cert is None:
+            die("No signer certificate found in CMS signature")
+
+        signer_cert_path = td_path / "signer.pem"
+        signer_cert_path.write_text(first_cert, encoding="utf-8")
+
+        fp = subprocess.run(
+            [
+                "openssl", "x509", "-in", str(signer_cert_path),
+                "-noout", "-fingerprint", "-sha256"
+            ],
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        if fp.returncode != 0:
+            die("Unable to compute signer certificate fingerprint")
+
+        line = fp.stdout.strip()
+        prefix = "sha256 Fingerprint="
+        if line.lower().startswith(prefix.lower()):
+            return line.split("=", 1)[1].replace(":", "").lower()
+        return line.replace(":", "").lower()
+
+
+def run_openssl_verify(content: bytes, signature_bytes: bytes) -> str:
     with tempfile.TemporaryDirectory() as td:
         td_path = Path(td)
         content_path = td_path / "content.md"
         sig_path = td_path / "signature.p7s"
-
         content_path.write_bytes(content)
         sig_path.write_bytes(signature_bytes)
 
@@ -109,26 +176,53 @@ def run_openssl_verify(content: bytes, signature_bytes: bytes) -> None:
         if proc.returncode != 0:
             die("CMS signature verification failed")
 
+    return signer_fingerprint_sha256(signature_bytes)
 
-def run_timestamp_verify(tsq_bytes: bytes, tsr_bytes: bytes) -> None:
+
+def run_timestamp_verify(
+    tsq_bytes: bytes,
+    tsr_bytes: bytes,
+    *,
+    tsa_ca_file: str | None,
+    tsa_untrusted_file: str | None,
+    tsa_ca_path: str | None,
+    tsa_ca_store: str | None,
+) -> None:
+    if not any([tsa_ca_file, tsa_ca_path, tsa_ca_store]):
+        die(
+            "Timestamp verification trust is not configured; "
+            "set --tsa-ca-file, --tsa-ca-path, or --tsa-ca-store",
+            code=EXIT_USAGE,
+        )
+
     with tempfile.TemporaryDirectory() as td:
         td_path = Path(td)
         tsq_path = td_path / "stamp.tsq"
         tsr_path = td_path / "stamp.tsr"
-
         tsq_path.write_bytes(tsq_bytes)
         tsr_path.write_bytes(tsr_bytes)
 
+        cmd = [
+            "openssl",
+            "ts",
+            "-verify",
+            "-queryfile",
+            str(tsq_path),
+            "-in",
+            str(tsr_path),
+        ]
+
+        if tsa_ca_file:
+            cmd += ["-CAfile", tsa_ca_file]
+        if tsa_untrusted_file:
+            cmd += ["-untrusted", tsa_untrusted_file]
+        if tsa_ca_path:
+            cmd += ["-CApath", tsa_ca_path]
+        if tsa_ca_store:
+            cmd += ["-CAstore", tsa_ca_store]
+
         proc = subprocess.run(
-            [
-                "openssl",
-                "ts",
-                "-verify",
-                "-queryfile",
-                str(tsq_path),
-                "-in",
-                str(tsr_path),
-            ],
+            cmd,
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
             check=False,
@@ -142,7 +236,6 @@ def validate_bundle_structure(
 ) -> tuple[bytes, bytes, bytes, bytes, str, str]:
     schema = require_path(doc, "schema")
     version = require_path(doc, "version")
-
     if schema != "north-shadow.attestation":
         die(f"Unexpected schema: {schema}")
     if version != 1:
@@ -225,7 +318,6 @@ def validate_external_input(
 
 def main() -> None:
     args = parse_args()
-
     proof_path = Path(args.proof)
     doc = load_json(proof_path)
 
@@ -234,13 +326,22 @@ def main() -> None:
     if args.input:
         validate_external_input(Path(args.input), content, algorithm, expected_hash)
 
-    run_openssl_verify(content, signature)
-    run_timestamp_verify(tsq, tsr)
+    signer_fp = run_openssl_verify(content, signature)
+    run_timestamp_verify(
+        tsq,
+        tsr,
+        tsa_ca_file=args.tsa_ca_file,
+        tsa_untrusted_file=args.tsa_untrusted_file,
+        tsa_ca_path=args.tsa_ca_path,
+        tsa_ca_store=args.tsa_ca_store,
+    )
 
-    if args.input:
-        print(f"Valid: {args.input} matches {args.proof}")
-    else:
-        print(f"Valid: {args.proof}")
+    target = args.input if args.input else args.proof
+    print(f"Valid: {target}")
+    print("CMS signature: valid")
+    print("Signer certificate trust: not evaluated by design")
+    print(f"Signer fingerprint (SHA-256): {signer_fp}")
+    print("Timestamp: valid and TSA trusted")
 
 
 if __name__ == "__main__":

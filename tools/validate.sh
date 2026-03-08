@@ -5,86 +5,64 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 TOOLS_DIR="$ROOT_DIR/tools"
 TIMESTAMPS_DIR="${TIMESTAMPS_DIR:-$ROOT_DIR/_timestamps}"
 
+# Optional local config
+if [[ -f "$TOOLS_DIR/stamp.conf" ]]; then
+  # shellcheck disable=SC1091
+  source "$TOOLS_DIR/stamp.conf"
+fi
+
 die() { echo "Error: $*" >&2; exit 3; }
 need() { command -v "$1" >/dev/null 2>&1 || die "Missing dependency: $1"; }
 
 usage() {
-  cat <<EOF
-Usage:
-  $0 --proof _timestamps/file.proof.json
-  $0 --proof _timestamps/file.proof.json --input path/to/file.md
+  cat >&2 <<'EOF'
+Usage: validate.sh <proof.json> [input.md]
 
-Notes:
-  --proof is the canonical validation target.
-  --input is optional and is only used to compare external file bytes
-  against the embedded content in the proof bundle.
+Validates:
+  - embedded content hash
+  - CMS content signature (without signer CA trust)
+  - RFC3161 timestamp response (with TSA trust)
 
-Exit codes:
-  0 = valid
-  1 = missing proof artifact
-  2 = mismatch / invalid proof
-  3 = usage or dependency error
+TSA trust must be configured by at least one of:
+  TSA_CA_FILE
+  TSA_CA_PATH
+  TSA_CA_STORE
 EOF
-}
-
-resolve_proof_path() {
-  local proof="$1"
-
-  if [[ -f "$proof" ]]; then
-    printf '%s\n' "$proof"
-    return 0
-  fi
-
-  if [[ -f "$TIMESTAMPS_DIR/$proof" ]]; then
-    printf '%s\n' "$TIMESTAMPS_DIR/$proof"
-    return 0
-  fi
-
-  return 1
+  exit 1
 }
 
 main() {
   need python3
+  need openssl
 
-  local proof=""
-  local input=""
+  local proof input resolved_proof
+  proof="${1:-}"
+  input="${2:-}"
 
-  while [[ $# -gt 0 ]]; do
-    case "$1" in
-      --proof)
-        [[ $# -ge 2 ]] || { usage; exit 3; }
-        proof="$2"
-        shift 2
-        ;;
-      --input)
-        [[ $# -ge 2 ]] || { usage; exit 3; }
-        input="$2"
-        shift 2
-        ;;
-      -h|--help)
-        usage
-        exit 0
-        ;;
-      *)
-        usage
-        exit 3
-        ;;
-    esac
-  done
+  [[ -n "$proof" ]] || usage
 
-  [[ -n "$proof" ]] || { usage; exit 3; }
-
-  local resolved_proof
-  if ! resolved_proof="$(resolve_proof_path "$proof")"; then
-    echo "Missing proof bundle: $proof" >&2
-    exit 1
-  fi
-
-  if [[ -n "$input" ]]; then
-    python3 "$TOOLS_DIR/validate_attestation.py" --proof "$resolved_proof" --input "$input"
+  if [[ -f "$proof" ]]; then
+    resolved_proof="$proof"
+  elif [[ -f "$TIMESTAMPS_DIR/$proof" ]]; then
+    resolved_proof="$TIMESTAMPS_DIR/$proof"
   else
-    python3 "$TOOLS_DIR/validate_attestation.py" --proof "$resolved_proof"
+    die "Proof bundle not found: $proof"
   fi
+
+  [[ -n "${TSA_CA_FILE:-}${TSA_CA_PATH:-}${TSA_CA_STORE:-}" ]] \
+    || die "Configure TSA_CA_FILE, TSA_CA_PATH, or TSA_CA_STORE for timestamp verification"
+
+  local -a py_args=(
+    --proof "$resolved_proof"
+  )
+
+  [[ -n "${input:-}" ]] && py_args+=(--input "$input")
+  [[ -n "${TSA_CA_FILE:-}" ]] && py_args+=(--tsa-ca-file "$TSA_CA_FILE")
+  [[ -n "${TSA_UNTRUSTED_FILE:-}" ]] && py_args+=(--tsa-untrusted-file "$TSA_UNTRUSTED_FILE")
+  [[ -n "${TSA_CA_PATH:-}" ]] && py_args+=(--tsa-ca-path "$TSA_CA_PATH")
+  [[ -n "${TSA_CA_STORE:-}" ]] && py_args+=(--tsa-ca-store "$TSA_CA_STORE")
+
+  python3 "$TOOLS_DIR/validate_attestation.py" "${py_args[@]}"
 }
 
 main "$@"
