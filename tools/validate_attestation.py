@@ -72,7 +72,7 @@ def compute_hash(data: bytes, algorithm: str) -> str:
     try:
         h = hashlib.new(algorithm)
     except ValueError as exc:
-        die(f"Unsupported hash algorithm: {algorithm}") from exc
+        raise SystemExit(f"Error: Unsupported hash algorithm: {algorithm}") from exc
     h.update(data)
     return h.hexdigest()
 
@@ -156,7 +156,7 @@ def validate_bundle_structure(
 
     sig_type = require_path(doc, "proof", "signature", "type")
     sig_encoding = require_path(doc, "proof", "signature", "encoding")
-    sig_b64 = require_path(doc, "proof", "signature", "value")
+    sig_value = require_path(doc, "proof", "signature", "value")
 
     tsq_type = require_path(doc, "proof", "timestamp", "query", "type")
     tsq_encoding = require_path(doc, "proof", "timestamp", "query", "encoding")
@@ -172,7 +172,7 @@ def validate_bundle_structure(
         die(f"Unexpected content.encoding: {encoding}")
     if sig_type != "cms":
         die(f"Unexpected proof.signature.type: {sig_type}")
-    if sig_encoding != "base64":
+    if sig_encoding not in ("base64", "pem"):
         die(f"Unexpected proof.signature.encoding: {sig_encoding}")
     if tsq_type != "rfc3161-tsq":
         die(f"Unexpected proof.timestamp.query.type: {tsq_type}")
@@ -184,7 +184,17 @@ def validate_bundle_structure(
         die(f"Unexpected proof.timestamp.response.encoding: {tsr_encoding}")
 
     content = b64decode_field(content_b64, "content.value")
-    signature = b64decode_field(sig_b64, "proof.signature.value")
+
+    if not isinstance(sig_value, str):
+        die("Field 'proof.signature.value' must be a string")
+
+    if sig_encoding == "base64":
+        signature = b64decode_field(sig_value, "proof.signature.value")
+    elif sig_encoding == "pem":
+        signature = sig_value.encode("utf-8")
+    else:
+        die(f"Unexpected proof.signature.encoding: {sig_encoding}")
+
     tsq = b64decode_field(tsq_b64, "proof.timestamp.query.value")
     tsr = b64decode_field(tsr_b64, "proof.timestamp.response.value")
 

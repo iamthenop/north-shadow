@@ -18,7 +18,7 @@
     "signature": {
       "type": "cms",
       "encoding": "pem",
-      "value": "..."
+      "value": "-----BEGIN CMS-----\n...\n-----END CMS-----\n"
     },
     "timestamp": {
       "query": {
