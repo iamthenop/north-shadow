@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+TOOLS_DIR="$ROOT_DIR/tools"
+
 POSTS_DIR="${POSTS_DIR:-_posts}"
 OUT_DIR="${OUT_DIR:-_timestamps}"
 
@@ -10,56 +13,71 @@ need() { command -v "$1" >/dev/null 2>&1 || die "Missing dependency: $1"; }
 usage() {
   cat <<EOF
 Usage:
-  ./tools/validate.sh _posts/file.md
+  $0 _posts/file.md
+  $0 --proof _timestamps/file.md.proof.json
+
+Exit codes:
+  0 = valid
+  1 = missing proof artifact
+  2 = mismatch / invalid proof
+  3 = usage or dependency error
 EOF
 }
 
-need openssl
+proof_path_for_post() {
+  local in_file="$1"
+  local base
+  base="$(basename "$in_file")"
+  printf '%s\n' "$OUT_DIR/$base.proof.json"
+}
 
-[[ $# -eq 1 ]] || { usage; exit 3; }
+validate_proof_json_only() {
+  local proof_json="$1"
+  [[ -f "$proof_json" ]] || { echo "Missing proof bundle: $proof_json" >&2; exit 1; }
 
-IN_FILE="$1"
-[[ -f "$IN_FILE" ]] || die "File not found: $IN_FILE"
+  python3 "$TOOLS_DIR/validate_attestation.py" --proof "$proof_json"
+}
 
-case "$IN_FILE" in
-  "$POSTS_DIR"/*.md) ;;
-  *)
-    die "Input must be a markdown file under $POSTS_DIR/"
-    ;;
-esac
+validate_post_against_proof() {
+  local in_file="$1"
+  [[ -f "$in_file" ]] || die "File not found: $in_file"
 
-BASE="$(basename "$IN_FILE")"
-P7S="$OUT_DIR/$BASE.p7s"
-TSQ="$OUT_DIR/$BASE.p7s.tsq"
-TSR="$OUT_DIR/$BASE.p7s.tsr"
+  case "$in_file" in
+    "$POSTS_DIR"/*.md|"$ROOT_DIR"/"$POSTS_DIR"/*.md) ;;
+    *)
+      die "Input must be a markdown file under $POSTS_DIR/"
+      ;;
+  esac
 
-missing=0
-for f in "$P7S" "$TSQ" "$TSR"; do
-  [[ -f "$f" ]] || missing=1
-done
+  local proof_json
+  proof_json="$(proof_path_for_post "$in_file")"
 
-if [[ $missing -ne 0 ]]; then
-  echo "Missing one or more timestamp artifacts for $IN_FILE" >&2
-  exit 1
-fi
+  [[ -f "$proof_json" ]] || {
+    echo "Missing proof bundle for $in_file: $proof_json" >&2
+    exit 1
+  }
 
-if ! openssl cms -verify \
-  -binary \
-  -in "$P7S" \
-  -inform PEM \
-  -content "$IN_FILE" \
-  -noverify \
-  -out /dev/null >/dev/null 2>&1; then
-  echo "CMS signature does not match current file contents: $IN_FILE" >&2
-  exit 2
-fi
+  python3 "$TOOLS_DIR/validate_attestation.py" --input "$in_file" --proof "$proof_json"
+}
 
-if ! openssl ts -verify \
-  -queryfile "$TSQ" \
-  -in "$TSR" >/dev/null 2>&1; then
-  echo "Timestamp response does not match stored query for: $IN_FILE" >&2
-  exit 2
-fi
+main() {
+  need python3
 
-echo "Valid: $IN_FILE"
-exit 0
+  [[ $# -ge 1 ]] || { usage; exit 3; }
+
+  case "${1:-}" in
+    --proof)
+      [[ $# -eq 2 ]] || { usage; exit 3; }
+      validate_proof_json_only "$2"
+      ;;
+    -h|--help)
+      usage
+      ;;
+    *)
+      [[ $# -eq 1 ]] || { usage; exit 3; }
+      validate_post_against_proof "$1"
+      ;;
+  esac
+}
+
+main "$@"
