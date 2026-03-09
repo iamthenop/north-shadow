@@ -1,36 +1,168 @@
 {
-  "schema": "north-shadow.attestation",
-  "version": 1,
-  "content": {
-    "media_type": "text/markdown",
-    "encoding": "base64",
-    "hash": {
-      "algorithm": "sha256",
-      "value": "..."
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "North Shadow Attestation",
+  "type": "object",
+  "required": [
+    "schema",
+    "version",
+    "content",
+    "proof"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "north-shadow.attestation"
     },
-    "value": "..."
-  },
-  "metadata": {
-    "series": "optional",
-    "title": "optional"
-  },
-  "proof": {
-    "signature": {
-      "type": "cms",
-      "encoding": "pem",
-      "value": "-----BEGIN CMS-----\n...\n-----END CMS-----\n"
+    "version": {
+      "type": "integer",
+      "const": 1
     },
-    "timestamp": {
-      "query": {
-        "type": "rfc3161-tsq",
-        "encoding": "base64",
-        "value": "..."
+    "content": {
+      "type": "object",
+      "required": [
+        "media_type",
+        "encoding",
+        "hash",
+        "value"
+      ],
+      "properties": {
+        "media_type": {
+          "type": "string",
+          "const": "text/markdown"
+        },
+        "encoding": {
+          "type": "string",
+          "const": "base64"
+        },
+        "hash": {
+          "type": "object",
+          "required": [
+            "algorithm",
+            "value"
+          ],
+          "properties": {
+            "algorithm": {
+              "type": "string",
+              "minLength": 1
+            },
+            "value": {
+              "type": "string",
+              "pattern": "^[a-fA-F0-9]{32,}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "value": {
+          "type": "string",
+          "contentEncoding": "base64"
+        }
       },
-      "response": {
-        "type": "rfc3161-tsr",
-        "encoding": "base64",
-        "value": "..."
-      }
+      "additionalProperties": false
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "series": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "proof": {
+      "type": "object",
+      "required": [
+        "signature",
+        "timestamp"
+      ],
+      "properties": {
+        "signature": {
+          "type": "object",
+          "required": [
+            "type",
+            "encoding",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "cms"
+            },
+            "encoding": {
+              "type": "string",
+              "enum": [
+                "pem",
+                "base64"
+              ]
+            },
+            "value": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "timestamp": {
+          "type": "object",
+          "required": [
+            "query",
+            "response"
+          ],
+          "properties": {
+            "query": {
+              "type": "object",
+              "required": [
+                "type",
+                "encoding",
+                "value"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "rfc3161-tsq"
+                },
+                "encoding": {
+                  "type": "string",
+                  "const": "base64"
+                },
+                "value": {
+                  "type": "string",
+                  "contentEncoding": "base64"
+                }
+              },
+              "additionalProperties": false
+            },
+            "response": {
+              "type": "object",
+              "required": [
+                "type",
+                "encoding",
+                "value"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "rfc3161-tsr"
+                },
+                "encoding": {
+                  "type": "string",
+                  "const": "base64"
+                },
+                "value": {
+                  "type": "string",
+                  "contentEncoding": "base64"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
     }
-  }
+  },
+  "additionalProperties": false
 }
