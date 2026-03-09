@@ -284,8 +284,6 @@ def publish_new_current(draft_path: Path) -> tuple[Path, Path]:
 
     index_path = update_index()
 
-    stamp_post(index_path)
-
     cleanup_legacy_sidecars(index_path)
 
     return proof_path, index_path
@@ -300,7 +298,6 @@ def first_publish(draft_path: Path, *, push: bool) -> None:
 
     stage_commit_and_maybe_push(
         [
-            draft_path,
             current_post_path_for_draft(draft_path),
             proof_path,
             index_path,
@@ -328,29 +325,71 @@ def publish_draft(draft_path: Path, assume_yes: bool = False, *, push: bool = Tr
         return
 
     if match_status == EXIT_INVALID:
-
-        if not assume_yes and not confirm(
-            "Draft differs from current attested content. Replace? [y/N] "
-        ):
-            die("Aborted.")
-
-        proof_path, index_path = publish_new_current(draft_path)
-
-        stage_commit_and_maybe_push(
-            [
-                draft_path,
-                current_post_path_for_draft(draft_path),
-                proof_path,
-                index_path,
-            ],
-            f"publish: {lineage_name_from_draft(draft_path)}",
-            push=push,
-        )
-
-        print(f"Published updated version: {lineage_name_from_draft(draft_path)}")
+        replace_current_truth(draft_path, assume_yes=assume_yes, push=push)
         return
 
     die("Unexpected validation result")
+
+
+def replace_current_truth(draft_path: Path, assume_yes: bool, *, push: bool) -> None:
+    if not assume_yes and not confirm("Draft differs from current attested content. Replace? [y/N] "):
+        die("Aborted by user.")
+
+    archive_dir = archive_current_truth(draft_path)
+    print(f"Archived current truth to: {archive_dir.relative_to(REPO_ROOT)}")
+
+    proof_path, index_path = publish_new_current(draft_path)
+
+    stage_commit_and_maybe_push(
+        [
+            current_post_path_for_draft(draft_path),
+            proof_path,
+            index_path,
+            archive_dir,
+        ],
+        f"publish: {lineage_name_from_draft(draft_path)}",
+        push=push,
+    )
+    print(f"Published updated version: {lineage_name_from_draft(draft_path)}")
+
+
+def archive_slug_dirname(draft_path: Path) -> str:
+    return lineage_name_from_draft(draft_path).removesuffix(".md")
+
+
+def archive_revision_dir(draft_path: Path) -> Path:
+    stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H-%M-%SZ")
+    return ARCHIVE_DIR / archive_slug_dirname(draft_path) / stamp
+
+
+def archive_current_truth(draft_path: Path) -> Path:
+    proof_path = current_proof_path_for_draft(draft_path)
+    post_path = current_post_path_for_draft(draft_path)
+
+    dest_dir = archive_revision_dir(draft_path)
+    dest_dir.mkdir(parents=True, exist_ok=False)
+
+    archived_any = False
+
+    for suffix in (".p7s", ".p7s.tsq", ".p7s.tsr"):
+        sidecar = TIMESTAMPS_DIR / f"{lineage_name_from_draft(draft_path)}{suffix}"
+        if sidecar.exists():
+            shutil.copy2(sidecar, dest_dir / sidecar.name)
+            archived_any = True
+
+    if proof_path.exists():
+        shutil.copy2(proof_path, dest_dir / proof_path.name)
+        archived_any = True
+
+    if post_path.exists():
+        shutil.copy2(post_path, dest_dir / post_path.name)
+        archived_any = True
+
+    if not archived_any:
+        shutil.rmtree(dest_dir)
+        die(f"Nothing current to archive for {lineage_name_from_draft(draft_path)}")
+
+    return dest_dir
 
 
 # ---------------------------------------------------------------------
