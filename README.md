@@ -43,6 +43,6 @@ The contents of [`tools/`](tools/) are separately licensed under the MIT License
 
 ## Contact
 
-For professional inquiries or consulting engagements, please reach out via [https://linkedin.com/in/lascanop](LinkedIn).
+For professional inquiries or consulting engagements, please reach out via [LinkedIn](https://linkedin.com/in/plascano).
 
 ---

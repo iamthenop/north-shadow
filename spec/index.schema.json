@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "North Shadow Index",
+  "type": "object",
+  "required": [
+    "schema",
+    "version",
+    "posts"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "north-shadow.index"
+    },
+    "version": {
+      "type": "integer",
+      "const": 1
+    },
+    "posts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "post",
+          "proof",
+          "proof_sha256"
+        ],
+        "properties": {
+          "post": {
+            "type": "string",
+            "description": "Path to the markdown post."
+          },
+          "proof": {
+            "type": "string",
+            "description": "Path to the proof bundle."
+          },
+          "proof_sha256": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{64}$",
+            "description": "SHA-256 hash of the proof bundle."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
