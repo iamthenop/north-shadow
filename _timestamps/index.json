@@ -10,7 +10,7 @@
     {
       "post": "_posts/proof-of-publisher.md",
       "proof": "_timestamps/proof-of-publisher.md.proof.json",
-      "proof_sha256": "66aa0feeac177080ad175fa8b4151d257463c32820aaa878670c2b2ac6ac79ec"
+      "proof_sha256": "cf0f63d7e772793318615607cdaf0810fbb46514b9870f4812ccf905c6c6007e"
     },
     {
       "post": "_posts/small.md",

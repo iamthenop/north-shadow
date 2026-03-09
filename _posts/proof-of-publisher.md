@@ -25,16 +25,16 @@ Very few preserve provenance.
 
 Modern platforms make publishing trivial.
 
-Press a button.
-Commit a file.
+Press a button.  
+Commit a file.  
 Push to a platform.
 
 An artifact appears.
 
 But the artifact alone proves nothing.
 
-Accounts can be compromised.
-Content can be copied.
+Accounts can be compromised.  
+Content can be copied.  
 Repositories can be mirrored.
 
 The artifact spreads.
@@ -47,9 +47,9 @@ Authorship becomes narrative.
 
 Digital artifacts do not remain where they were created.
 
-They are forked.
-Archived.
-Quoted.
+They are forked.  
+Archived.  
+Quoted.  
 Mirrored.
 
 This is not a flaw.
@@ -80,18 +80,14 @@ Artifacts carry proof.
 
 ## Proof of Publisher
 
-Recently I added a small mechanism to my writing workflow.
-
-I call it **Proof of Publisher**.
-
 Each article is treated as an artifact.
 
 Before publication, the artifact is cryptographically signed and timestamped.
 
-This creates a binding between three things:
+This binds three things together:
 
-1. the artifact
-2. the author
+1. the artifact  
+2. the author  
 3. the moment of publication
 
 The platform may change.
