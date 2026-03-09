@@ -1,4 +1,5 @@
-.tools/
+tools/
+_drafts/
 *.swp
 *.tmp
 .DS_Store
