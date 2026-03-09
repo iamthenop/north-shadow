@@ -6,6 +6,7 @@ import base64
 import hashlib
 import json
 from pathlib import Path
+from typing import Any
 
 
 def parse_args() -> argparse.Namespace:
@@ -35,12 +36,19 @@ def hash_bytes(data: bytes, algorithm: str) -> str:
     return h.hexdigest()
 
 
-def read_json_file(path: Path) -> dict:
+def read_json_file(path: Path) -> dict[str, Any]:
     with path.open("r", encoding="utf-8") as f:
         data = json.load(f)
     if not isinstance(data, dict):
         raise SystemExit(f"Metadata file must contain a JSON object: {path}")
     return data
+
+
+def require_nonempty_file(path: Path, label: str) -> None:
+    if not path.is_file():
+        raise SystemExit(f"Required file not found: {path}")
+    if path.stat().st_size == 0:
+        raise SystemExit(f"Required file is empty for {label}: {path}")
 
 
 def main() -> None:
@@ -53,9 +61,11 @@ def main() -> None:
     metadata_path = Path(args.metadata)
     output_path = Path(args.output)
 
-    for path in (input_path, sig_path, tsq_path, tsr_path, metadata_path):
-        if not path.is_file():
-            raise SystemExit(f"Required file not found: {path}")
+    require_nonempty_file(input_path, "input")
+    require_nonempty_file(sig_path, "signature")
+    require_nonempty_file(tsq_path, "timestamp query")
+    require_nonempty_file(tsr_path, "timestamp response")
+    require_nonempty_file(metadata_path, "metadata")
 
     content_bytes = input_path.read_bytes()
     signature_bytes = sig_path.read_bytes()
@@ -63,7 +73,18 @@ def main() -> None:
     tsr_bytes = tsr_path.read_bytes()
     metadata = read_json_file(metadata_path)
 
-    doc: dict = {
+    try:
+        signature_text = signature_bytes.decode("utf-8")
+    except UnicodeDecodeError as exc:
+        raise SystemExit(f"Signature file is not valid UTF-8 PEM text: {sig_path}") from exc
+
+    clean_metadata: dict[str, str] = {}
+    for key in ("series", "title"):
+        value = metadata.get(key)
+        if isinstance(value, str) and value.strip():
+            clean_metadata[key] = value.strip()
+
+    doc: dict[str, Any] = {
         "schema": "north-shadow.attestation",
         "version": 1,
         "content": {
@@ -79,7 +100,7 @@ def main() -> None:
             "signature": {
                 "type": "cms",
                 "encoding": "pem",
-                "value": signature_bytes.decode(),
+                "value": signature_text,
             },
             "timestamp": {
                 "query": {
@@ -94,16 +115,8 @@ def main() -> None:
                 },
             },
         },
+        "metadata": clean_metadata,
     }
-
-    clean_metadata = {}
-    for key in ("series", "title"):
-        value = metadata.get(key)
-        if isinstance(value, str) and value.strip():
-            clean_metadata[key] = value.strip()
-
-    if clean_metadata:
-        doc["metadata"] = clean_metadata
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with output_path.open("w", encoding="utf-8", newline="\n") as f:

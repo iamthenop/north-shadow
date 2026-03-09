@@ -133,7 +133,7 @@ def decode_embedded_content(proof_path: Path) -> bytes:
 
 def validate_proof_only(proof_path: Path) -> int:
     proc = run(
-        [str(TOOLS_DIR / "validate.sh"), "--proof", str(proof_path)],
+        [str(TOOLS_DIR / "validate.sh"), str(proof_path)],
         check=False,
     )
     return proc.returncode
@@ -143,9 +143,7 @@ def validate_draft_against_proof(draft_path: Path, proof_path: Path) -> int:
     proc = run(
         [
             str(TOOLS_DIR / "validate.sh"),
-            "--proof",
-            str(proof_path),
-            "--input",
+                str(proof_path),
             str(draft_path),
         ],
         check=False,
@@ -245,10 +243,13 @@ def rename_generated_proof(post_path: Path, draft_path: Path) -> Path:
 
 
 def cleanup_legacy_sidecars(post_path: Path) -> None:
-    for suffix in (".p7s", ".p7s.tsq", ".p7s.tsr"):
-        p = TIMESTAMPS_DIR / f"{post_path.name}{suffix}"
-        if p.exists():
-            p.unlink()
+    KEEP_SIDECARS = True
+
+    if not KEEP_SIDECARS:
+        for suffix in (".p7s", ".p7s.tsq", ".p7s.tsr"):
+            p = TIMESTAMPS_DIR / f"{post_path.name}{suffix}"
+            if p.exists():
+                p.unlink()
 
 
 def publish_new_current(draft_path: Path) -> Path:
@@ -351,7 +352,7 @@ def publish_draft(draft_path: Path, assume_yes: bool = False, *, push: bool = Tr
 
     if not proof_path.exists():
         print(f"No current proof found. Publishing: {lineage_name_from_draft(draft_path)}")
-        first_publish(draft_path)
+        first_publish(draft_path, push=push)
         return
 
     match_status = validate_draft_against_proof(draft_path, proof_path)

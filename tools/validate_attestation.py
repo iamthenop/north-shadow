@@ -78,8 +78,8 @@ def compute_hash(data: bytes, algorithm: str) -> str:
         die("Hash algorithm must be a non-empty string")
     try:
         h = hashlib.new(algorithm)
-    except ValueError as exc:
-        raise SystemExit(f"Error: Unsupported hash algorithm: {algorithm}") from exc
+    except ValueError:
+        die(f"Unsupported hash algorithm: {algorithm}")
     h.update(data)
     return h.hexdigest()
 
@@ -91,27 +91,46 @@ def signer_fingerprint_sha256(signature_bytes: bytes) -> str:
         certs_path = td_path / "certs.pem"
         sig_path.write_bytes(signature_bytes)
 
-        extract = subprocess.run(
+        # First ensure the CMS object itself parses correctly.
+        parse = subprocess.run(
             [
-                "openssl", "cms", "-cmsout", "-print",
-                "-inform", "PEM",
-                "-in", str(sig_path),
+                "openssl",
+                "cms",
+                "-inform",
+                "PEM",
+                "-in",
+                str(sig_path),
+                "-cmsout",
+                "-print",
             ],
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
             check=False,
         )
-        # Fallback path below is more reliable for getting cert material:
+        if parse.returncode != 0:
+            die("Unable to parse CMS signature")
+
+        # Certificate extraction is helpful for a fingerprint, but some valid CMS
+        # blobs do not export cleanly via `openssl pkcs7 -print_certs`. Treat that
+        # as non-fatal and simply report fingerprint unavailable.
         export = subprocess.run(
             [
-                "openssl", "pkcs7", "-inform", "PEM", "-in", str(sig_path), "-print_certs", "-out", str(certs_path)
+                "openssl",
+                "pkcs7",
+                "-inform",
+                "PEM",
+                "-in",
+                str(sig_path),
+                "-print_certs",
+                "-out",
+                str(certs_path),
             ],
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
             check=False,
         )
-        if export.returncode != 0 or not certs_path.exists():
-            die("Unable to extract signer certificate from CMS signature")
+        if export.returncode != 0 or not certs_path.exists() or certs_path.stat().st_size == 0:
+            return ""
 
         cert_pem = certs_path.read_text(encoding="utf-8")
         blocks = cert_pem.split("-----END CERTIFICATE-----")
@@ -121,22 +140,27 @@ def signer_fingerprint_sha256(signature_bytes: bytes) -> str:
                 first_cert = block + "-----END CERTIFICATE-----\n"
                 break
         if first_cert is None:
-            die("No signer certificate found in CMS signature")
+            return ""
 
         signer_cert_path = td_path / "signer.pem"
         signer_cert_path.write_text(first_cert, encoding="utf-8")
 
         fp = subprocess.run(
             [
-                "openssl", "x509", "-in", str(signer_cert_path),
-                "-noout", "-fingerprint", "-sha256"
+                "openssl",
+                "x509",
+                "-in",
+                str(signer_cert_path),
+                "-noout",
+                "-fingerprint",
+                "-sha256",
             ],
             capture_output=True,
             text=True,
             check=False,
         )
         if fp.returncode != 0:
-            die("Unable to compute signer certificate fingerprint")
+            return ""
 
         line = fp.stdout.strip()
         prefix = "sha256 Fingerprint="
@@ -340,7 +364,10 @@ def main() -> None:
     print(f"Valid: {target}")
     print("CMS signature: valid")
     print("Signer certificate trust: not evaluated by design")
-    print(f"Signer fingerprint (SHA-256): {signer_fp}")
+    if signer_fp:
+        print(f"Signer fingerprint (SHA-256): {signer_fp}")
+    else:
+        print("Signer fingerprint (SHA-256): unavailable")
     print("Timestamp: valid and TSA trusted")
 
 

@@ -29,8 +29,8 @@ def extract_simple_field(front_matter: str, key: str) -> str | None:
 
 def main() -> None:
     if len(sys.argv) != 2:
-      print("Usage: extract_metadata.py <markdown-file>", file=sys.stderr)
-      raise SystemExit(1)
+        print("Usage: extract_metadata.py <markdown-file>", file=sys.stderr)
+        raise SystemExit(1)
 
     path = Path(sys.argv[1])
     if not path.is_file():
@@ -38,7 +38,6 @@ def main() -> None:
         raise SystemExit(1)
 
     text = path.read_text(encoding="utf-8")
-
     result: dict[str, str] = {}
 
     front_matter = extract_front_matter(text)

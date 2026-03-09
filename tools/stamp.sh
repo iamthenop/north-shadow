@@ -100,7 +100,6 @@ sign_cms() {
       [[ -n "$PKCS11_URI"    ]] || die "PKCS11_URI is not set"
       [[ -f "$PKCS11_CERT"   ]] || die "Certificate not found: $PKCS11_CERT"
 
-      # This path may need adjustment depending on local OpenSSL + PKCS#11 setup.
       openssl cms -sign \
         -binary \
         -in "$in_file" \
@@ -146,7 +145,14 @@ main() {
 
   mkdir -p "$OUT_DIR"
 
-  local base p7s tsq tsr proof_json metadata_json cert_path
+  local base
+  local p7s
+  local tsq
+  local tsr
+  local proof_json
+  local metadata_json
+  local cert_path
+
   base="$(basename "$in_file")"
   p7s="$OUT_DIR/$base.p7s"
   tsq="$OUT_DIR/$base.p7s.tsq"
@@ -155,12 +161,13 @@ main() {
   metadata_json="$(mktemp)"
   cert_path="$(provider_cert_path)"
 
-  trap 'rm -f "$metadata_json"' EXIT
+  trap 'rm -f -- '"$(printf '%q' "$metadata_json")" EXIT
 
   echo "Stamping: $in_file"
   echo "Provider: $SIGNING_PROVIDER"
 
   sign_cms "$in_file" "$p7s"
+  [[ -s "$p7s" ]] || die "CMS signature file is empty: $p7s"
 
   echo "Creating timestamp query: $tsq"
   openssl ts -query \
@@ -168,16 +175,25 @@ main() {
     "-$HASH_ALGORITHM" \
     -cert \
     -out "$tsq"
+  [[ -s "$tsq" ]] || die "Timestamp query file is empty: $tsq"
 
   echo "Requesting timestamp response: $tsr"
-  curl --fail --silent --show-error \
+  curl --http1.1 --fail --silent --show-error \
+    -D /tmp/tsa.headers \
     -H 'Content-Type: application/timestamp-query' \
+    -H 'Accept: application/timestamp-reply' \
     --data-binary "@$tsq" \
     "$TSA_URL" \
     -o "$tsr"
 
+  echo "TSA headers:"
+  cat /tmp/tsa.headers
+
+  [[ -s "$tsr" ]] || die "Timestamp response file is empty: $tsr"
+
   echo "Extracting metadata"
   python3 "$TOOLS_DIR/extract_metadata.py" "$in_file" > "$metadata_json"
+  [[ -s "$metadata_json" ]] || die "Metadata extraction produced an empty file"
 
   echo "Building attestation bundle: $proof_json"
   python3 "$TOOLS_DIR/build_attestation.py" \
@@ -188,6 +204,8 @@ main() {
     --metadata "$metadata_json" \
     --hash-algorithm "$HASH_ALGORITHM" \
     --output "$proof_json"
+
+  [[ -s "$proof_json" ]] || die "Attestation bundle is empty: $proof_json"
 
   echo "Wrote:"
   echo "  $p7s"
