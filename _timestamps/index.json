@@ -8,6 +8,11 @@
       "proof_sha256": "56a2fcfe9b20e82211c419f3beebb8df6fd4f94701f0fa6ab371900361c5c24f"
     },
     {
+      "post": "_posts/proof-of-publisher.md",
+      "proof": "_timestamps/proof-of-publisher.md.proof.json",
+      "proof_sha256": "66aa0feeac177080ad175fa8b4151d257463c32820aaa878670c2b2ac6ac79ec"
+    },
+    {
       "post": "_posts/small.md",
       "proof": "_timestamps/small.md.proof.json",
       "proof_sha256": "a9e0d84229393a415b7efa37a4583875417834561f8a36f0e3d76c31d3ebf3cf"
