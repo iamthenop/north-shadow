@@ -1,0 +1,16 @@
+{
+  "schema": "north-shadow.index",
+  "version": 1,
+  "posts": [
+    {
+      "post": "_posts/AutomatingPKIatScale.md",
+      "proof": "_timestamps/AutomatingPKIatScale.md.proof.json",
+      "proof_sha256": "56a2fcfe9b20e82211c419f3beebb8df6fd4f94701f0fa6ab371900361c5c24f"
+    },
+    {
+      "post": "_posts/small.md",
+      "proof": "_timestamps/small.md.proof.json",
+      "proof_sha256": "a9e0d84229393a415b7efa37a4583875417834561f8a36f0e3d76c31d3ebf3cf"
+    }
+  ]
+}
