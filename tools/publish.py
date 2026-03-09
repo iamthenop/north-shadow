@@ -119,16 +119,16 @@ def decode_embedded_content(proof_path: Path) -> bytes:
     doc = load_json(proof_path)
     try:
         value = doc["content"]["value"]
-    except Exception as exc:
-        die(f"Malformed proof bundle, missing content.value: {proof_path}") from exc
+    except Exception:
+        die(f"Malformed proof bundle, missing content.value: {proof_path}")
 
     if not isinstance(value, str):
         die(f"Malformed proof bundle, content.value must be a base64 string: {proof_path}")
 
     try:
         return base64.b64decode(value, validate=True)
-    except Exception as exc:
-        die(f"Malformed proof bundle, invalid base64 in content.value: {proof_path}") from exc
+    except Exception:
+        die(f"Malformed proof bundle, invalid base64 in content.value: {proof_path}")
 
 
 def validate_proof_only(proof_path: Path) -> int:
@@ -166,17 +166,26 @@ def add_for_commit(paths: list[Path]) -> None:
     run(["git", "add", *[str(p) for p in paths]])
 
 
-def git_commit_and_push(message: str) -> None:
+def git_commit(message: str) -> None:
     run(["git", "commit", "-m", message])
+
+
+def git_push() -> None:
     run(["git", "push"])
 
 
-def stage_and_push(paths: list[Path], message: str) -> None:
+def stage_commit_and_maybe_push(paths: list[Path], message: str, *, push: bool = True) -> None:
     add_for_commit(paths)
     if not git_has_staged_changes():
         print("No changes to commit.")
         return
-    git_commit_and_push(message)
+
+    git_commit(message)
+
+    if push:
+        git_push()
+    else:
+        print("Committed locally. Skipping push (--no-push).")
 
 
 def archive_slug_dirname(draft_path: Path) -> str:
@@ -255,17 +264,17 @@ def publish_new_current(draft_path: Path) -> Path:
     return proof_path
 
 
-def first_publish(draft_path: Path) -> None:
+def first_publish(draft_path: Path, *, push: bool) -> None:
     proof_path = publish_new_current(draft_path)
 
-    stage_and_push(
+    stage_commit_and_maybe_push(
         [draft_path, current_post_path_for_draft(draft_path), proof_path],
-        f"publish: {lineage_name_from_draft(draft_path)}",
+        f"publish: {lineage_name_from_draft(draft_path)}", push=push
     )
     print(f"Published: {lineage_name_from_draft(draft_path)}")
 
 
-def repair_current_projection_or_proof(draft_path: Path, proof_path: Path, assume_yes: bool) -> None:
+def repair_current_projection_or_proof(draft_path: Path, proof_path: Path, assume_yes: bool, *, push: bool) -> None:
     proof_status = validate_proof_only(proof_path)
     post_path = current_post_path_for_draft(draft_path)
     post_matches_truth = post_path.exists() and post_path.read_bytes() == decode_embedded_content(proof_path)
@@ -277,9 +286,9 @@ def repair_current_projection_or_proof(draft_path: Path, proof_path: Path, assum
     if proof_status == EXIT_VALID and not post_matches_truth:
         print("Current proof is valid, but _posts projection is stale. Refreshing projection.")
         shutil.copy2(draft_path, post_path)
-        stage_and_push(
+        stage_commit_and_maybe_push(
             [draft_path, post_path],
-            f"publish: {lineage_name_from_draft(draft_path)}",
+            f"publish: {lineage_name_from_draft(draft_path)}", push=push
         )
         print(f"Refreshed projection: {post_path.relative_to(REPO_ROOT)}")
         return
@@ -297,14 +306,14 @@ def repair_current_projection_or_proof(draft_path: Path, proof_path: Path, assum
 
     publish_new_current(draft_path)
 
-    stage_and_push(
+    stage_commit_and_maybe_push(
         [draft_path, current_post_path_for_draft(draft_path), current_proof_path_for_draft(draft_path)],
-        f"publish: {lineage_name_from_draft(draft_path)}",
+        f"publish: {lineage_name_from_draft(draft_path)}", push=push
     )
     print(f"Rebuilt current truth for: {lineage_name_from_draft(draft_path)}")
 
 
-def replace_current_truth(draft_path: Path, proof_path: Path | None, assume_yes: bool) -> None:
+def replace_current_truth(draft_path: Path, proof_path: Path | None, assume_yes: bool, *, push: bool) -> None:
     prompt = "Draft differs from current attested content. Archive current version and replace it? [y/N] "
 
     if proof_path and proof_path.exists():
@@ -330,14 +339,14 @@ def replace_current_truth(draft_path: Path, proof_path: Path | None, assume_yes:
 
     new_proof_path = publish_new_current(draft_path)
 
-    stage_and_push(
+    stage_commit_and_maybe_push(
         [draft_path, current_post_path_for_draft(draft_path), new_proof_path, archive_dir],
-        f"publish: {lineage_name_from_draft(draft_path)}",
+        f"publish: {lineage_name_from_draft(draft_path)}", push=push
     )
     print(f"Published updated version: {lineage_name_from_draft(draft_path)}")
 
 
-def publish_draft(draft_path: Path, assume_yes: bool = False) -> None:
+def publish_draft(draft_path: Path, assume_yes: bool = False, *, push: bool = True) -> None:
     proof_path = current_proof_path_for_draft(draft_path)
 
     if not proof_path.exists():
@@ -355,9 +364,9 @@ def publish_draft(draft_path: Path, assume_yes: bool = False) -> None:
         # Should not happen if proof_path exists, but keep behavior explicit.
         print("Current proof path resolved but proof is missing. Rebuilding current truth.")
         publish_new_current(draft_path)
-        stage_and_push(
+        stage_commit_and_maybe_push(
             [draft_path, current_post_path_for_draft(draft_path), current_proof_path_for_draft(draft_path)],
-            f"publish: {lineage_name_from_draft(draft_path)}",
+            f"publish: {lineage_name_from_draft(draft_path)}", push=push
         )
         print(f"Published: {lineage_name_from_draft(draft_path)}")
         return
@@ -383,6 +392,11 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Auto-confirm replacement when draft differs from current attested content or current proof is invalid.",
     )
+    parser.add_argument(
+        "--no-push",
+        action="store_true",
+        help="Create the local commit but do not push to the remote.",
+    )
     return parser.parse_args()
 
 
@@ -390,7 +404,7 @@ def main() -> None:
     args = parse_args()
     require_repo_paths()
     draft_path = resolve_draft_path(args.draft)
-    publish_draft(draft_path, assume_yes=args.yes)
+    publish_draft(draft_path, assume_yes=args.yes, push=not args.no_push)
 
 
 if __name__ == "__main__":
