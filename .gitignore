@@ -1,5 +1,6 @@
 tools/
 _drafts/
+!_drafts/_skel.example.md
 *.swp
 *.tmp
 .DS_Store
