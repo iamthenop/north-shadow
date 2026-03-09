@@ -10,7 +10,7 @@
     {
       "post": "_posts/_skel.example.md",
       "proof": "_timestamps/_skel.example.md.proof.json",
-      "proof_sha256": "1d4363c3330f3c70a49031357d9a0369d35697eb628b038d2325f3630ef660a1"
+      "proof_sha256": "87831e0520d5e7a24e90e810abe4be183d7caacae0ef316be680982a85389517"
     },
     {
       "post": "_posts/proof-of-publisher.md",
