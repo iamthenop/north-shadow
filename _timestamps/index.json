@@ -18,6 +18,11 @@
       "proof_sha256": "ce11f008c88406e804d4ae163d86ef344f1a12e598815778b136ed1df81cb60b"
     },
     {
+      "post": "_posts/handbook-of-implied-cryptography-part-2-protocol.md",
+      "proof": "_timestamps/handbook-of-implied-cryptography-part-2-protocol.md.proof.json",
+      "proof_sha256": "cd1a5b0021e7aad89f097c8f301006988d08509c2c460e6a3df56b40a6284963"
+    },
+    {
       "post": "_posts/proof-of-publisher.md",
       "proof": "_timestamps/proof-of-publisher.md.proof.json",
       "proof_sha256": "cf0f63d7e772793318615607cdaf0810fbb46514b9870f4812ccf905c6c6007e"
