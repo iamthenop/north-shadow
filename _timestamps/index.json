@@ -33,6 +33,11 @@
       "proof_sha256": "fcf2ce2e2857d6ed27314cebe29b807b0f3c8b2ac73c9a226766732b573c70ce"
     },
     {
+      "post": "_posts/handbook-of-implied-cryptography-part-5-durable-cryptography.md",
+      "proof": "_timestamps/handbook-of-implied-cryptography-part-5-durable-cryptography.md.proof.json",
+      "proof_sha256": "c93b51ff589e37ee7b46980d30204ddeaf45d0afd5bf812b8e04340c4380a683"
+    },
+    {
       "post": "_posts/proof-of-publisher.md",
       "proof": "_timestamps/proof-of-publisher.md.proof.json",
       "proof_sha256": "cf0f63d7e772793318615607cdaf0810fbb46514b9870f4812ccf905c6c6007e"
