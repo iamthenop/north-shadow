@@ -20,6 +20,12 @@
       "revision": 2
     },
     {
+      "post": "_posts/automating-pki-3-protocol.md",
+      "proof": "_timestamps/automating-pki-3-protocol.md.proof.json",
+      "proof_sha256": "84446232f6e0cb01ad54aa860f8dea8ac11d10c7701c372fe8599e0ccd3823a6",
+      "revision": 2
+    },
+    {
       "post": "_posts/handbook-of-implied-cryptography-part-1-developers.md",
       "proof": "_timestamps/handbook-of-implied-cryptography-part-1-developers.md.proof.json",
       "proof_sha256": "ce11f008c88406e804d4ae163d86ef344f1a12e598815778b136ed1df81cb60b"
