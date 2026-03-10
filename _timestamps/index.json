@@ -32,6 +32,12 @@
       "revision": 2
     },
     {
+      "post": "_posts/automating-pki-5-high-assurance.md",
+      "proof": "_timestamps/automating-pki-5-high-assurance.md.proof.json",
+      "proof_sha256": "7e7a0012e515d053ef77ea31cae29742d03fd3f9d2c16e2aadd3325dbcb93a34",
+      "revision": 2
+    },
+    {
       "post": "_posts/handbook-of-implied-cryptography-part-1-developers.md",
       "proof": "_timestamps/handbook-of-implied-cryptography-part-1-developers.md.proof.json",
       "proof_sha256": "ce11f008c88406e804d4ae163d86ef344f1a12e598815778b136ed1df81cb60b"
