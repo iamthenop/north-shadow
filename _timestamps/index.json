@@ -38,6 +38,12 @@
       "revision": 2
     },
     {
+      "post": "_posts/automating-pki-6-tls-proxies.md",
+      "proof": "_timestamps/automating-pki-6-tls-proxies.md.proof.json",
+      "proof_sha256": "ebeb9eeb5e258769fd8bb6c12c5a3b3875e3a36d32d648077e732e3c5a408413",
+      "revision": 2
+    },
+    {
       "post": "_posts/handbook-of-implied-cryptography-part-1-developers.md",
       "proof": "_timestamps/handbook-of-implied-cryptography-part-1-developers.md.proof.json",
       "proof_sha256": "ce11f008c88406e804d4ae163d86ef344f1a12e598815778b136ed1df81cb60b"
