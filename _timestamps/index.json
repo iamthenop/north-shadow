@@ -14,6 +14,12 @@
       "revision": 2
     },
     {
+      "post": "_posts/automating-pki-2-discovery.md",
+      "proof": "_timestamps/automating-pki-2-discovery.md.proof.json",
+      "proof_sha256": "0882a84146c1ebc2f86ae3465f801993025ba47ff1096aa01ab1973f79b1a9b8",
+      "revision": 2
+    },
+    {
       "post": "_posts/handbook-of-implied-cryptography-part-1-developers.md",
       "proof": "_timestamps/handbook-of-implied-cryptography-part-1-developers.md.proof.json",
       "proof_sha256": "ce11f008c88406e804d4ae163d86ef344f1a12e598815778b136ed1df81cb60b"
