@@ -5,12 +5,17 @@
     {
       "post": "_posts/AutomatingPKIatScale.md",
       "proof": "_timestamps/AutomatingPKIatScale.md.proof.json",
-      "proof_sha256": "56a2fcfe9b20e82211c419f3beebb8df6fd4f94701f0fa6ab371900361c5c24f"
+      "proof_sha256": "2b237084a08cdf9df96f86f6914a914fd8e6c3d49a86ace995e66c53d4335464"
     },
     {
       "post": "_posts/_skel.example.md",
       "proof": "_timestamps/_skel.example.md.proof.json",
       "proof_sha256": "25b44b9770a6c2ee5fdd50e6d5fa0613b17ae2217e23e1f6e8525cbf73b007d7"
+    },
+    {
+      "post": "_posts/handbook-of-implied-cryptography-part-1-developers.md",
+      "proof": "_timestamps/handbook-of-implied-cryptography-part-1-developers.md.proof.json",
+      "proof_sha256": "ce11f008c88406e804d4ae163d86ef344f1a12e598815778b136ed1df81cb60b"
     },
     {
       "post": "_posts/proof-of-publisher.md",
