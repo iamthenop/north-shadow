@@ -10,7 +10,8 @@
     {
       "post": "_posts/_skel.example.md",
       "proof": "_timestamps/_skel.example.md.proof.json",
-      "proof_sha256": "25b44b9770a6c2ee5fdd50e6d5fa0613b17ae2217e23e1f6e8525cbf73b007d7"
+      "proof_sha256": "2cf924146fa6814b1ad9299bf4ade95655cf8429702992411f01a5d38acfca8c",
+      "revision": 2
     },
     {
       "post": "_posts/handbook-of-implied-cryptography-part-1-developers.md",
