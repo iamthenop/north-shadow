@@ -28,6 +28,11 @@
       "proof_sha256": "c1a61e9249932aa79eda472e769449f8f8e1a6ee2228f4b42290e8200e206823"
     },
     {
+      "post": "_posts/handbook-of-implied-cryptography-part-4-missing.md",
+      "proof": "_timestamps/handbook-of-implied-cryptography-part-4-missing.md.proof.json",
+      "proof_sha256": "fcf2ce2e2857d6ed27314cebe29b807b0f3c8b2ac73c9a226766732b573c70ce"
+    },
+    {
       "post": "_posts/proof-of-publisher.md",
       "proof": "_timestamps/proof-of-publisher.md.proof.json",
       "proof_sha256": "cf0f63d7e772793318615607cdaf0810fbb46514b9870f4812ccf905c6c6007e"
