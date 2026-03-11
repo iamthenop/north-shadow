@@ -26,6 +26,12 @@
       "revision": 2
     },
     {
+      "post": "_posts/artifact-economy-3-mechanisms.md",
+      "proof": "_timestamps/artifact-economy-3-mechanisms.md.proof.json",
+      "proof_sha256": "e4c4b7f2cfb6ecdce2c0e5ac864c9ab5fa9f3ec668c56b9bf3fe4c19b765fc65",
+      "revision": 2
+    },
+    {
       "post": "_posts/automating-pki-2-discovery.md",
       "proof": "_timestamps/automating-pki-2-discovery.md.proof.json",
       "proof_sha256": "0882a84146c1ebc2f86ae3465f801993025ba47ff1096aa01ab1973f79b1a9b8",
