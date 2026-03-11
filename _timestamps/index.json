@@ -62,6 +62,12 @@
       "revision": 2
     },
     {
+      "post": "_posts/evergreen-is-not-a-project-4-architecture.md",
+      "proof": "_timestamps/evergreen-is-not-a-project-4-architecture.md.proof.json",
+      "proof_sha256": "aec52e1f2314cd213177a740fdf93906ed93a2c73164f855279ca2981e7ad21a",
+      "revision": 2
+    },
+    {
       "post": "_posts/handbook-of-implied-cryptography-part-1-developers.md",
       "proof": "_timestamps/handbook-of-implied-cryptography-part-1-developers.md.proof.json",
       "proof_sha256": "ce11f008c88406e804d4ae163d86ef344f1a12e598815778b136ed1df81cb60b"
