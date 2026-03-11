@@ -50,6 +50,12 @@
       "revision": 2
     },
     {
+      "post": "_posts/evergreen-is-not-a-project-2-dependencies.md",
+      "proof": "_timestamps/evergreen-is-not-a-project-2-dependencies.md.proof.json",
+      "proof_sha256": "85d2b6c470519e9465de85aff429602f9d10094a4b70940d7899a1c42fd5335c",
+      "revision": 2
+    },
+    {
       "post": "_posts/handbook-of-implied-cryptography-part-1-developers.md",
       "proof": "_timestamps/handbook-of-implied-cryptography-part-1-developers.md.proof.json",
       "proof_sha256": "ce11f008c88406e804d4ae163d86ef344f1a12e598815778b136ed1df81cb60b"
