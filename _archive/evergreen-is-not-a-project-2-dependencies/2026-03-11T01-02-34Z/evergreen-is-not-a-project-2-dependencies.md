@@ -11,7 +11,7 @@ series_number: 2
 permalink: /evergreen-is-not-a-project/dependencies/
 ---
 
-# Part II: Dependencies
+# Part 2 — Dependencies
 ### Evergreen Is Not a Project
 
 ## Coordination Appears
