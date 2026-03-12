@@ -68,6 +68,12 @@
       "revision": 2
     },
     {
+      "post": "_posts/castles-do-not-float-2-the-dream.md",
+      "proof": "_timestamps/castles-do-not-float-2-the-dream.md.proof.json",
+      "proof_sha256": "f72f322541061e7244f4639732ea3efc6b8d94d8a1030f5e956b86078e5e16d0",
+      "revision": 2
+    },
+    {
       "post": "_posts/evergreen-is-not-a-project-1-the-promise.md",
       "proof": "_timestamps/evergreen-is-not-a-project-1-the-promise.md.proof.json",
       "proof_sha256": "f3748e3a50fc39b7a7b03342cc7eb9ac5441b3907b0968ee4b68ad6464089638",
