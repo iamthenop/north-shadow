@@ -173,6 +173,12 @@
       "proof": "_timestamps/war-on-a-false-premise-3-borrowed-privilege.md.proof.json",
       "proof_sha256": "f148c06503c1e67ca3025d3b201f3f7afb803a06b93b5e9222fac91eecc5bf67",
       "revision": 2
+    },
+    {
+      "post": "_posts/war-on-a-false-premise-4-the-maginot-line.md",
+      "proof": "_timestamps/war-on-a-false-premise-4-the-maginot-line.md.proof.json",
+      "proof_sha256": "7255150c8de812faede25f511d156aec0cd3cf4e1b72f183ffc976e2bb739083",
+      "revision": 2
     }
   ]
 }
