@@ -26,140 +26,114 @@ Reports can be reviewed.
 Dashboards can be displayed.  
 Evidence can be presented.
 
-From a management perspective, artifacts create visibility.
+From a management perspective, visibility improves.
 
-But visibility is not the same thing as control.
+Control may not.
 
 ---
 
 ## Risk Without Ownership
 
-Many risks appear before clear ownership exists.
+Risk often appears before ownership does.
 
-A failure mode is discovered.  
-An audit identifies a weakness.  
-An incident exposes a gap.
-
-Often the underlying system crosses several teams.
+An assessment identifies a weakness.  
+An incident exposes a gap.  
+A system failure reveals a boundary between teams.
 
 No single group fully owns the mechanism that would eliminate the problem.
 
-When ownership is unclear, organizations rarely stop and redesign the system.
+Something must still happen.
 
-Instead, they introduce visibility.
+A review meeting is scheduled.  
+A report is requested.  
+A dashboard is created.
 
-A report is created.  
-A dashboard is built.  
-A review meeting is scheduled.
+The organization gains visibility.
 
-The organization can now see the risk.
-
-The ownership question may still be unresolved.
+Ownership remains unclear.
 
 ---
 
 ## Visibility Is Cheap
 
-Visibility is the fastest response available to most organizations.
+Visibility is the fastest response available.
 
-A monitoring rule can be added in hours.  
-A dashboard can be created in an afternoon.  
-A weekly report can be scheduled immediately.
+A monitoring rule can be added quickly.  
+A dashboard can be assembled in hours.  
+A report can appear the same afternoon.
 
 Structural improvements take longer.
 
-Automation requires engineering effort.  
-Lifecycle ownership requires coordination across teams.  
-Platform changes may require redesign.
+Automation requires engineering.
 
-These changes take time.
+Lifecycle ownership requires coordination.
 
-Visibility can be implemented today.
+Visibility moves faster than redesign.
 
-Because of this difference in speed, organizations naturally choose visibility first.
-
-Leaders gain awareness.
-
-The underlying system may remain unchanged.
+So organizations choose visibility first.
 
 ---
 
 ## Compliance Requires Evidence
 
-Regulated environments reinforce this pattern.
+Regulated environments reinforce the pattern.
 
-Audits rarely inspect the full system.
+Audits rarely inspect the entire system.
 
-They inspect evidence that controls are operating.
+They inspect evidence that controls exist.
 
-Evidence must be something that can be reviewed and documented.
+Evidence must be reviewable.
 
-Examples include:
-
-- reports  
-- screenshots  
-- review logs  
-- policy attestations
+Reports appear.  
+Screenshots are captured.  
+Review logs are recorded.
 
 Artifacts satisfy these requirements easily.
 
-Mechanisms are harder to evaluate.
-
-Automation may not produce a document.  
-Architecture does not always produce a screenshot.
-
-As a result, audits often measure artifacts.
-
-Not the system itself.
+Mechanisms often remain invisible.
 
 ---
 
 ## The Assessment Cycle
 
-Each assessment introduces new evidence requests.
+Every assessment produces requests.
 
-An auditor asks for proof that a control exists.
+Proof that a control exists.
 
 The organization produces an artifact.
 
 A report is generated.  
-A review is recorded.  
+A review is documented.  
 A screenshot is captured.
 
 The assessment completes successfully.
 
-The next assessment arrives months later.
+Months later the next assessment arrives.
 
-The artifact must be produced again.
+The artifact must exist again.
 
 Over time these artifacts accumulate.
-
-Each one requires ongoing maintenance.
 
 ---
 
 ## The Artifact Owners
 
-Artifacts require people to maintain them.
+Artifacts require maintenance.
 
-Someone must collect the evidence.  
-Someone must prepare the report.  
-Someone must respond to the auditor.
+Evidence must be gathered.  
+Reports must be generated.  
+Auditors must be answered.
 
-So artifact ownership becomes clear very quickly.
+Ownership appears quickly.
 
-There is a person responsible for the evidence.
+Someone maintains the artifact.
 
-But the underlying system may still span multiple teams.
+The underlying system may still span several teams.
 
-The automation may be incomplete.  
-The lifecycle responsibility may be unclear.
+Automation may be incomplete.  
+Lifecycle responsibility may be unclear.
 
-In many organizations, artifacts have owners before systems do.
-
-The artifact becomes the manageable boundary.
-
-The mechanism may still lack clear ownership.
+Artifacts gain owners before systems do.
 
 ---
 
@@ -169,52 +143,38 @@ Eventually the organization begins to interpret passing assessments as proof tha
 
 The artifact exists.
 
-The report is generated.  
+The report appears.  
 The dashboard shows activity.  
 The evidence package is complete.
 
-From the perspective of the audit, the control appears successful.
+The audit passes.
 
 But the assessment validated the artifact.
 
-It did not necessarily validate the system.
-
-Artifacts can exist even when mechanisms are incomplete.
-
-Reports can be generated.  
-Dashboards can display activity.  
-Evidence packages can be assembled.
-
-The underlying failure mode may still exist.
-
-The organization experiences success.
-
-The system may not have improved.
+The system itself may not have changed.
 
 ---
 
 ## Structural Drift
 
-Over time this pattern becomes normal.
+Over time the pattern becomes normal.
 
 Artifacts multiply.
 
-Each one requires ongoing maintenance.
+Teams become skilled at producing evidence.
 
-Teams spend increasing time producing evidence.
+Less time remains for structural change.
 
-Less time remains for structural improvements.
+The organization becomes better at demonstrating control.
 
-The organization becomes very good at demonstrating control.
-
-The underlying mechanisms may evolve much more slowly.
+The mechanisms evolve more slowly.
 
 ---
 
 ## Structural Reality
 
-Passing an audit proves that the artifact existed.
+Passing an audit proves the artifact existed.
 
-It does not prove that the system works.
+It does not prove the system works.
 
 Next: Mechanisms
