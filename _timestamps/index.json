@@ -155,6 +155,12 @@
       "post": "_posts/small.md",
       "proof": "_timestamps/small.md.proof.json",
       "proof_sha256": "a9e0d84229393a415b7efa37a4583875417834561f8a36f0e3d76c31d3ebf3cf"
+    },
+    {
+      "post": "_posts/war-on-a-false-premise-1-battle-of-the-sovereign-workstation.md",
+      "proof": "_timestamps/war-on-a-false-premise-1-battle-of-the-sovereign-workstation.md.proof.json",
+      "proof_sha256": "0b56fc65efe7f6652c8cf71aab203726af76c123d65e7937f7d83053ba84c1d1",
+      "revision": 2
     }
   ]
 }
