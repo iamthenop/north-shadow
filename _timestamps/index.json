@@ -167,6 +167,12 @@
       "proof": "_timestamps/war-on-a-false-premise-2-the-packaging-trap.md.proof.json",
       "proof_sha256": "3045b1ad028885175bf1c7a03701ca63201b47a9d0767bdf2092e01815343b94",
       "revision": 2
+    },
+    {
+      "post": "_posts/war-on-a-false-premise-3-borrowed-privilege.md",
+      "proof": "_timestamps/war-on-a-false-premise-3-borrowed-privilege.md.proof.json",
+      "proof_sha256": "f148c06503c1e67ca3025d3b201f3f7afb803a06b93b5e9222fac91eecc5bf67",
+      "revision": 2
     }
   ]
 }
