@@ -16,42 +16,38 @@ permalink: /artifact-economy/signals-of-control/
 
 A certificate expires.
 
-This should not be surprising.
+This should not be a surprise.
 
-Expiration dates are known years in advance.  
+Certificate expiration dates are known years in advance.  
 Most organizations have systems that warn about them.
 
-Yet outages still occur.
+Yet outages still happen.
 
 The alerts were sent.  
 The dashboards showed the risk.  
 The reports existed.
 
-The certificate still expired.
+But the certificate still expired.
 
 ---
 
 ## More Eyes, Same Failure
 
-After an outage like this, organizations respond quickly.
+After an outage like this, organizations usually respond quickly.
 
-More monitoring appears.
+More monitoring is added.
 
 A new alert is created.  
-Another dashboard is added.  
+Another dashboard appears.  
 A report is scheduled for leadership.
 
-Visibility improves.
+These actions increase visibility.
 
-The organization can now see the risk earlier.
+The organization can now see the problem more clearly.
 
 But the system itself may not have changed.
 
-The next certificate may still expire in the same way.
-
-Observation improved.
-
-The mechanism did not.
+The next certificate may still expire the same way.
 
 ---
 
@@ -59,46 +55,41 @@ The mechanism did not.
 
 Dashboards, alerts, and reports serve an important purpose.
 
-They make risk visible.
+They show that a risk is visible.
 
-They allow leaders to understand what is happening.  
-They show that the organization is paying attention.
+They allow leaders to understand what is happening.
 
-This visibility matters.
+They demonstrate that the organization is paying attention.
 
-Monitoring reveals when systems drift.
+These signals are valuable.
 
-It tells us when something is wrong.
+But they are not the same thing as control.
 
-But monitoring does not repair the system that caused the failure.
+Monitoring tells you when something is wrong.
 
-Observation detects the problem.
-
-It does not remove it.
+It does not fix the system that caused the failure.
 
 ---
 
 ## The Artifact Economy
 
-Over time organizations begin producing many of these signals.
+Over time, organizations begin to produce many of these signals.
 
 Dashboards multiply.  
 Reports accumulate.  
 Review meetings appear on calendars.
 
-Each one demonstrates attention.
+Each one demonstrates attention to the problem.
 
-Each one produces an artifact.
+Each one creates an artifact.
 
-Artifacts move easily through organizations.
+Artifacts are useful because they can be reviewed and shared.
 
-They can be reviewed.  
-They can be shared.  
-They can be stored as evidence.
+They travel easily through organizations.
 
-They travel well.
+But artifacts describe a system.
 
-Systems do not.
+They do not change how the system behaves.
 
 ---
 
@@ -114,9 +105,9 @@ If the report is produced, the control appears active.
 
 The organization has evidence that work is happening.
 
-But the underlying mechanism may not have changed.
+But the underlying system may not have changed.
 
-The failure mode may still exist.
+The failure mode may still be present.
 
 ---
 
@@ -124,20 +115,15 @@ The failure mode may still exist.
 
 This shift rarely happens intentionally.
 
-Artifacts are simply easier to produce.
+It happens because artifacts are easier to produce than mechanisms.
 
-A dashboard can be created in an afternoon.
+Artifacts provide visibility quickly.
 
-Mechanisms take longer.
+Mechanisms require time, coordination, and engineering effort.
 
-Automation requires engineering.  
-Ownership requires coordination.
+So organizations produce artifacts first.
 
-Structural change moves slowly.
-
-Visibility moves quickly.
-
-Organizations choose the faster path.
+Over time, they produce many of them.
 
 ---
 
