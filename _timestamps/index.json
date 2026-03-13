@@ -179,6 +179,12 @@
       "proof": "_timestamps/war-on-a-false-premise-4-the-maginot-line.md.proof.json",
       "proof_sha256": "7255150c8de812faede25f511d156aec0cd3cf4e1b72f183ffc976e2bb739083",
       "revision": 2
+    },
+    {
+      "post": "_posts/war-on-a-false-premise-5-ending-the-workstation-privilege-war.md",
+      "proof": "_timestamps/war-on-a-false-premise-5-ending-the-workstation-privilege-war.md.proof.json",
+      "proof_sha256": "2089af0c38058dc89e294491fd552cca5cfc76065a44ede23a2a899b96ab0b5e",
+      "revision": 2
     }
   ]
 }
