@@ -32,6 +32,12 @@
       "revision": 2
     },
     {
+      "post": "_posts/automating-pki-1-countdown.md",
+      "proof": "_timestamps/automating-pki-1-countdown.md.proof.json",
+      "proof_sha256": "922a8c2ae3e38d63d8246069a8a13937bdc149aceb89deb06df8c3ca6d89bb3f",
+      "revision": 2
+    },
+    {
       "post": "_posts/automating-pki-2-discovery.md",
       "proof": "_timestamps/automating-pki-2-discovery.md.proof.json",
       "proof_sha256": "0882a84146c1ebc2f86ae3465f801993025ba47ff1096aa01ab1973f79b1a9b8",
