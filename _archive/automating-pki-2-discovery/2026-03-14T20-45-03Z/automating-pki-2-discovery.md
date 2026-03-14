@@ -29,7 +29,6 @@ Most organizations respond to certificate sprawl with scanning:
 
 Necessary. → Not sufficient.
 
----
 ## Discovery Is Not Ownership
 
 Discovery tells you a certificate exists.
@@ -50,7 +49,6 @@ An inventory without ownership is a list of liabilities.
 
 Automation built on unidentified assets cannot be trusted.
 
----
 ## The CMDB Cannot Be Bypassed
 
 Building a parallel “PKI inventory” feels efficient.
@@ -67,10 +65,6 @@ Automation layered on top of conflicting data will stall at change control.
 
 Discovery should reconcile the CMDB — not replace it.
 
-Discovery reveals drift.
-Reconciliation corrects it.
-
----
 ## Frequency Exposes Drift
 
 Under annual renewal cycles, stale records hide.
@@ -85,7 +79,6 @@ Decommissioned services linger. DNS zones move. Application owners change.
 
 Shorter lifetimes compress tolerance for inaccuracy.
 
----
 ## Authority Precedes Automation
 
 Before enabling automated renewal, the system must be able to answer:
@@ -101,7 +94,6 @@ Authority is organizational.
 
 Both are required.
 
----
 ## Structural Reality
 
 Certificate lifetime reduction increases frequency.
@@ -112,6 +104,6 @@ Discovery without alignment amplifies it.
 
 Automation cannot compensate for unclear ownership.
 
----
+##
 
 Next: why protocol-level automation alone does not solve change-discipline environments.
