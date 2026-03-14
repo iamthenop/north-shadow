@@ -68,6 +68,12 @@
       "revision": 2
     },
     {
+      "post": "_posts/automating-pki-7-thesis.md",
+      "proof": "_timestamps/automating-pki-7-thesis.md.proof.json",
+      "proof_sha256": "259a35a5a303d8a216cc02e59cbab242f85786cf21153224e5515be7b82ec05c",
+      "revision": 2
+    },
+    {
       "post": "_posts/castles-do-not-float-1-gravity.md",
       "proof": "_timestamps/castles-do-not-float-1-gravity.md.proof.json",
       "proof_sha256": "cff5ae696e47bcaa5694e702cf68c673773fc407050e564dc29eb42d8e8aff2b",
