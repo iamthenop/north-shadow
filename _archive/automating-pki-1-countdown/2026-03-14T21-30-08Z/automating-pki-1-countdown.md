@@ -41,7 +41,7 @@ A certificate could be issued for long periods and revoked if something went wro
 In practice, revocation has proven difficult to rely on at Internet scale.
 
 - CRLs grow continuously as certificates are revoked
-- OCSP introduces availability concerns and potential exposure to browsing patterns
+- OCSP introduces availability and privacy concerns
 - Many clients fall back to soft-fail behavior when revocation checks cannot be completed
 
 The result is an uncomfortable reality:
