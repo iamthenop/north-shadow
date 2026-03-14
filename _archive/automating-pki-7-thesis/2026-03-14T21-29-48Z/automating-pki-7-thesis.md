@@ -106,11 +106,11 @@ Start with five questions:
 
 Discovery helps answer the first.
 Deployment testing reveals the second.
-Operators expose the third.
-Change discipline governs the fourth.
+Operators demands the third.
+Governance defines the fourth.
 Architecture addresses the fifth.
 
-When those answers are clear, certificate renewal stops being a project.
+When those answers are clear, certificate renewal stops being an operational event.
 
 It becomes infrastructure behavior.
 
