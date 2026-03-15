@@ -11,181 +11,203 @@ series_number: 1
 permalink: /evergreen-is-not-a-project/the-promise/
 ---
 
-## Part I: The Promise 
+# Part I: The Promise
 ### Evergreen Is Not a Project
 
-Organizations like the idea of evergreen systems. 
+Organizations like the idea of evergreen systems.
+
+The appeal is obvious.  
 
 Infrastructure that never ages.  
 Platforms that remain modern.  
-Systems that quietly update themselves. 
+Systems that quietly update themselves in the background.
 
 No migrations.  
 No refresh programs.  
-No crisis projects. 
+No crisis projects.
 
-Just continuous renewal. 
+Just continuous renewal.
 
-It is an appealing promise. 
+It is an appealing promise.
 
---- 
-## The Refresh Cycle 
+---
 
-Most large systems still follow a familiar rhythm. 
+## The Refresh Cycle
+
+Most large systems still follow a familiar rhythm.
+
+They are built with care.  
+They operate for years.  
+They accumulate assumptions along the way.
 
 Build.  
 Operate.  
-Drift. 
+Drift.
 
-Over time the system becomes harder to change.  
+Over time the system becomes harder to change.
+
 Dependencies accumulate.  
-Assumptions harden. 
+Assumptions harden.  
+Operational workarounds become part of the landscape.
 
-Eventually a program forms. 
+Eventually a program forms.
 
 Modernization.  
 Transformation.  
-Platform refresh. 
+Platform refresh.
 
-The system is rebuilt. 
+The system is rebuilt.
 
-The cycle begins again. 
+The cycle begins again.
 
---- 
-## The Evergreen Promise 
+---
 
-Evergreen proposes a different future. 
+## The Evergreen Promise
 
-Instead of rebuilding systems every decade, they evolve continuously. 
+Evergreen proposes a different future.
+
+Instead of rebuilding systems every decade, they evolve continuously.  
+The work of renewal is distributed across time instead of concentrated into a single event.
 
 Components rotate.  
 Dependencies update.  
-Infrastructure renews itself gradually. 
+Infrastructure renews itself gradually.
 
-The system never reaches the point where replacement becomes necessary. 
+The system never reaches the point where replacement becomes necessary.
 
-Change becomes routine. 
+Change becomes routine.
 
-But the promise is often misunderstood. 
+But the promise is often misunderstood.
 
-Evergreen is often treated as a project. 
+Evergreen is frequently treated as a project.
 
 A transformation program.  
 A modernization effort.  
-A platform migration. 
+A platform migration.
 
-Something that can be delivered once. 
+Something that can be delivered once.
 
-The name suggests permanence. 
+The name suggests permanence.
 
-The mechanism is maintenance. 
+The mechanism is maintenance.
 
---- 
-## The Forest 
+---
 
-Not all ecosystems renew themselves the same way. 
+## The Forest
 
-A boreal forest changes slowly. 
+Not all ecosystems renew themselves the same way.
+
+A boreal forest changes slowly.
 
 Growth is gradual.  
-Disturbances are rare.  
-When fire comes, it resets large areas. 
+Disturbances are rare.
+
+When fire arrives, it spreads across vast areas.
 
 Long periods of stability.  
-Occasional large events. 
+Occasional large resets.
 
-Some systems behave this way. 
+Some systems behave this way.
 
-They accumulate change quietly.  
-Eventually a migration resets the platform. 
+They accumulates change quietly.  
+The remain usable for long stretches of time.  
+Then a large reset becomes unavoidable.
 
---- 
-Temperate forests evolve differently. 
+Eventually a migration rebuilds the platform.
+
+The cycle repeats.
+
+---
+
+Temperate forests evolve differently.
 
 Trees fall.  
 Light reaches the ground.  
-New growth fills the gap. 
+New growth fills the gap.
 
-Change is continuous. 
+Renewal happens continuously.
 
-The forest renews itself without large resets. 
+The forest renews itself without sudden system wide events.
 
-This is how evergreen systems are often imagined. 
+This is how evergreen systems are often imagined.
 
-Small disturbances.  
-Gradual renewal.  
-No catastrophic reset. 
+Small disturbances.
+Gradual renewal.
+No catastrophic reset.
 
---- 
-Tropical forests move faster still. 
+---
+
+Tropical forests move faster still.
 
 Growth is constant.  
-Competition is relentless.  
-Decay and renewal occur simultaneously. 
+Competition is relentless.
 
-Nothing remains static. 
+Decay and renewal occur simultaneously.
 
-The ecosystem survives because it absorbs change continuously. 
+Nothing remains static.
 
---- 
-## The Assumption 
+The ecosystem survives because it absorbs change continuously.
 
-Evergreen assumes the system behaves like a temperate forest. 
+---
+
+## The Assumption
+
+Evergreen usually assumes the system behaves like a temperate forest.
 
 Small disturbances.  
 Localized renewal.  
-Gradual replacement. 
+Gradual replacement.
 
-But many large systems operate closer to the boreal model. 
+But many large systems operate closer to the boreal model.
 
 Dependencies accumulate quietly.  
-When change finally arrives, it moves across the entire system. 
+Local decisions compound.  
+The effect is not obvious until change finally arrives.
 
-Reset becomes unavoidable. 
+When it does, it spreads across the entire system.
 
---- 
-## The Terrain 
+Reset becomes unavoidable.
 
-Complex systems have terrain. 
+---
+
+## The Terrain
+
+Complex systems have terrain.
 
 Dependencies.  
 Shared infrastructure.  
-Authority boundaries. 
+Authority boundaries.
 
-These forces shape how change moves through an organization. 
+These forces shape how change moves through an organization.
 
-Sometimes they allow incremental evolution. 
+Sometimes they allow incremental evolution.  
+Sometimes they force coordinated movement.
 
-Sometimes they force coordinated movement. 
+No methodology removes this terrain.
 
-No methodology removes this terrain. 
+It can only help navigate it.
 
-It can only help navigate it. 
+---
 
---- 
-## A Structural Truth 
+## Structural Reality
 
-Evergreen systems are not defined by how quickly they change. 
+Evergreen systems are not defined by how quickly they change.
 
-They are defined by how safely they can change. 
+They are defined by how safely they can change.
 
-Speed is a process property. 
+Speed is a process property.
 
-Tolerance for change is an architectural one. 
+Tolerance for change is an architectural one.
 
---- 
-## The Series 
+---
 
-This series explores the relationship between those two ideas. 
+## The Series
+
+This series explores the relationship between those two ideas.
 
 Evergreen systems.  
-Agile organizations. 
+Agile organizations.
 
-Both attempt to solve the same problem. 
+Both attempt to solve the same problem.
 
-How complex systems evolve without periodic collapse. 
-
---- 
-In the next part we examine the terrain. 
-
-Dependencies.
+How complex systems evolve without periodic collapse.
