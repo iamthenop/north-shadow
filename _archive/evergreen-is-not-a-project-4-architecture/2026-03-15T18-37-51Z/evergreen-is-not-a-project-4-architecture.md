@@ -22,9 +22,7 @@ Payment networks.
 Device fleets.  
 Infrastructure platforms.
 
-They operate continuously because the people and organizations that depend on them continue operating.
-
-The service is not permitted to disappear because change has become inconvenient.
+They operate continuously.
 
 Change must occur while the system is running.
 
@@ -38,16 +36,13 @@ It is failure.
 
 Architecture begins with boundaries.
 
-Systems must interact.  
-That is not the problem.
+Systems must interact.
 
-The problem begins when every interaction becomes a path for change to spread.
+But those interactions must be contained.
 
-Those interactions must be contained.
+Clear boundaries allow one part of the system to change.
 
-Clear boundaries allow one part of the system to change while the rest continues operating.
-
-This is how architecture protects delivery work from becoming system-wide coordination by default.
+While the rest continues operating.
 
 When boundaries blur, change spreads.
 
@@ -61,8 +56,6 @@ Distributed systems depend on stable protocols.
 
 Protocols allow participants to evolve independently.
 
-They create a structure in which old and new can coexist for long enough to make change survivable.
-
 Old versions remain in service.  
 New versions appear gradually.
 
@@ -71,11 +64,6 @@ Services in the cloud.
 Partners across networks.
 
 All must coexist.
-
-This matters especially in long-lived environments.
-
-IoT devices are not replaced on sprint boundaries.  
-Financial systems do not reset because a cleaner interface would be convenient.
 
 Protocols that cannot evolve will eventually require migration.
 
@@ -93,12 +81,6 @@ Versions overlap.
 
 The system evolves piece by piece.
 
-This is the architectural foundation of reliability over time.
-
-Not perfect stasis.  
-Not one-time design success.  
-Replaceability.
-
 When components cannot be replaced independently, change gathers into projects.
 
 ---
@@ -113,23 +95,13 @@ Velocity.
 
 That pressure is real.
 
-Project managers feel it too.
-
-They are the ones asked to turn architectural reality into movement, dates, and coordinated outcomes.
-
-Architects play a role closer to a forester than a builder.
-
-They do not control every change.
-
-They shape the conditions that allow the system to renew itself.
-
 But the systems we build must survive long after the sprint ends.
 
 Devices remain in the field for years.  
 Protocols persist across generations of services.  
 Financial systems carry decades of history.
 
-End users depend on this continuity, even when they never see the architecture that preserves it.
+End users depend on this continuity.
 
 Architecture exists to protect the system from the urgency of the present.
 
@@ -139,9 +111,9 @@ Architecture exists to protect the system from the urgency of the present.
 
 Distributed systems survive by allowing old and new to coexist.
 
-Boundaries must contain change.  
-Protocols must enable evolution.  
-Replacement is allowed to happen gradually.
+Boundaries contain change.  
+Protocols enable evolution.  
+Replacement happens gradually.
 
 When these properties hold, systems evolve through maintenance.
 
