@@ -16,21 +16,15 @@ permalink: /evergreen-is-not-a-project/dependencies/
 
 ## Coordination Appears
 
-Project managers usually see the problem early.
+Project managers see it early.
 
-Work that looked independent on paper begins to converge.  
 Multiple teams must move together.  
 Schedules begin to align.  
-Release plans grow larger than the features they were meant to deliver.
+Release plans grow.
 
-From the outside this can look like inefficiency.
+Work completes.
 
-Inside the delivery process it looks different.
-
-The work is complete.  
-The code is ready.
-
-But the system cannot move yet.
+But it cannot ship.
 
 Dependencies appear late in the cycle.  
 Integration windows emerge.  
@@ -43,12 +37,6 @@ Coordination becomes the work.
 ## Connections Form
 
 Systems interact.
-
-They share data.  
-They trust common authorities.  
-They depend on the same platforms.
-
-Beneath the forest floor, roots intertwine.
 
 Connections appear.
 
@@ -70,27 +58,15 @@ Every relationship creates a dependency.
 
 Dependencies determine what must move together.
 
-When a single tree falls, a small gap opens in the canopy.
-
-Light reaches the ground.  
-New growth fills the space.  
-The forest continues.
-
 When connections are loose, change stays small.
 
 A service evolves.  
 A component updates.  
 The rest of the system continues.
 
-This is what delivery teams want.  
-It is what agile methods assume.  
-It is what project schedules are built around, even when nobody says it explicitly.
-
 When connections tighten, the unit of safe change grows.
 
-Small updates become multi-team events.  
-Release planning expands.  
-Local work turns into coordinated movement.
+Small updates become multi-team events.
 
 The system begins to move in larger pieces.
 
@@ -100,7 +76,7 @@ The system begins to move in larger pieces.
 
 Project managers respond appropriately.
 
-They introduce coordination because coordination has become necessary.
+They introduce coordination.
 
 Dependency tracking.  
 Release planning.  
@@ -110,9 +86,6 @@ Synchronized deployments.
 None of this is failure.
 
 It is a rational response to architectural friction.
-
-This is one reason experienced project managers often see the limits of methodology talk before anyone else does.  
-They are the people who inherit the shape of the system in calendar form.
 
 ---
 
@@ -128,22 +101,25 @@ The responsibility is to shape those connections.
 
 So change remains localized.
 
-Good architecture allows components to evolve independently.  
-It prevents every local adjustment from becoming a system-wide event.
+Good architecture allows components to evolve independently.
 
 Poor architecture forces the system to move as one.
 
 ---
 
-## Structural Reality
+## The Signal
 
 Increasing coordination is a signal.
 
-Not of poor execution.  
-Not of weak planning.  
+Not of poor execution.
+
 Of structural coupling.
 
 Dependencies determine how systems move.
+
+---
+
+## Next
 
 Agile assumes change can move in small increments.
 
