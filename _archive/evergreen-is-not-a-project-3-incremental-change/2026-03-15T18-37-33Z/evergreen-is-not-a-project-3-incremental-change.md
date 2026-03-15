@@ -11,16 +11,12 @@ series_number: 3
 permalink: /evergreen-is-not-a-project/incremental-change/
 ---
 
-# Part III: Incremental Change
+# Part III — Incremental Change
 ### Evergreen Is Not a Project
 
 ## Small Steps
 
-Many organizations adopt Agile methods for sensible reasons.
-
-Short cycles reduce uncertainty.  
-Frequent delivery creates feedback.  
-Continuous movement makes large surprises less likely.
+Many organizations adopt Agile methods.
 
 Short cycles.  
 Frequent delivery.  
@@ -40,40 +36,27 @@ Small steps limit the blast radius.
 
 Incremental change works when systems can evolve independently.
 
-A service changes without forcing others to change.  
-Interfaces remain stable.  
+A service changes without forcing others to change.
+
+Interfaces remain stable.
+
 Components can be replaced while the rest of the system continues operating.
 
 Under these conditions, change stays small.
-
-Delivery teams can move with confidence because the system is able to absorb movement without demanding synchronized response elsewhere.
 
 ---
 
 ## When It Slows
 
-Some fields are planted all at once.
-
-The crop matures together.  
-Harvest arrives together.
-
-Many software systems behave the same way.
-
 Dependencies change the size of safe movement.
 
 When connections tighten, small changes ripple outward.
 
-More teams must move together.  
+More teams must move together.
+
 Release schedules align.  
 Integration phases appear.  
 Planning cycles lengthen.
-
-This is the point where delivery teams start feeling the difference between local progress and system movement.  
-
-Work can continue.  
-Tickets can close.
-
-But the system itself becomes harder to move in small increments.
 
 Agile continues.
 
@@ -81,16 +64,16 @@ But the system begins to move in larger steps.
 
 ---
 
-## Structural Reality
+## The Observation
 
 Agile does not remove dependencies.
 
 It operates within them.
 
-Methodology can improve feedback.  
-It can improve coordination.
+---
 
-It cannot make a tightly coupled system behave like a loosely coupled one.
+## The Bridge
 
 Agile assumes change can remain small.
+
 Architecture determines whether it can.
