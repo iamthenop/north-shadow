@@ -159,6 +159,12 @@
       "proof_sha256": "c93b51ff589e37ee7b46980d30204ddeaf45d0afd5bf812b8e04340c4380a683"
     },
     {
+      "post": "_posts/mr-whiskerson-1-mr-whiskerson.md",
+      "proof": "_timestamps/mr-whiskerson-1-mr-whiskerson.md.proof.json",
+      "proof_sha256": "82a81c3f6fa1b66f66ddbb9e77b06bd6f3ff8b21f55eaf20d37ab7a6629f8659",
+      "revision": 2
+    },
+    {
       "post": "_posts/proof-of-publisher.md",
       "proof": "_timestamps/proof-of-publisher.md.proof.json",
       "proof_sha256": "cf0f63d7e772793318615607cdaf0810fbb46514b9870f4812ccf905c6c6007e"
