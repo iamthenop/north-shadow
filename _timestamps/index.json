@@ -165,6 +165,12 @@
       "revision": 2
     },
     {
+      "post": "_posts/mr-whiskerson-2-the-second-cat.md",
+      "proof": "_timestamps/mr-whiskerson-2-the-second-cat.md.proof.json",
+      "proof_sha256": "28e72b12b06d4066bf6db7dbb5ba9a50c58fe57c68d21e6acfe4f9c386217bbe",
+      "revision": 2
+    },
+    {
       "post": "_posts/proof-of-publisher.md",
       "proof": "_timestamps/proof-of-publisher.md.proof.json",
       "proof_sha256": "cf0f63d7e772793318615607cdaf0810fbb46514b9870f4812ccf905c6c6007e"
