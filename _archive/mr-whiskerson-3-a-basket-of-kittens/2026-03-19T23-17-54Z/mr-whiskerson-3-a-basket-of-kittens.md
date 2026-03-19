@@ -40,9 +40,9 @@ That was enough.
 
 The kittens did what kittens do.
 
-They climbed over each other and fell asleep in a pile. They wandered only a few feet before turning back. They treated the basket like a border and the little shelter like an answer. When food appeared, they crowded around it with the kind of trust that makes care feel not only necessary, but deserved.
+They climbed over each other and fell asleep in a pile. They wandered only a few feet before turning back. They treated the basket like a border and the little shelter like an answer. When food appeared, they crowded around it with the kind of certainty that makes provision feel effective.
 
-That was part of what made it hard to call any of it a problem.
+That was part of the problem.
 
 What was fragile could still look lively. What was unsustainable could still look warm. A small shelter, a bulk bag of food, and a visible place to gather were enough to make the whole arrangement feel more stable than it was.
 
