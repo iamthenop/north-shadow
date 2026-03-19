@@ -177,6 +177,12 @@
       "revision": 2
     },
     {
+      "post": "_posts/mr-whiskerson-4-two-baskets-of-kittens.md",
+      "proof": "_timestamps/mr-whiskerson-4-two-baskets-of-kittens.md.proof.json",
+      "proof_sha256": "7ee23eefd75697f70a93966aa882aac24251e087c8c3e965f6ce176cbe2573dc",
+      "revision": 2
+    },
+    {
       "post": "_posts/proof-of-publisher.md",
       "proof": "_timestamps/proof-of-publisher.md.proof.json",
       "proof_sha256": "cf0f63d7e772793318615607cdaf0810fbb46514b9870f4812ccf905c6c6007e"
