@@ -2,10 +2,10 @@
 layout: post
 title: "The Artifact Economy"
 subtitle: "Part II: Why Artifacts Multiply"
-date: 2026-03-12
+date: 2023-03-20
 author: "Penuel Lascano"
-categories: [security, architecture, operations]
-tags: [security-architecture, governance, compliance, systems-thinking, operations]
+categories: [security, architecture, governance]
+tags: [security-architecture, compliance, systems]
 series: "The Artifact Economy"
 series_number: 2
 permalink: /artifact-economy/why-artifacts-multiply/
@@ -14,167 +14,90 @@ permalink: /artifact-economy/why-artifacts-multiply/
 # Part II: Why Artifacts Multiply
 ### The Artifact Economy
 
-Artifacts do not appear randomly.
+Artifacts rarely exist alone.
 
-They appear because they solve a real organizational problem.
+Most regulated environments operate under multiple audit regimes.
 
-When risk becomes visible, leaders need to see that something is being done.
+PCI DSS.  
+PCI P2PE.  
+PCI PIN.  
+MPoC.  
+Interac.
 
-Artifacts make that possible.
-
-Reports can be reviewed.  
-Dashboards can be displayed.  
-Evidence can be presented.
-
-From a management perspective, visibility improves.
-
-Control may not.
+Each framework asks for evidence.
 
 ---
 
-## Risk Without Ownership
+## Parallel Evidence
 
-Risk often appears before ownership does.
+The mechanisms underneath these frameworks are often the same.
 
-An assessment identifies a weakness.  
-An incident exposes a gap.  
-A system failure reveals a boundary between teams.
+Device identity.  
+Key management.  
+Network segmentation.  
+Cryptographic boundaries.
 
-No single group fully owns the mechanism that would eliminate the problem.
+But the evidence is collected separately.
 
-Something must still happen.
+A DSS report.  
+A P2PE evidence package.  
+PIN ceremony records.  
+Interac documentation.
 
-A review meeting is scheduled.  
-A report is requested.  
-A dashboard is created.
-
-The organization gains visibility.
-
-Ownership remains unclear.
+Five artifacts may describe the same mechanism.
 
 ---
 
-## Visibility Is Cheap
+## The Maintenance Trap
 
-Visibility is the fastest response available.
+Artifacts appear inexpensive at first.
 
-A monitoring rule can be added quickly.  
-A dashboard can be assembled in hours.  
-A report can appear the same afternoon.
+A report satisfies one audit.
 
-Structural improvements take longer.
+Months later the report must appear again.
 
-Automation requires engineering.
+Evidence must be regenerated.  
+Screenshots must be captured again.  
+Attestations must be repeated.
 
-Lifecycle ownership requires coordination.
-
-Visibility moves faster than redesign.
-
-So organizations choose visibility first.
+Artifacts must be maintained.
 
 ---
 
-## Compliance Requires Evidence
+## Two Paths
 
-Regulated environments reinforce the pattern.
+Organizations eventually face a choice.
 
-Audits rarely inspect the entire system.
+Maintain the system that produces the artifact.
 
-They inspect evidence that controls exist.
+Or maintain both the system and the artifact.
 
-Evidence must be reviewable.
+The first path concentrates effort.
 
-Reports appear.  
-Screenshots are captured.  
-Review logs are recorded.
-
-Artifacts satisfy these requirements easily.
-
-Mechanisms often remain invisible.
-
----
-
-## The Assessment Cycle
-
-Every assessment produces requests.
-
-Proof that a control exists.
-
-The organization produces an artifact.
-
-A report is generated.  
-A review is documented.  
-A screenshot is captured.
-
-The assessment completes successfully.
-
-Months later the next assessment arrives.
-
-The artifact must exist again.
-
-Over time these artifacts accumulate.
-
----
-
-## The Artifact Owners
-
-Artifacts require maintenance.
-
-Evidence must be gathered.  
-Reports must be generated.  
-Auditors must be answered.
-
-Ownership appears quickly.
-
-Someone maintains the artifact.
-
-The underlying system may still span several teams.
-
-Automation may be incomplete.  
-Lifecycle responsibility may be unclear.
-
-Artifacts gain owners before systems do.
-
----
-
-## The Illusion of Success
-
-Eventually the organization begins to interpret passing assessments as proof that the system works.
-
-The artifact exists.
-
-The report appears.  
-The dashboard shows activity.  
-The evidence package is complete.
-
-The audit passes.
-
-But the assessment validated the artifact.
-
-The system itself may not have changed.
+The second multiplies it.
 
 ---
 
 ## Structural Drift
 
-Over time the pattern becomes normal.
+Over time artifact maintenance becomes its own operational surface.
 
-Artifacts multiply.
+Reports must remain consistent with inventories.
 
-Teams become skilled at producing evidence.
+Inventories must match diagrams.
 
-Less time remains for structural change.
+Diagrams must match policies.
 
-The organization becomes better at demonstrating control.
+Energy shifts toward maintaining the narrative.
 
-The mechanisms evolve more slowly.
+The system itself may remain unchanged.
 
 ---
 
 ## Structural Reality
 
-Passing an audit proves the artifact existed.
+Artifacts can be maintained indefinitely.
 
-It does not prove the system works.
+Mechanisms must be built.
 
 Next: Mechanisms
