@@ -2,10 +2,10 @@
 layout: post
 title: "The Artifact Economy"
 subtitle: "Part III: Mechanisms"
-date: 2026-03-13
+date: 2026-03-20
 author: "Penuel Lascano"
-categories: [security, architecture, operations]
-tags: [security-architecture, governance, compliance, systems-thinking, operations]
+categories: [security, architecture, governance]
+tags: [security-architecture, compliance, systems]
 series: "The Artifact Economy"
 series_number: 3
 permalink: /artifact-economy/mechanisms/
@@ -14,118 +14,76 @@ permalink: /artifact-economy/mechanisms/
 # Part III: Mechanisms
 ### The Artifact Economy
 
-Dashboards can show risk.
+Mechanisms change how systems behave.
 
-Reports can document it.  
-Alerts can notify the organization when something goes wrong.
+They regulate behavior rather than describe it.
 
-These tools provide visibility.
+Automation is a mechanism.
 
-But visibility alone does not regulate a system.
+Cryptographic constraints are mechanisms.
 
-Observation tells us what is happening.
-
-Regulation determines what happens next.
+Operational procedures can also act as mechanisms when they reliably shape behavior.
 
 ---
 
-## Observing a System Is Not Regulating It
+## Derived Evidence
 
-In Part I we saw how organizations respond to failure.
+Strong mechanisms produce artifacts naturally.
 
-More dashboards appear.  
-More alerts are configured.  
-More reports are created.
+A certificate authority produces an inventory.
 
-These artifacts make the system easier to observe.
-But observation does not change how the system behaves.
+An HSM produces key lifecycle logs.
 
-The underlying failure mode may still exist.
-The next certificate may still expire.
+An identity system produces access reviews.
 
----
+Artifacts become observations of system state.
 
-## What a Mechanism Does
-
-A mechanism regulates system behavior.
-It reduces the probability of a failure.
-It makes the correct outcome easier than the incorrect one.
-
-Sometimes a mechanism is automation.
-Automatic certificate renewal is a mechanism.
-
-Sometimes a mechanism is process.
-A defined operational procedure can regulate behavior as well.
-
-Sometimes the mechanism includes people operating inside a structured control loop.
-Humans can be part of mechanisms.
-
-The key property is not automation.
-
-The key property is regulation.
+They do not require separate maintenance.
 
 ---
 
-## Ownership Enables Mechanisms
+## Shared Mechanisms
 
-Mechanisms rarely appear without ownership.
+A single mechanism can satisfy many frameworks.
 
-Someone must be responsible for the lifecycle of the system.
-Someone must own the failure mode.
+Key management may satisfy DSS, PIN, and P2PE simultaneously.
 
-Without clear ownership, structural improvements are difficult.
-When authority is unclear, organizations fall back to artifacts.
+Device identity may satisfy P2PE, MPoC, and network requirements.
 
-Reports provide visibility.
-Dashboards demonstrate activity.
-Artifacts make the system observable.
+The mechanisms are shared.
 
-But they do not regulate it.
-
-Ownership allows mechanisms to appear.
-
----
-
-## Platforms Create Stable Mechanisms
-
-Many strong mechanisms exist at the platform level.
-
-Platform controls regulate behavior consistently across teams.
-
-Examples include:
-
-- automated certificate lifecycle management  
-- identity systems that enforce authentication boundaries  
-- deployment pipelines that enforce security policies  
-- infrastructure guardrails that prevent unsafe configurations
-
-These mechanisms regulate behavior before failures occur.
-
-They reduce the need for constant observation.
-
-They make the correct behavior the default behavior.
+Only the evidence streams differ.
 
 ---
 
 ## When Systems Become Quiet
 
-Well-regulated systems often appear quiet.
+Well-regulated systems appear quiet.
 
-Incidents become rare.
-Alerts trigger less frequently.
-Dashboards show stable conditions.
+Incidents decline.  
+Dashboards stabilize.  
+Reports show little change.
 
-Artifacts still exist.
-But their role changes.
+Quiet systems are sometimes mistaken for inactivity.
+
+In reality the mechanism is doing its work.
 
 ---
+
 ## Structural Reality
 
-Artifacts describe a system.
-Mechanisms regulate it.
+Return to the electrical panel.
 
-Passing an audit proves the artifact existed.
-It does not prove the system works.
+The breaker label describes the circuit.
 
-Artifacts explain why a system is quiet.
-Mechanisms are why it stays that way.
+The breaker interrupts current when the circuit overloads.
+
+The GFCI trips when current leaks where it should not.
+
+Each mechanism protects the circuit it governs.
+
+The safety of the system does not depend on the label being correct.
+
+Artifacts describe the system.
+
+Mechanisms regulate the parts they govern.
