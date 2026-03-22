@@ -5,7 +5,7 @@ subtitle: "Part I: Signals of Control"
 date: 2026-03-20
 author: "Penuel Lascano"
 categories: [security, architecture, governance]
-tags: [security-architecture, compliance, systems]
+tags: [security-architecture, compliance, systems, governance, operations]
 series: "The Artifact Economy"
 series_number: 1
 permalink: /artifact-economy/signals-of-control/
@@ -14,80 +14,86 @@ permalink: /artifact-economy/signals-of-control/
 # Part I: Signals of Control
 ### The Artifact Economy
 
-An electrical panel must be labeled.
+It is time to do some maintenance. At the cottage, that often begins with whatever looks simple.
 
-So the breakers are labeled.
+The electrical panel is labeled because it has to be. That is not the same thing as being understood.
 
 Kitchen.  
 Bedroom.  
 Bathroom.
 
-The inspection passes.
+The panel looks organized. At a glance, it gives the impression that the system is understood.
 
-Later someone shuts off the breaker labeled “Bathroom” to work on an outlet.
-
-The outlet is still live.
+So the breaker marked “Bathroom” is switched off to do a small repair. The outlet is still live.
 
 Fortunately the GFCI trips.
 
-The panel label described the system.
+The label described the system.
 
 The mechanism protected the person.
 
 ---
 
-## Signals of Control
+## Labels
 
-Organizations produce signals to demonstrate control.
+A label is useful. It helps a person navigate the system. It suggests that someone has already done the work of understanding what connects to what.
 
-Dashboards.  
+That suggestion may be true. It may also be the only thing that is true.
+
+A label can describe a circuit without governing it.
+
+## Ordered Surfaces
+
+The panel still looks orderly. That is part of the problem.
+
+Order on the surface creates confidence. The same thing happens elsewhere. A spreadsheet looks organized. A signed attestation looks complete. A dashboard with the right colors looks reassuring.
+
+The surface appears maintained. The underlying system may not be.
+
+This is the quiet trade.
+
+The artifact becomes easier to trust than the mechanism.
+
+## Signals
+
+Organizations produce these surfaces constantly. They produce signals that suggest control.
+
 Reports.  
-Review records.
+Reviews.  
+Dashboards.
 
-These signals show that attention exists.
+These signals are not useless. They make the system easier to see.
 
-They do not necessarily show that control exists.
+They do not necessarily make it safer to touch.
 
 Observation is not regulation.
 
----
-
 ## Evidence
 
-Compliance frameworks depend on evidence.
+Compliance frameworks depend on evidence. Evidence must be reviewable.
 
-Evidence must be reviewable.
-
-Reports can be inspected.  
-Screenshots can be archived.  
-Attestations can be signed.
+A label can be checked. A screenshot can be archived. A report can be signed.
 
 Artifacts travel easily through organizations.
 
 Systems do not.
 
----
+A circuit does not become safer because its label is legible.
 
-## The Quiet Trade
+## Why This Happens
 
-Producing artifacts appears inexpensive.
+Producing artifacts appears inexpensive. A label can be applied quickly. A report can be generated in an afternoon. A spreadsheet can be assembled before the meeting.
 
-A report can be generated quickly.  
-A spreadsheet can be assembled in an afternoon.
+Mechanisms take longer. A circuit has to be traced. A boundary has to be verified. Ownership has to be made explicit.
 
-Mechanisms take longer.
-
-Automation requires engineering.  
-Lifecycle ownership requires coordination.
-
-So the organization produces artifacts first.
-
----
+So the organization produces artifacts first. The surface improves. The system remains largely unchanged.
 
 ## Structural Reality
 
 Artifacts describe a system.
 
 They do not change how it behaves.
+
+---
 
 Next: Why Artifacts Multiply
