@@ -15,7 +15,7 @@ permalink: /war-on-a-false-premise/borrowed-privilege
 
 In 1731, a British merchant captain named Robert Jenkins claimed that Spanish coast guards boarded his ship and cut off his ear.
 
-Years later he reportedly presented the ear to Parliament.
+Years later, he reportedly presented the ear to Parliament.
 
 The incident became justification for a war between Britain and Spain.
 
@@ -29,23 +29,20 @@ Software privilege behaves in much the same way.
 
 ## The Moment of Elevation
 
-Developers occasionally encounter tools that require elevated privileges.
+Developers occasionally run into tools that require elevated privileges.
 
-An installer needs access to system directories.  
-A runtime must create network interfaces.  
-A dependency needs to compile native modules.
+An installer needs access to system directories. A runtime must create network interfaces. A dependency needs to compile native modules. None of this feels especially dramatic in the moment. It feels like work.
 
-So a familiar command appears:
-```
+So a familiar command appears.
+
+```text
 sudo
 Run as Administrator
-```
+````
 
 Elevation happens once.
 
-The task proceeds.
-
-The system appears to behave normally.
+The task proceeds. The system appears to behave normally. The software installs, the build completes, and the workflow continues.
 
 But something important has already changed.
 
@@ -53,12 +50,15 @@ But something important has already changed.
 
 ## Privilege Inheritance
 
-Operating systems attach privileges to **processes**, not intent.
+Operating systems attach privileges to processes, not intent.
 
-When a privileged process launches another process, the privilege flows forward.
+That distinction matters.
 
-The chain continues.
-```
+When a privileged process launches another process, the privilege flows forward with it. The system does not stop to ask whether the second process should hold the same authority, or whether the third process in the chain deserves it, or whether the fourth was ever meant to run with elevated power at all.
+
+The chain simply continues.
+
+```text
 elevated shell
 → package manager
 → dependency installer
@@ -78,21 +78,19 @@ They borrowed it.
 
 Modern development ecosystems do more than download packages.
 
-They execute code.
+They execute code, often automatically and often at scale.
 
 Consider a common command:
-```
+
+```text
 sudo npm install
 ```
 
+Developers usually run this when dependency permissions become difficult to manage or when an installation path expects system-level access. The command looks simple enough. It feels like one action.
 
-Developers often run this when dependencies require system access or when local permissions become difficult to manage.
+The execution chain is much larger than that.
 
-The command appears simple.
-
-But the execution chain is much larger.
-
-```
+```text
 sudo npm install
 → npm downloads dependencies
 → dependency install scripts execute
@@ -102,13 +100,9 @@ sudo npm install
 
 Every step runs with root privileges.
 
-Many of these scripts originate from external packages.
+Many of these scripts originate from external packages. Most are harmless. Some are brittle. A few are poorly written. All of them inherit the authority of the original command.
 
-Most are harmless.
-
-Some are poorly written.
-
-All inherit the authority of the original command.
+That is the uncomfortable part.
 
 Package managers were designed to automate trust.
 
@@ -120,17 +114,11 @@ Privilege systems were not designed for that level of delegation.
 
 Many developers assume containers solve this issue.
 
-Containers improve isolation.
+Containers do improve isolation in important ways. They help separate environments, reduce dependency conflicts, and create cleaner build paths. But they do not change how privilege propagates.
 
-But they do not change how privilege propagates.
+Docker itself often runs with elevated authority. Container builds execute instructions supplied by external images, Dockerfiles, package managers, and build scripts. The chain becomes longer and the boundaries become less obvious, but the underlying model remains the same.
 
-Docker itself often runs with elevated authority.
-
-Container builds execute instructions supplied by external images and build scripts.
-
-The chain becomes longer, but the model remains the same.
-
-```
+```text
 elevated user
 → container runtime
 → container build steps
@@ -139,49 +127,43 @@ elevated user
 
 Privilege still spreads through the execution chain.
 
+The location of the work may change.
+
+The model does not.
+
 ---
 
 ## The JIT Illusion
 
-Some organizations attempt to solve the workstation privilege problem with **Just-In-Time elevation**.
+Some organizations attempt to solve the workstation privilege problem with just-in-time elevation.
 
-The model appears straightforward.
+The idea appears straightforward. Remove standing administrator rights, grant temporary elevation when required, and return the system to normal afterward.
 
-Remove standing administrator rights.  
-Grant temporary elevation when required.  
-Return the system to normal afterward.
+From a policy perspective, that sounds like progress.
 
-But the underlying behavior has not changed.
+From a systems perspective, the behavior has not changed.
 
-When a user is elevated, every process launched during that window inherits the same authority.
+When a user is elevated, every process launched during that window inherits the same authority. The window may be short. The propagation is not. Once granted, privilege continues to move through the execution chain exactly as before.
 
-The elevation may be temporary.
+The elevation is temporary.
 
-The privilege propagation is not.
-
-Once granted, authority flows through the entire execution chain.
+The borrowed privilege is not.
 
 ---
 
 ## The Real Actors
 
-Most privileged actions on developer workstations are not performed by the user.
+Most privileged actions on developer workstations are not performed by the user directly.
 
-They are performed by:
+They are performed by installers, package managers, dependency scripts, container runtimes, and build systems. These tools execute code automatically. They pull new components into the environment. They compile, configure, assemble, and modify the system on the user’s behalf.
 
-- installers  
-- package managers  
-- dependency scripts  
-- container runtimes  
-- build systems  
+The user initiates the chain.
 
-These tools execute code automatically.
+The software performs the work.
 
-The user simply initiates the chain.
+Yet the system still assigns privilege to the user.
 
-Yet the system assigns privilege to the user.
-
-Every tool that follows inherits it.
+Everything that follows inherits it.
 
 ---
 
@@ -189,15 +171,15 @@ Every tool that follows inherits it.
 
 This behavior has a name.
 
-In security architecture it is called **ambient authority**.
+In security architecture it is called ambient authority.
 
-In practice it is easier to describe as something else.
+In practice, there is a plainer way to describe it.
 
-**Borrowed privilege.**
+Borrowed privilege.
 
-Authority spreads through the system because it follows the user.
+Authority spreads through the system because it follows the user rather than the software performing the action. That is why the problem remains difficult to see at first. The user appears to be in control. The system behaves as if the authority belongs to every tool that can reach it.
 
-Not the software performing the action.
+And once modern development tooling enters the picture, that assumption no longer holds.
 
 ---
 
@@ -205,17 +187,15 @@ Not the software performing the action.
 
 Modern development environments depend on automation.
 
-Dependencies install themselves.  
-Build systems compile code automatically.  
-Containers assemble entire environments from scripts.
+Dependencies install themselves. Build systems compile code automatically. Containers assemble entire environments from scripts. Local toolchains routinely execute instructions the user did not write and cannot fully inspect in advance.
 
-Privilege models designed decades ago assume a different world.
+Privilege models designed decades ago assumed a different world.
 
-They assume the user is the primary actor.
+They assumed the user was the primary actor.
 
-But modern systems operate through chains of automated software.
+But modern systems operate through chains of automated software, and those chains inherit whatever authority the user possesses. That is why the workstation privilege war persists even after local administrator rights are removed and just-in-time elevation is introduced.
 
-And those chains inherit whatever authority the user possesses.
+The boundary was never corrected.
 
 ---
 
@@ -223,18 +203,16 @@ And those chains inherit whatever authority the user possesses.
 
 If privilege should not follow the user, where should it belong?
 
-Modern systems already provide the answer.
+Modern systems already point toward the answer.
 
-Software can be identified.
-
-Publishers can be verified.
-
-Artifacts can be trusted.
+Software can be identified. Publishers can be verified. Artifacts can be trusted. The software performing the action does not have to remain anonymous just because a human launched it.
 
 Privilege does not have to belong to the user.
 
 It can belong to the software performing the action.
 
+That is the question security must finally answer.
+
 ---
 
-Next: **Part IV: The Maginot Line**
+Next: The Maginot Line
