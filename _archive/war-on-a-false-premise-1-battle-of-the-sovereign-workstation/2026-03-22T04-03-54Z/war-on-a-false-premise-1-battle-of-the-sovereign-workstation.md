@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Part I: The Battle of the Sovereign Workstation"
+title: "Part I: The Battle Over the Sovereign Workstation"
 subtitle: "The Pig War of 1859"
 date: 2026-03-12
 author: "Penuel Lascano"
@@ -11,29 +11,13 @@ series_number: 1
 permalink: /war-on-a-false-premise/battle-of-the-sovereign-workstation
 ---
 
-# Part I: The Battle of the Sovereign Workstation
-
-The lake is calm at that hour.
-
-A small tin boat drifts slowly toward a fallen tree, quiet enough that the evening feels undisturbed. The light is soft. Nothing appears urgent. The scene carries the kind of stillness that makes interruption feel almost unreasonable.
-
-Then the phone rings.
-
-Another developer needs local administrator access approved.
-
-The reason is absurd.
-
-The conflict is not.
-
-That is how the workstation privilege war usually appears. Not as doctrine or strategy, but as interruption. Someone needs a tool. Security owns the rule. Operations absorbs the friction.
-
-The cycle begins again.
+# Part I: The Battle Over the Sovereign Workstation
 
 People often fight over absurd things.
 
 In 1859, a farmer shot a pig that was eating his potatoes.
 
-The incident escalated into a military standoff between the United States and Britain over the San Juan Islands.
+The incident escalated into a military standoff between the United States and Britain over the San Juan Islands. Troops mobilized. Warships arrived. Both sides believed they were defending the correct border.
 
 The problem was not the pig.
 
@@ -41,9 +25,28 @@ The problem was the treaty.
 
 It defined the boundary using a channel that did not clearly exist.
 
-When boundaries are ambiguous, even small triggers can produce prolonged conflict.
+When borders are ambiguous, even small triggers can escalate into prolonged conflict.
 
-The workstation privilege debate follows the same pattern.
+Modern organizations experience a similar pattern.
+
+The debate over local administrator privileges never ends.
+
+It returns in cycles.
+
+Administrator rights are removed.  
+Exceptions appear.  
+Support teams fall behind.  
+Security reinforces the policy.
+
+The cycle repeats.
+
+Everyone involved is acting rationally within their role.
+
+Developers need their tools to work.  
+End user support must maintain a stable fleet.  
+Security must reduce the risk created by administrative privilege.
+
+Yet the friction persists.
 
 ---
 
@@ -51,15 +54,17 @@ The workstation privilege debate follows the same pattern.
 
 Modern development environments are large ecosystems.
 
-Languages evolve quickly. Frameworks update constantly. Build tools, SDKs, package managers, and extensions appear continuously.
+Languages evolve quickly.  
+Frameworks update constantly.  
+Build tools, SDKs, package managers, and extensions appear continuously.
 
 Developers rely on tools such as:
 
-- language runtimes
-- build systems
-- command-line utilities
-- package managers
-- development frameworks
+- language runtimes  
+- build systems  
+- command-line utilities  
+- package managers  
+- development frameworks  
 
 These tools change faster than workstation management processes can adapt.
 
@@ -77,15 +82,20 @@ The tool does not work without administrative access.
 
 End user support teams operate under different constraints.
 
-They maintain standardized workstation images. They test updates for compatibility. They deploy software across large fleets.
+They maintain standardized workstation images.  
+They test updates for compatibility.  
+They deploy software across large fleets.
 
 This model works well for common applications.
 
-Office suites. Browsers. Standard productivity tools.
+Office suites.  
+Browsers.  
+Standard productivity tools.
 
 Developer tooling behaves differently.
 
-The ecosystem is too large. The rate of change is too high.
+The ecosystem is too large.  
+The rate of change is too high.
 
 Support teams cannot realistically package and maintain every development tool required across the organization.
 
@@ -109,10 +119,10 @@ Administrative privilege dramatically expands the attack surface of a workstatio
 
 Malware executed by an administrator can:
 
-- modify system files
-- install persistence mechanisms
-- bypass security controls
-- move laterally across the network
+- modify system files  
+- install persistence mechanisms  
+- bypass security controls  
+- move laterally across the network  
 
 From a defensive standpoint, removing standing administrator privileges is a powerful control.
 
@@ -134,13 +144,17 @@ Each side believes it is defending the correct boundary.
 
 The workstation has quietly changed.
 
-Developers now run containers. They run build systems and local services. They rely on package managers that download and execute code.
+Developers now run containers.  
+They run build systems and local services.  
+They rely on package managers that download and execute code.
 
 At the same time, devices remain continuously connected through always-on VPN and remote access systems.
 
 The workstation is no longer just a user device.
 
-It runs infrastructure. It hosts services. It maintains persistent network access.
+It runs infrastructure.  
+It hosts services.  
+It maintains persistent network access.
 
 In practice, it behaves like a node inside the enterprise environment.
 
@@ -154,11 +168,16 @@ Administrative authority is still attached to the user.
 
 Development tooling reinforces this shift.
 
-Containers. Build systems. Package managers. Local databases.
+Containers.  
+Build systems.  
+Package managers.  
+Local databases.
 
 Tools such as Docker and Node.js routinely perform operations that once belonged to system administrators.
 
-Containers create network interfaces. Package managers execute installation scripts. Build systems compile native modules.
+Containers create network interfaces.  
+Package managers execute installation scripts.  
+Build systems compile native modules.
 
 From the operating system’s perspective, these are privileged operations.
 
@@ -170,13 +189,17 @@ From the developer’s perspective, they are simply part of running the toolchai
 
 When developers cannot install tools and support teams cannot package them quickly enough, requests for exceptions begin to appear.
 
-Temporary administrator access. On-demand privilege elevation. Ticket-based approvals.
+Temporary administrator access.  
+On-demand privilege elevation.  
+Ticket-based approvals.
 
 These mechanisms attempt to balance productivity and security.
 
 But they rarely eliminate the friction.
 
-Developers still wait for approvals. Support teams still struggle with packaging demand. Security teams still see elevated privileges as a risk.
+Developers still wait for approvals.  
+Support teams still struggle with packaging demand.  
+Security teams still see elevated privileges as a risk.
 
 The organization finds itself negotiating the same issue again and again.
 
@@ -218,4 +241,4 @@ The premise is wrong.
 
 ---
 
-Next: The Packaging Trap
+Next: **Part II: The Packaging Trap**
