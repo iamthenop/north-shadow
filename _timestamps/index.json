@@ -190,7 +190,8 @@
     {
       "post": "_posts/handbook-of-implied-cryptography-part-5-durable-cryptography.md",
       "proof": "_timestamps/handbook-of-implied-cryptography-part-5-durable-cryptography.md.proof.json",
-      "proof_sha256": "c93b51ff589e37ee7b46980d30204ddeaf45d0afd5bf812b8e04340c4380a683"
+      "proof_sha256": "ee921862ccc3548c28add7aa08013884692716d898dd00ffb4be9443b45f8f98",
+      "revision": 2
     },
     {
       "post": "_posts/mr-whiskerson-1-mr-whiskerson.md",

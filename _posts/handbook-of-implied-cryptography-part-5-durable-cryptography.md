@@ -1,183 +1,87 @@
 ---
 layout: post
 title: "Handbook of Implied Cryptography"
-subtitle: "Part V: Durable Cryptography"
-date: 2026-04-22
+subtitle: "Part V: A Legible System"
+date: 2026-03-10
 author: "Penuel Lascano"
-
-categories:
-  - security-architecture
-  - cryptography
-  - systems-thinking
-
-tags:
-  - cryptography
-  - software-architecture
-  - protocol-design
-  - security-engineering
-  - lifecycle
-
+categories: [security-architecture, cryptography, systems-thinking]
+tags: [cryptography, software-architecture, protocol-design, security-engineering, lifecycle]
 series: "Handbook of Implied Cryptography"
 series_number: 5
-
 permalink: /implied-cryptography/durable-cryptography/
 ---
 
-## Part V: Durable Cryptography
-### Handbook of Implied Cryptography
+# Handbook of Implied Cryptography  
+## Part V: A Legible System
 
-Part IV described the missing architect.
+By spring, the old tin boat is still the same boat.
 
-Local decisions accumulated.  
-Operational habits shaped identifiers.  
-Protocols inherited implementation details.
+The hull is sound.  
+The work is still there.  
+The seasons still turn.
 
-Over time the system stiffened.
+What changes is the motor.
 
-Eventually it became brittle.
+A new one goes on.  
+A four-stroke.
 
-At that point the system discovers something important.
+The boat does not become magical.
 
-Cryptography is not a feature.
+It becomes easier to understand.
 
-It is infrastructure.
+Fuel and oil are maintained separately.  
+The tank no longer depends on premix.  
+The startup sequence asks less of memory.  
+Seasonal maintenance begins to look more like routine work and less like inherited ritual.
 
----
-## Infrastructure Behaves Differently
+The work has not disappeared.
 
-Features can be replaced.
+More of it simply lives in the design.
 
-A new API can be introduced.  
-A service can be rewritten.  
-A library can be swapped.
+That is what durable systems do.
 
-Infrastructure behaves differently.
+They do not eliminate responsibility.  
+They relocate it.
 
-It connects systems.  
-It persists across migrations.  
-It survives organizational change.
+What used to depend on remembered handling becomes part of the platform.  
+What used to depend on folklore becomes part of maintenance.  
+What used to depend on one keeper becomes something the next person can understand.
 
-Cryptography lives in this layer.
+This is the difference between implied cryptography and legible cryptography.
 
-Which means its design must survive time.
+In an implied system, too much remains unstated.
 
----
-## The Lifecycle Problem
+Algorithm choices hide inside helpers.  
+Initialization vectors travel without being named.  
+Identifiers inherit meanings no one fully explains.  
+Payloads compress structure until interpretation depends on memory.  
+Protocols preserve assumptions long after the original reasoning is gone.
 
-Most cryptographic failures are not failures of mathematics.
+The system still works.
 
-The primitives are usually sound.
+But too much of it lives in handling rather than design.
 
-The failures appear in the lifecycle.
+A legible system is different.
 
-Keys are not rotated.  
-Algorithms cannot change.  
-Identifiers cannot evolve.  
-Payloads cannot adapt.
+It declares what it depends on.  
+It names the algorithm and mode of use.  
+It preserves the metadata needed to interpret the payload.  
+It separates identifiers from key material.  
+It is built for lifecycle transitions.  
+It treats lifecycle management as part of the platform, not as cleanup for the next person.
 
-The system continues to operate.
+That is the real lesson of implied cryptography.
 
-But its ability to evolve quietly disappears.
+The problem was never that systems changed.
 
----
-## Explicit Structure
+The problem was that too much of the change was absorbed by memory.
 
-Durable systems make cryptographic structure visible.
+Durable cryptography is not cryptography without work.
 
-Algorithms are identified.  
-Modes are declared.  
-Key identifiers exist independently of key material.  
-Metadata travels with the ciphertext.
+It is cryptography where the work has been put in the right place.
 
-Nothing is implied.
+The old tin boat never needed to become a different boat.
 
-The system states the conditions under which the data can be interpreted.
+It needed a motor that asked less of the keeper and a platform that declared more of itself.
 
-Future systems can understand it.
-
----
-## Separation of Concerns
-
-Durable systems separate responsibilities.
-
-Developers build applications.
-
-Architects define cryptographic boundaries.
-
-Operators manage keys.
-
-No single layer carries the entire burden.
-
-When these responsibilities blur, cryptography becomes accidental.
-
----
-## Identifiers Before Keys
-
-A durable system assigns identity before it generates secrets.
-
-Keys are created.  
-But identifiers already exist.
-
-Key material rotates.
-
-Identifiers persist.
-
-This allows systems to change keys without changing the system that references them.
-
----
-## Protocols That Expect Change
-
-Durable protocols assume the future will be different.
-
-Algorithms will age.  
-Key sizes will grow.  
-New primitives will appear.
-
-Protocols leave space for that change.
-
-Version fields exist.  
-Metadata travels with the payload.  
-Formats do not assume fixed cryptographic structure.
-
-The system expects evolution.
-
----
-## Automation as Maintenance
-
-Automation often appears in cryptographic discussions.
-
-Usually as a way to simplify deployment.
-
-But its real purpose is maintenance.
-
-Certificates renew automatically.  
-Keys rotate on schedule.  
-Protocols adapt without manual intervention.
-
-Automation does not eliminate lifecycle management.
-
-It enforces it.
-
----
-## The Quiet Principle
-
-Durable cryptography does not depend on remembering decisions.
-
-It depends on systems that declare them.
-
-Explicit identifiers.  
-Explicit metadata.  
-Explicit boundaries.
-
-When the structure is visible, the system can evolve.
-
----
-## Structural Truth
-
-Cryptographic systems rarely fail because encryption was absent.
-
-They fail because evolution was impossible.
-
-Durable cryptography is not implemented.
-
-It is maintained.
+So do our systems.
