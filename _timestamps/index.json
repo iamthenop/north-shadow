@@ -80,6 +80,12 @@
       "revision": 2
     },
     {
+      "post": "_posts/careless-whispers-2-hot-potato.md",
+      "proof": "_timestamps/careless-whispers-2-hot-potato.md.proof.json",
+      "proof_sha256": "e2e100adb81539eb3c6646dd115dc0068a6154e0caadfdcf18095d746bf700dd",
+      "revision": 2
+    },
+    {
       "post": "_posts/castles-do-not-float-1-gravity.md",
       "proof": "_timestamps/castles-do-not-float-1-gravity.md.proof.json",
       "proof_sha256": "cff5ae696e47bcaa5694e702cf68c673773fc407050e564dc29eb42d8e8aff2b",
