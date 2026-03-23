@@ -184,7 +184,8 @@
     {
       "post": "_posts/handbook-of-implied-cryptography-part-4-missing.md",
       "proof": "_timestamps/handbook-of-implied-cryptography-part-4-missing.md.proof.json",
-      "proof_sha256": "fcf2ce2e2857d6ed27314cebe29b807b0f3c8b2ac73c9a226766732b573c70ce"
+      "proof_sha256": "ad3a2726de3172fe40104c9a4a432723e22d93eaefa234ccd422d1352f97fcb4",
+      "revision": 2
     },
     {
       "post": "_posts/handbook-of-implied-cryptography-part-5-durable-cryptography.md",
