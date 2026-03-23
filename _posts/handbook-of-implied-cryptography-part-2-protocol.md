@@ -2,231 +2,190 @@
 layout: post
 title: "Handbook of Implied Cryptography"
 subtitle: "Part II: When Assumptions Become Protocol"
-date: 2026-04-15
+date: 2026-03-10
 author: "Penuel Lascano"
-
-categories:
-  - security-architecture
-  - cryptography
-  - systems-thinking
-
-tags:
-  - cryptography
-  - software-architecture
-  - protocol-design
-  - security-engineering
-  - lifecycle
-
+categories: [security-architecture, cryptography, systems-thinking]
+tags: [cryptography, software-architecture, protocol-design, security-engineering, lifecycle]
 series: "Handbook of Implied Cryptography"
 series_number: 2
-
 permalink: /implied-cryptography/assumed-protocol/
 ---
 
-# Part II: When Assumptions Become Protocol
-### Handbook of Implied Cryptography
+# Handbook of Implied Cryptography  
+## Part II — When Implementation Becomes Protocol
 
-Part I described how cryptography becomes implied.
+By the time most people see the old tin boat, the sequence has already hardened.
 
-Libraries hide complexity.  
-Parameters disappear from interfaces.  
-Defaults replace explicit design.
+The motor has to be in neutral.  
+The choke has to sit in the right place.  
+The cover comes off and goes back on halfway.  
+Someone gives the gas tank a light kick and claps twice.
 
-The system still works.
+None of this appears in the shape of the boat itself.
 
-So the assumptions accumulate.
+From the shoreline, it is still just a boat.
 
-Over time they spread.
+That is how implementation becomes protocol.
 
-Across services.  
-Across payloads.  
-Across databases.
-
-Eventually they stop being implementation details.
-
-They become the protocol.
+The visible system remains simple.  
+The real structure moves into sequence, assumption, and inherited handling.
 
 ---
+
 ## Implementation Is Flexible
 
-Inside a single application, cryptographic choices are easy to change.
+Inside a single application, cryptographic choices are still relatively easy to change.
 
 A library can be replaced.  
 An algorithm can be upgraded.  
-A function can generate IVs differently.
+A helper function can generate IVs differently.
 
-The change remains local.
+At that stage, the decision is still local. One team can revise it, test it, and ship the change without disturbing much else.
 
-Tests pass.  
-The application deploys.
-
-Nothing else depends on the decision.
+That is what implementation feels like. It is close to the code that made the choice.
 
 ---
+
 ## Protocols Are Not Flexible
 
 A protocol is different.
 
-It defines how systems interpret data.
+A protocol defines how systems interpret data across a boundary. It shapes payloads, token formats, encrypted fields, and assumptions about what the next system will receive.
 
-Payload structures.  
-Token formats.  
-Encrypted fields.
+Once that structure leaves a single service, multiple systems begin to rely on it. Clients parse it. Databases store it. APIs return it. Monitoring systems log it. Integration code quietly learns its shape.
 
-Once these structures leave a service boundary, they become shared assumptions.
-
-Multiple systems begin to rely on them.
-
-Clients parse them.  
-Databases store them.  
-APIs return them.
-
-Changing them becomes difficult.
+That is when a local decision stops being local.
 
 ---
+
 ## The Opaque Payload
 
-Many systems eventually produce a familiar artifact.
-
-A single opaque field.
+Most systems eventually produce a familiar artifact: a single opaque field.
 
 A token.  
 A payload.  
 A string representing encrypted data.
 
-The cryptographic structure disappears from view.
+From the outside, it appears simple. One field in the request. One value in the database. One blob passed from system to system.
 
-Algorithm.  
-Mode.  
-IV.  
-Authentication tag.
+It only looks simple.
 
-All packed together.
+Inside that field, structure still exists. Algorithm choice, mode, IV, authentication tag, version assumptions, and key selection all remain present in some form. They have not disappeared. They have merely been packed together.
 
-Often encoded again.
+That is why opaque payloads are so useful and so dangerous at the same time. They move easily through interfaces because they compress detail into something transportable. But the detail is still there, waiting to be interpreted correctly by the next system that touches it.
 
-Base64 inside JSON inside HTTP.
+The boat works the same way.
 
-The payload becomes convenient.
+From the shoreline, it is only a boat.  
+The real structure lives in everything you have to know before you touch the cord.
 
-Transportable.  
-Serializable.  
-Easy to pass through systems.
+---
 
-But difficult to interpret.
+## Hidden Structure
 
-Inside the payload, structure still exists.
+When cryptographic structure is compressed, the system still has to recover it somewhere.
 
 Offsets appear.  
 Fields have assumed lengths.  
-Certain bytes are interpreted as metadata.
+Metadata is packed into specific positions.  
+Certain bytes are treated as if their meaning is obvious.
 
-These details are rarely documented.
+Over time, that shape becomes familiar to the systems that already depend on it. The parser knows where to look. The helper function knows how to unpack it. The application code learns which parts matter and which parts can be ignored.
 
-They survive as implementation knowledge.
+But familiarity is not the same thing as clarity.
 
-Sometimes a field is reserved but never used.
+The structure is still there. It is simply no longer visible in a way that invites inspection.
 
-The space remains.
+---
 
-A strange appendage at the edge of the payload.
+## The Strange Appendage
 
-Future developers discover it years later.
+Sometimes a field is reserved but never truly used. Sometimes a value survives from an older design that no longer exists anywhere else. Sometimes a few bytes remain in the format because removing them would be riskier than explaining them.
 
-They search the codebase for its meaning.
+Future developers encounter these details as if they were natural.
 
-Often there is none.
+A length that always appears.  
+A flag that no one sets.  
+A segment of the payload that gets copied forward without interpretation.
+
+They search the codebase for its purpose. Often they do not find a real answer. What they find instead is repetition.
 
 The protocol simply remembers a decision that was never completed.
 
 ---
+
 ## Copy-Paste Cryptography
 
-Implementation patterns spread quickly.
+Implementation patterns spread faster than design.
 
-A helper function encrypts a payload.  
-Another service copies the same code.  
-A third team wraps it in a utility library.
+A helper function encrypts a payload. Another service copies it. A third team wraps it in a shared utility. Before long, the pattern is no longer one implementation among many. It is the way the organization does that kind of work.
 
-Soon dozens of systems depend on the same pattern.
+That spread feels efficient.
 
-No one remembers where it originated.
+It reduces repeated effort.  
+It encourages consistency.  
+It makes adoption easier.
 
-Or why it was written that way.
+But it also hardens assumptions. The original implementation may have been local, but repetition turns it into an informal standard long before anyone names it as one.
 
-The pattern becomes institutional knowledge.
-
-A silent standard.
+That is how sequence becomes protocol.
 
 ---
-## The Token Becomes an Identifier
 
-Opaque tokens illustrate the pattern clearly.
+## The Payload Becomes an Identifier
 
-A service issues a token.
+At some point, a cryptographic artifact stops being treated as cryptography at all.
 
-Clients store it.  
-Other services validate it.  
-Infrastructure passes it through unchanged.
+A token becomes an identifier.  
+A blob becomes a reference.  
+A string becomes something the system passes around without interpretation.
 
-The token contains cryptographic structure.
+This is a subtle shift, but an important one.
 
-But that structure is rarely visible.
+Once the payload is treated primarily as an identifier, its internal structure disappears from everyday thought. The application no longer sees a cryptographic object with conditions and metadata. It sees a thing that can be stored, copied, compared, and returned.
 
-The system treats the token as an identifier.
+The visible system becomes simpler.
 
-A string.
-
-Not a cryptographic artifact.
-
-Its interpretation depends entirely on hidden assumptions.
+The hidden system becomes harder to change.
 
 ---
+
 ## Structural Hardening
 
-At first these decisions are harmless.
+At first these decisions are harmless enough.
 
-Local.  
-Convenient.  
-Practical.
+They are practical.  
+They reduce friction.  
+They help software move.
 
-But once the data format spreads across systems, the assumptions harden.
+But once the data format spreads across enough systems, the assumptions begin to harden. A client expects the field. A downstream service relies on a specific layout. A datastore preserves the representation exactly as it arrived. A migration script quietly encodes the same assumptions into another layer.
 
-Clients depend on the structure.  
-Logs capture the format.  
-Databases store the representation.
+The boat did not become this way all at once.
 
-Changing the cryptography now requires changing the payload.
+Something changed.  
+A part was replaced.  
+A control behaved differently.  
+A later decision had to fit an older platform.
 
-And payload formats behave like protocols.
+Redesigning the whole system would have been too expensive, too disruptive, or simply unnecessary.
 
-They resist change.
+So the platform stayed the same.
 
----
-## Quiet Transition
-
-The transition rarely happens intentionally.
-
-A library default becomes a helper function.  
-A helper function becomes a shared utility.  
-The utility shapes a payload format.
-
-Soon the payload travels everywhere.
-
-By then the decision is no longer local.
-
-It is infrastructure.
+The sequence carried the change.
 
 ---
 
-## Structural Truth
+## The Quiet Transition
 
-Cryptography begins as implementation.
+No one usually decides to turn implementation into protocol.
 
-But systems rarely keep it there.
+The transition happens gradually.
 
-Over time, the implementation leaks into the protocol.
+A local helper becomes a shared utility.  
+A shared utility shapes a payload.  
+A payload travels across a boundary.  
+Another system learns to depend on it.
 
-And protocols remember every assumption.
+Eventually the original choice is no longer remembered as a choice. It is treated as the natural shape of the system.
 
-Even the ones no one meant to make.
+By then, the sequence has become part of the boat.
