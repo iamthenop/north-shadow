@@ -2,195 +2,189 @@
 layout: post
 title: "Handbook of Implied Cryptography"
 subtitle: "Part III: Cryptographic Drift"
-date: 2026-04-17
+date: 2026-03-10
 author: "Penuel Lascano"
-
-categories:
-  - security-architecture
-  - cryptography
-  - systems-thinking
-
-tags:
-  - cryptography
-  - software-architecture
-  - protocol-design
-  - security-engineering
-  - lifecycle
-
+categories: [security-architecture, cryptography, systems-thinking]
+tags: [cryptography, software-architecture, protocol-design, security-engineering, lifecycle]
 series: "Handbook of Implied Cryptography"
 series_number: 3
-
-permalink: /implied-cryptography/cryptographic-drift/
+permalink: /implied-cryptography/drift/
 ---
 
-# Part III: Cryptographic Drift
+# Handbook of Implied Cryptography  
+## Part III — Cryptographic Drift
 
-Part II described how implementation becomes protocol.
+The old tin boat is put away for winter the way many systems are maintained.
 
-Payload formats spread.  
-Helper functions become shared utilities.  
-Assumptions cross service boundaries.
+Not carelessly.  
+Not completely.
 
-The system stabilizes.
+The boat is winched into the shed.  
+The plug is removed to let it drain.  
+The tank is disconnected and set aside for next season.  
+The fuel line is removed and given a shake.  
+The spark plug is disconnected.  
+The battery is put in the middle so the boat does not tilt.  
+There is one quick pull to cycle it once.  
+The cat will take care of vermin.
 
-Nothing appears broken.
+From the shoreline, it looks prepared.
 
-But time continues to move.
-
-And cryptography changes with it.
+Spring has a way of exposing what "mostly" meant.
 
 ---
+
 ## Time Moves Differently
 
-Software moves quickly.
+Software moves quickly. Features ship, libraries update, and services are replaced on timelines that feel immediate to the people building them.
 
-Features ship weekly.  
-Services deploy daily.  
-Libraries update continuously.
+Cryptography does not move that way. Algorithms persist for years. Key models survive across teams. Payload formats outlast the code that first introduced them.
 
-Cryptography does not move this way.
+Those are not the same timeline.
 
-Algorithms persist for decades.  
-Key management models last even longer.  
-Protocols often outlive the teams that created them.
-
-The timelines rarely align.
+A system can feel current in its delivery cycle and old in its cryptographic assumptions at the same time.
 
 ---
-## Systems Outlive Decisions
 
-Most cryptographic decisions are made once.
+## The System Was Not Neglected
 
-Which algorithm to use.  
-How ciphertext is structured.  
-Where keys are stored.  
-How identifiers are assigned.
+Most drift does not begin with obvious neglect.
 
-At the moment the decision is made, the choice feels temporary.
+It begins with partial preparation.
 
-Another library can be adopted later.  
-The payload format can evolve.  
-The key structure can be revisited.
+A review is scheduled, but the format stays the same for compatibility. A key lifecycle is discussed, but the surrounding identifier model is left alone. A migration plan exists, but only the most visible pieces move forward.
 
-But once systems depend on those decisions, they stop being temporary.
+The system is not abandoned.
 
-They become infrastructure.
+It is prepared halfway.
 
 ---
-## Knowledge Fades
 
-Teams change.
+## Stability Hides Drift
 
-Developers leave.  
-Services are inherited.  
-Repositories are archived and revived years later.
+A drifting system often still works.
 
-The code remains.
+That is what makes drift difficult to see.
 
-But the reasoning disappears.
+The boat still looks covered.  
+The motor is still there.  
+The rope still pulls.
 
-Why the payload contains a reserved field.  
-Why a token has a specific offset.  
-Why a key identifier follows an unusual pattern.
+The payload still decrypts.  
+The token still validates.  
+The service still starts.
 
-The system continues operating.
+Nothing about the visible behavior forces the deeper question.
 
-The explanation is gone.
-
----
-## The Persistence of Habit
-
-Some patterns survive migrations.
-
-Systems move from one standard to another.  
-New formats replace old ones.  
-Protocols evolve.
-
-But operational habits often remain.
-
-Identifiers derived from key material.  
-Short fragments used as references.  
-Convenience fields embedded into structures.
-
-The system adapts.
-
-But traces of the older model remain embedded in the new one.
+So the assumptions remain in place.
 
 ---
-## The Quiet Expansion of Assumptions
 
-Each generation of developers inherits the system as it exists.
+## Margin Narrows First
 
-They rarely redesign it.
+Drift rarely appears as immediate failure.
 
-They extend it.
+It appears first as reduced tolerance.
 
-A field is reused.  
-A format is preserved for compatibility.  
-A helper function becomes the canonical way to encrypt data.
+The same sequence becomes less forgiving. The same format becomes harder to change. The same assumptions that once fit comfortably begin to fit tightly.
 
-Nothing seems wrong.
+This is how systems age.
 
-Every change is incremental.
+Not by stopping.  
+By requiring more care to get the same result.
 
 ---
-## The Day Nothing Changes
 
-Most days, cryptographic drift is invisible.
+## Conditions Change Before Ritual Does
 
-Encryption still works.  
-Tokens still validate.  
-Keys still decrypt data.
+By spring, the sequence for the old tin boat is still the same.
 
-The system appears stable.
+At least that is how people remember it.
 
-Stability becomes evidence that the assumptions were correct.
+Neutral.  
+Choke in the right place.  
+Do not over-prime it.  
+Cover off, back on halfway.  
+One light pull before the real one.  
+A light kick to the gas tank.  
+Two claps.
 
-But the assumptions have not been tested.
+The sequence survives.
 
-They have simply persisted.
+The conditions do not.
 
----
-## Accumulated Structure
+Fuel sits longer than it should.  
+The line stiffens.  
+The weather shifts.  
+The motor grows less forgiving.
 
-Over time the system accumulates layers.
-
-Formats built for earlier libraries.  
-Key identifiers shaped by earlier devices.  
-Payload conventions inherited from older services.
-
-Each layer made sense when it was introduced.
-
-Together they form a structure that no single person designed.
+It only looks the same.
 
 ---
-## Drift Is Quiet
 
-Cryptographic failures rarely appear suddenly.
+## Inherited Systems Resist Revision
 
-They accumulate.
+The longer a system survives, the more likely it is to preserve choices that once made sense under earlier conditions.
 
-A payload format constrains a future algorithm.  
-An identifier structure blocks a migration path.  
-A helper function encodes a hidden assumption.
+A format remains because too many other systems already depend on it. A field survives because removing it would be riskier than carrying it forward. An algorithm stays in place because the migration path around it touches too many other assumptions.
 
-None of these changes break the system.
+This is not always laziness.
 
-They only reduce its ability to change.
+Often it is the cost of disturbing an inherited platform.
+
+So the system keeps moving with less margin than before.
 
 ---
-## Structural Truth
 
-Cryptographic systems rarely collapse.
+## Drift Accumulates Quietly
 
-They stiffen.
+Each season carries something forward.
 
-Each assumption reduces the system’s ability to move.
+A little left in the line.  
+A little more deferred to next quarter.  
+A little less confidence in what can safely change without breaking something else.
 
-Over time the structure becomes rigid.
+None of these changes look dramatic by themselves.
 
-Eventually it becomes brittle.
+That is why drift is easy to underestimate.
 
-Then one day the system must change.
+The system still appears familiar.  
+The real difference is in how much uncertainty it can absorb.
 
-And discovers how much it remembers.
+---
+
+## The Quiet Reduction
+
+A drifting system does not always stop working.
+
+It becomes less forgiving.
+
+A second pull.  
+A narrower choke position.  
+A payload that still works, but only if the next system already knows what to expect.  
+A control that still exists, but only inside the tolerated range.
+
+That is how cryptographic drift usually arrives.
+
+Not as collapse.
+
+As shrinking margin.
+
+---
+
+## The Quiet Season
+
+Drift rarely begins as failure.
+
+It begins as partial preparation carried forward.
+
+The boat was not abandoned.  
+The system was not ignored.
+
+But neither was made ready for what came next.
+
+That is what time does to inherited systems.
+
+They do not always stop.
+
+They become less forgiving.

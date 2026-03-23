@@ -178,7 +178,8 @@
     {
       "post": "_posts/handbook-of-implied-cryptography-part-3-drift.md",
       "proof": "_timestamps/handbook-of-implied-cryptography-part-3-drift.md.proof.json",
-      "proof_sha256": "c1a61e9249932aa79eda472e769449f8f8e1a6ee2228f4b42290e8200e206823"
+      "proof_sha256": "39d99d187d86c1a711a531d12c7944790d9924760b85c36168f089499f126ded",
+      "revision": 2
     },
     {
       "post": "_posts/handbook-of-implied-cryptography-part-4-missing.md",
