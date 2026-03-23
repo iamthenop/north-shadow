@@ -86,6 +86,12 @@
       "revision": 2
     },
     {
+      "post": "_posts/careless-whispers-3-the-slippers.md",
+      "proof": "_timestamps/careless-whispers-3-the-slippers.md.proof.json",
+      "proof_sha256": "771ff21738858e1a9b32600393fba64ce170770fd3a19b1524ba91357b9f2370",
+      "revision": 2
+    },
+    {
       "post": "_posts/castles-do-not-float-1-gravity.md",
       "proof": "_timestamps/castles-do-not-float-1-gravity.md.proof.json",
       "proof_sha256": "cff5ae696e47bcaa5694e702cf68c673773fc407050e564dc29eb42d8e8aff2b",
