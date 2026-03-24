@@ -19,9 +19,9 @@ The Maginot Line.
 
 Massive fortifications protected the eastern border. Underground rail systems moved troops quickly. Artillery positions covered every expected approach. The engineering was extraordinary, and the strategy was logical enough that it carried the weight of national confidence.
 
-The defense was not foolish.
+The problem was not the defense.
 
-The defense was misplaced.
+The problem was the boundary.
 
 In 1940, German forces simply went around the line.
 
@@ -35,13 +35,13 @@ Workstation security followed a similar path.
 
 ## The Security Response
 
-Security recognized the workstation problem early.
+Security teams recognized the workstation problem early.
 
-Malware running with administrator privileges could modify system files, disable security controls, install persistence mechanisms, and move laterally through the network. The risk was real, and the response was rational.
+Malware running with administrator privileges could modify system files, disable security controls, install persistence mechanisms, and move laterally through the network. None of that was hypothetical. The risk was real, and the response was rational.
 
 Remove standing administrator rights.
 
-Over time, that response matured into a familiar set of controls. Local administrator removal, endpoint privilege management, just-in-time elevation, and approval workflows all emerged from the same instinct. Reduce the blast radius. Constrain elevation. Put friction in front of abuse.
+Over time, that response matured into a familiar collection of controls. Local administrator removal, endpoint privilege management, just-in-time elevation, and approval workflows all emerged from the same instinct. Reduce the blast radius. Constrain elevation. Put friction in front of abuse.
 
 These controls reduced obvious abuse.
 
@@ -88,13 +88,13 @@ user
 → downloaded code
 ```
 
-Authority spreads through the execution chain, often quietly and without any explicit decision at each step. The system does not evaluate each new process as a new actor. It continues to propagate the authority it has already granted.
+Authority spreads through the execution chain, often quietly and without any explicit decision at each step. The software does not ask for separate approval. The system simply continues to propagate the authority it has already granted.
 
 None of those components requested the privilege directly.
 
 They borrowed it.
 
-Security focused on restricting user elevation. That was understandable. It was also incomplete. The system continued to propagate privilege through software, which meant the control point remained attached to the wrong actor.
+Security controls focused on restricting user elevation. That was understandable. It was also incomplete. The system continued to propagate privilege through software, which meant the control point remained attached to the wrong actor.
 
 The boundary was misplaced.
 
@@ -138,7 +138,7 @@ Modern systems already contain the building blocks for a different model.
 
 Software can be identified. Publishers can be verified. Artifacts can be trusted. Those signals already exist across the stack, even if they are often discussed under separate headings like code signing, supply chain security, endpoint policy, or application control.
 
-These signals allow the system to recognize the software performing an action.
+These signals allow systems to recognize the software performing an action.
 
 That recognition creates a new kind of actor.
 
@@ -147,8 +147,6 @@ The machine.
 Not the workstation itself.
 
 The software executing within it.
-
-The more development moves into managed containers, virtual workstations, and ephemeral environments, the clearer that shift becomes.
 
 ---
 
@@ -162,9 +160,9 @@ The identity must be anchored to something trustworthy.
 
 Trusted software artifacts provide that anchor.
 
-Code signing, verified publishers, artifact hashes, and repository trust all contribute to that decision. Each of them helps answer a more useful question than which user clicked the button.
+Code signing, verified publishers, artifact hashes, and repository trust all contribute to that decision. Each of them helps answer a more useful question than “which user clicked the button?”
 
-They help answer a better one.
+They help answer:
 
 What is this software, and why should the system trust it?
 
@@ -217,7 +215,7 @@ The question is no longer which user should be allowed to elevate.
 
 The question becomes which software should be trusted to perform privileged operations.
 
-That is a harder question.
+That is a much harder question.
 
 It is also the right one.
 
@@ -236,3 +234,7 @@ It is an organizational one.
 Security must be willing to admit that the original control worked and still failed.
 
 That is the beginning of a modern model.
+
+---
+
+Next: Ending the Workstation Privilege War
