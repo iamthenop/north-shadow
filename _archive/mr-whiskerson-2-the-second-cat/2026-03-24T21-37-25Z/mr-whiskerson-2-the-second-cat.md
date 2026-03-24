@@ -26,13 +26,13 @@ It did not arrive in any dramatic way. No one found it. No one brought it over. 
 
 At first, it did not seem especially important.
 
-Cats wandered through from time to time. Sometimes they belonged to someone a few places over. Sometimes they stayed for a bit and then moved on. Another cat still fit inside the same ordinary uncertainty that already surrounded Mr. Whiskerson.
+Cats wandered through from time to time. Sometimes they belonged to someone a few places over. Sometimes they stayed for a bit and then moved on. A single new cat was still easy to file under the same kind of ordinary uncertainty that already surrounded Mr. Whiskerson.
 
-No one expected it, and no one ever really figured out where it came from.
+No one expected another cat, and no one ever really figured out where it came from.
 
-There were guesses, of course. It probably belonged somewhere farther down the lake. It probably came over from another stretch of shoreline. It probably would not stay.
+There were guesses, of course. It probably belonged to someone farther down the lake. It probably came over from another stretch of shoreline. It probably would not stay.
 
-That was enough for the moment.
+Those explanations were enough for the moment.
 
 ## Still Fine
 
@@ -46,13 +46,13 @@ There was still no mess to clean up. Still no noise at night. Still no obvious r
 
 It was just one more cat.
 
-The two of them were sometimes seen in roughly the same places, and the obvious question followed. Where had this one come from?
+Every now and then someone would notice the two of them in roughly the same places and ask the obvious question. Where had this one come from?
 
-There was no real answer.
+No one had a real answer.
 
-So the easier possibilities held. It belonged somewhere. It had wandered over. It would move on.
+And because there was no answer, people reached for the easier possibilities instead. It belonged somewhere. It had wandered over. It would move on.
 
-Nothing about the setting pushed back very hard against those explanations. Around the lake, things drift in and out of view all the time. Things appear, linger for a while, and then disappear again. Another cat still fit inside that kind of thinking.
+Nothing about the setting pushed back very hard against those explanations. Around the lake, things drift in and out of view all the time. Things show up, linger for a while, and then disappear again. Another cat still fit inside that kind of thinking.
 
 So nothing was treated as urgent.
 
