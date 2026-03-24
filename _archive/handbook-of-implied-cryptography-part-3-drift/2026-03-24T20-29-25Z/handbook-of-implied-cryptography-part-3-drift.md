@@ -38,11 +38,7 @@ Spring has a way of exposing what "mostly" meant.
 
 Software moves quickly. Features ship, libraries update, and services are replaced on timelines that feel immediate to the people building them.
 
-Cryptography does not move that way.
-
-Algorithms persist for years.  
-Key models survive across teams.  
-Payload formats outlast the code that first introduced them.
+Cryptography does not move that way. Algorithms persist for years. Key models survive across teams. Payload formats outlast the code that first introduced them.
 
 Those are not the same timeline.
 
@@ -152,8 +148,7 @@ None of these changes look dramatic by themselves.
 
 That is why drift is easy to underestimate.
 
-The system still appears familiar.
-
+The system still appears familiar.  
 The real difference is in how much uncertainty it can absorb.
 
 ---
