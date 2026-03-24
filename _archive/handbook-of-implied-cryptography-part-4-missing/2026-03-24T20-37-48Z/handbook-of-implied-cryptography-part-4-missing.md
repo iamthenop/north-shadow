@@ -12,7 +12,7 @@ permalink: /implied-cryptography/missing-architect/
 ---
 
 # Handbook of Implied Cryptography  
-## Part IV — The Missing Architect
+## Part IV: The Missing Architect
 
 A newspaper ad shows the specs for a new motor — a four-stroke.
 
@@ -38,10 +38,7 @@ The old tin boat did not survive because no alternative existed.
 
 It survived because replacing the whole platform was rarely the real problem. The hull still floated true. The weight still made sense. The boat still did the work it had always done.
 
-That is how many systems survive.
-
-Not because they are ideal.  
-Because enough of the platform is still sound.
+That is how many systems survive. Not because they are ideal. Because enough of the platform is still sound.
 
 The real burden accumulates somewhere narrower.
 
@@ -135,8 +132,7 @@ A better system does not always remove effort.
 
 It relocates it.
 
-What used to depend on the keeper becomes part of the platform.  
-What used to depend on inherited handling becomes part of ordinary maintenance.
+What used to depend on the keeper becomes part of the platform. What used to depend on inherited handling becomes part of ordinary maintenance.
 
 What used to depend on tolerated ambiguity becomes part of declared structure.
 
