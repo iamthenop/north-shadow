@@ -18,9 +18,7 @@ permalink: /mr-whiskerson/part-i/
 
 There’s a cat that’s been around the neighborhood for as long as anyone can remember.
 
-He moves between a few yards and docks along the lake. Sometimes he shows up on the deck, stays for a bit, and then disappears again. A day or two later, he comes back like nothing changed.
-
-The shoreline had once been more connected than it looked. Three neighbouring cottages had belonged to three brothers, and their docks had once been joined by a boardwalk.
+He moves between a few yards and docks along the lake. Sometimes he shows up on the deck, stays for a bit, and then disappears again. A day or two later, he’ll come back like nothing changed.
 
 No one really knows where he belongs.
 
@@ -34,17 +32,13 @@ Mr. Whiskerson.
 
 He was just part of the neighborhood.
 
-There was a standing rumour that he had once belonged to the older cottage to the left.
-
-If he had ever had another name, no one used it anymore.
-
 He doesn’t cause trouble. He doesn’t get into garbage, and he doesn’t scratch at doors. He doesn’t stay long enough to become anyone’s problem.
 
 If anything, he keeps the vermin down.
 
 Most of the time he just passes through.
 
-Sometimes he sits on the railing for a while, watching everything. Other times he stretches out on the boards like he owns the place, then disappears again without much notice.
+Sometimes he’ll sit on the railing for a while, watching everything. Other times he stretches out on the boards like he owns the place, then disappears again without much notice.
 
 ## Nothing To Do
 
@@ -52,7 +46,7 @@ It never really felt like anything needed to be done.
 
 He wasn’t a stray in the way people usually worry about strays. He always looked fine. He moved comfortably through the same few spaces and never stayed long enough to raise concern.
 
-He was just around.
+He was just… around.
 
 Every so often someone would ask about him—where he came from, or who he belonged to.
 
