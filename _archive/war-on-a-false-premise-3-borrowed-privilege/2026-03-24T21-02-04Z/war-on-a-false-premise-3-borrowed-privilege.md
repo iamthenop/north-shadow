@@ -29,9 +29,9 @@ Software privilege behaves in much the same way.
 
 ## The Moment of Elevation
 
-Developer work occasionally reaches a point where elevated privileges seem unavoidable.
+Developers occasionally run into tools that require elevated privileges.
 
-An installer needs access to system directories. A runtime needs to create network interfaces. A dependency needs to compile native modules. In the moment, none of this feels especially dramatic. It feels like ordinary work reaching across an inconvenient boundary.
+An installer needs access to system directories. A runtime must create network interfaces. A dependency needs to compile native modules. None of this feels especially dramatic in the moment. It feels like work.
 
 So a familiar command appears.
 
@@ -42,7 +42,7 @@ Run as Administrator
 
 Elevation happens once.
 
-The task proceeds. The software installs, the build completes, and the workflow continues.
+The task proceeds. The system appears to behave normally. The software installs, the build completes, and the workflow continues.
 
 But something important has already changed.
 
@@ -52,9 +52,9 @@ But something important has already changed.
 
 Operating systems attach privileges to processes, not intent.
 
-That distinction matters more than it first appears to.
+That distinction matters.
 
-When a privileged process launches another process, the privilege flows forward with it. The system does not stop to ask whether the next process should hold the same authority, or whether the one after that was ever meant to run with elevated power at all.
+When a privileged process launches another process, the privilege flows forward with it. The system does not stop to ask whether the second process should hold the same authority, or whether the third process in the chain deserves it, or whether the fourth was ever meant to run with elevated power at all.
 
 The chain simply continues.
 
@@ -78,7 +78,7 @@ They borrowed it.
 
 Modern development ecosystems do more than download packages.
 
-They execute code, often automatically and often in long dependency chains.
+They execute code, often automatically and often at scale.
 
 Consider a common command:
 
@@ -114,7 +114,7 @@ Privilege systems were not designed for that level of delegation.
 
 Many developers assume containers solve this issue.
 
-Containers do improve isolation in important ways. They separate environments, reduce dependency conflicts, and create cleaner build paths. But they do not change how privilege propagates.
+Containers do improve isolation in important ways. They help separate environments, reduce dependency conflicts, and create cleaner build paths. But they do not change how privilege propagates.
 
 Docker itself often runs with elevated authority. Container builds execute instructions supplied by external images, Dockerfiles, package managers, and build scripts. The chain becomes longer and the boundaries become less obvious, but the underlying model remains the same.
 
@@ -127,9 +127,9 @@ elevated user
 
 Privilege still spreads through the execution chain.
 
-Managed development environments change where privilege lives.
+The location of the work may change.
 
-They do not change how borrowed privilege propagates inside the environment.
+The model does not.
 
 ---
 
@@ -155,7 +155,7 @@ The borrowed privilege is not.
 
 Most privileged actions on developer workstations are not performed by the user directly.
 
-They are performed by installers, package managers, dependency scripts, container runtimes, and build systems. These tools execute code automatically. They pull new components into the environment, compile, configure, assemble, and modify the system on the user’s behalf.
+They are performed by installers, package managers, dependency scripts, container runtimes, and build systems. These tools execute code automatically. They pull new components into the environment. They compile, configure, assemble, and modify the system on the user’s behalf.
 
 The user initiates the chain.
 
@@ -177,7 +177,7 @@ In practice, there is a plainer way to describe it.
 
 Borrowed privilege.
 
-Authority spreads through the system because it follows the user rather than the software performing the action. That is why the problem remains difficult to see at first. The user appears to be in control. The system behaves as though the authority belongs to every tool that can reach it.
+Authority spreads through the system because it follows the user rather than the software performing the action. That is why the problem remains difficult to see at first. The user appears to be in control. The system behaves as if the authority belongs to every tool that can reach it.
 
 And once modern development tooling enters the picture, that assumption no longer holds.
 
@@ -212,3 +212,7 @@ Privilege does not have to belong to the user.
 It can belong to the software performing the action.
 
 That is the question security must finally answer.
+
+---
+
+Next: The Maginot Line
