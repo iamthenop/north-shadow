@@ -68,9 +68,7 @@ That is how a local exception becomes a system condition.
 
 ## Inspection and Use
 
-By the time the condition could be counted, it was no longer living only at the edge of a property line.
-
-That pattern is not limited to shorelines.
+This pattern is not limited to visible life at the edge of a property line.
 
 It appears anywhere a class of systems is treated as resolved because the surrounding signals are consistent. A broad remediation effort can complete. A fleet can be upgraded. Reports can show compliance. Scans can continue to pass. Asset inventories can remain internally coherent for years.
 
@@ -80,9 +78,7 @@ Not because the system was invisible.
 
 Because it was misclassified.
 
-A condition can be inherited from the general case without ever being validated at the point that matters. The evidence around it may be accurate as far as it goes. The reporting may be internally consistent. The records may support the conclusion.
-
-But consistency is not the same as direct verification.
+A condition can be inherited from the general case without ever being validated at the point that matters. The evidence around it may be accurate as far as it goes. The reporting may be internally consistent. The records may support the conclusion. But consistency is not the same as direct verification.
 
 That gap often remains hidden until the path of interaction changes.
 
