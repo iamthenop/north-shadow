@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Automating PKI at Scale: An Architectural Perspective"
-subtitle: "Part V: Automation Is Not Control"
+subtitle: "Part V: Automation in High-Assurance Environments"
 date: 2026-03-23
 author: "Penuel Lascano"
 categories: [pki, automation, architecture]
@@ -11,7 +11,7 @@ series_number: 5
 permalink: /automating-pki-at-scale/part-5-high-assurance/
 ---
 
-# Part V: Automation Is Not Control
+# Part V: Automation in High-Assurance Environments
 ### Automating PKI at Scale: An Architectural Perspective
 
 Automation becomes more complex when private keys are not files.
@@ -23,16 +23,14 @@ In high-assurance environments, keys may be:
 - Bound to compliance controls
 - Subject to audit and dual control
 
-The automation model must adapt.
-
+The automation model must adapt.  
 The constraint changes again.
 
-A bicycle courier can move a package across town.
+Moving a package across town can involve a bicycle courier.
 
-High-value assets move under armored transport.
+Transporting high-value assets involves an armored truck.
 
-Both move something from one place to another.
-
+Both move something from one place to another.  
 The procedures surrounding them are very different.
 
 High-assurance key management follows the second model.
@@ -49,8 +47,7 @@ In HSM-backed systems, key lifecycle decisions are architectural:
 - Generate new keys per renewal?
 - Rotate on schedule independent of certificate lifetime?
 
-Shorter certificate lifetimes increase certificate churn.
-
+Shorter certificate lifetimes increase certificate churn.  
 They should not automatically increase key churn.
 
 Those are separate risk domains.
@@ -72,16 +69,14 @@ Automation that assumes filesystem access fails here.
 
 Protocol-level automation must respect hardware boundaries.
 
-The HSM is not a performance detail.
-
+The HSM is not a performance detail.  
 It is a control plane.
 
 ---
 
 ## Dual Control and CI/CD Can Coexist
 
-High-assurance does not prohibit automation.
-
+High-assurance does not prohibit automation.  
 It requires deliberate automation.
 
 Instead of approving each certificate event, governance can approve:
@@ -93,16 +88,16 @@ Instead of approving each certificate event, governance can approve:
 
 Control shifts from individual transactions to system design.
 
-That is stronger governance, not weaker.
+That is stronger governance — not weaker.
 
 ---
 
-## Certificate Cadence and Key Cadence Are Related, but Not Identical
+## Certificate Cadence and Key Cadence Are Related — But Not Identical
 
-Shorter certificate lifetimes reduce exposure in environments where private key protection is variable or widely distributed.
+Shorter certificate lifetimes reduce exposure in environments where private key protection is variable or widely distributed.  
+That is part of the rationale behind the 47-day trajectory.
 
-In HSM-backed systems, key material is generated and protected under stronger controls.
-
+In HSM-backed systems, key material is generated and protected under stronger controls.  
 The risk profile differs.
 
 That does not eliminate the need for key rotation.
@@ -114,11 +109,10 @@ It means key rotation should be driven by:
 - Regulatory requirements
 - Algorithm transition strategy
 
-Certificate lifetime reduction addresses exposure frequency.
-
+Certificate lifetime reduction addresses exposure frequency.  
 Key rotation addresses compromise impact.
 
-Conflating the two leads either to excessive churn or unjustified stasis.
+Conflating the two leads either to excessive churn — or unjustified stasis.
 
 Both are architectural errors.
 
