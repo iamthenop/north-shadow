@@ -86,6 +86,12 @@
       "revision": 2
     },
     {
+      "post": "_posts/boring-pqc-3-wheels.md",
+      "proof": "_timestamps/boring-pqc-3-wheels.md.proof.json",
+      "proof_sha256": "1574fec27caa05da551ac4f01ef9c4243e22e6b37cd76e2a4e667ef492952382",
+      "revision": 2
+    },
+    {
       "post": "_posts/careless-whispers-1-language-drift.md",
       "proof": "_timestamps/careless-whispers-1-language-drift.md.proof.json",
       "proof_sha256": "fd3e09cf0420ac0023a452b75e031d2923f5c33f2bcad95183b1d254a77838ae",
