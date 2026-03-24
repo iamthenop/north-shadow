@@ -98,6 +98,12 @@
       "revision": 2
     },
     {
+      "post": "_posts/boring-pqc-5-normal.md",
+      "proof": "_timestamps/boring-pqc-5-normal.md.proof.json",
+      "proof_sha256": "ef8cd35e8d25838e958a67d59ffed825496a6b6c55e600a965c548017439c82f",
+      "revision": 2
+    },
+    {
       "post": "_posts/careless-whispers-1-language-drift.md",
       "proof": "_timestamps/careless-whispers-1-language-drift.md.proof.json",
       "proof_sha256": "fd3e09cf0420ac0023a452b75e031d2923f5c33f2bcad95183b1d254a77838ae",
