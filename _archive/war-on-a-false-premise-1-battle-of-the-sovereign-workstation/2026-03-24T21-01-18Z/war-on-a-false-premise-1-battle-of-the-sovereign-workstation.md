@@ -21,9 +21,11 @@ Then the phone rings.
 
 Another developer needs local administrator access approved.
 
-The reason feels absurd. The conflict does not.
+The reason is absurd.
 
-That is how the workstation privilege war usually appears. Not as doctrine or strategy, but as interruption. A tool needs to work. Security owns the rule. Operations absorbs the friction.
+The conflict is not.
+
+That is how the workstation privilege war usually appears. Not as doctrine or strategy, but as interruption. Someone needs a tool. Security owns the rule. Operations absorbs the friction.
 
 The cycle begins again.
 
@@ -51,7 +53,15 @@ Modern development environments are large ecosystems.
 
 Languages evolve quickly. Frameworks update constantly. Build tools, SDKs, package managers, and extensions appear continuously.
 
-Developers rely on language runtimes, build systems, command-line utilities, package managers, and development frameworks. These tools change faster than workstation management processes can adapt.
+Developers rely on tools such as:
+
+- language runtimes
+- build systems
+- command-line utilities
+- package managers
+- development frameworks
+
+These tools change faster than workstation management processes can adapt.
 
 When developers request administrator privileges, they are rarely seeking unrestricted power.
 
@@ -67,7 +77,7 @@ The tool does not work without administrative access.
 
 End user support teams operate under different constraints.
 
-They maintain standardized workstation images, test updates for compatibility, and deploy software across large fleets.
+They maintain standardized workstation images. They test updates for compatibility. They deploy software across large fleets.
 
 This model works well for common applications.
 
@@ -97,7 +107,12 @@ Security teams view the situation through another lens.
 
 Administrative privilege dramatically expands the attack surface of a workstation.
 
-Malware executed by an administrator can modify system files, install persistence mechanisms, bypass security controls, and move laterally across the network.
+Malware executed by an administrator can:
+
+- modify system files
+- install persistence mechanisms
+- bypass security controls
+- move laterally across the network
 
 From a defensive standpoint, removing standing administrator privileges is a powerful control.
 
@@ -139,9 +154,11 @@ Administrative authority is still attached to the user.
 
 Development tooling reinforces this shift.
 
-Containers, build systems, package managers, and local databases now perform operations that once belonged to system administrators.
+Containers. Build systems. Package managers. Local databases.
 
-Tools such as Docker and Node.js create network interfaces, execute installation scripts, and compile native modules as part of ordinary development work.
+Tools such as Docker and Node.js routinely perform operations that once belonged to system administrators.
+
+Containers create network interfaces. Package managers execute installation scripts. Build systems compile native modules.
 
 From the operating system’s perspective, these are privileged operations.
 
@@ -198,3 +215,7 @@ Yet the tension remains.
 The conflict is not procedural.
 
 The premise is wrong.
+
+---
+
+Next: The Packaging Trap
