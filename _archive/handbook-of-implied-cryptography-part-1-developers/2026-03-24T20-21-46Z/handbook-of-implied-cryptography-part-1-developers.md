@@ -22,7 +22,7 @@ It only looks simple.
 
 The fuel mix has to be right. The motor has to be set to neutral. The choke has to sit in a narrow middle position. You cannot prime it too much or it floods. Before starting, the cover comes off and goes back on halfway. Then there is one light pull before the real one.
 
-The gas tank gets a light kick. Two claps follow.
+Someone lightly kicks the gas tank and claps twice.
 
 And even then, it never starts on the first pull.
 
@@ -142,27 +142,15 @@ Because it was never the unit being measured.
 
 ## The Sprint Horizon
 
-Cryptography lives on a different timeline.
+Cryptography lives on a different timeline. Algorithms age slowly, keys persist for years, and trust anchors often outlive whole teams.
 
-Algorithms age slowly.  
-Keys persist for years.  
-Trust anchors often outlive whole teams.
-
-That creates a mismatch.
-
-The developer writing the encryption path today is usually working on the next sprint, while the cryptographic consequences may not become visible for years.
+That creates a mismatch. The developer writing the encryption path today is usually working on the next sprint, while the cryptographic consequences may not become visible for years.
 
 Those are not the same horizon.
 
-A system built for delivery will naturally optimize for delivery.
+A system built for delivery will naturally optimize for delivery. Libraries that reduce ceremony are preferred. Framework defaults that remove decisions are preferred. Interfaces that keep the payload small are preferred.
 
-Libraries that reduce ceremony are preferred.  
-Framework defaults that remove decisions are preferred.  
-Interfaces that keep the payload small are preferred.
-
-None of this is irrational.
-
-It is exactly what the surrounding incentives produce.
+None of this is irrational. It is exactly what the surrounding incentives produce.
 
 The sprint rewards completion in the present.
 
