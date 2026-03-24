@@ -92,6 +92,12 @@
       "revision": 2
     },
     {
+      "post": "_posts/boring-pqc-4-chores.md",
+      "proof": "_timestamps/boring-pqc-4-chores.md.proof.json",
+      "proof_sha256": "1e6560340b2ead82482ad8ca08d86bbd8caafb08be54d24517d87a6313983856",
+      "revision": 2
+    },
+    {
       "post": "_posts/careless-whispers-1-language-drift.md",
       "proof": "_timestamps/careless-whispers-1-language-drift.md.proof.json",
       "proof_sha256": "fd3e09cf0420ac0023a452b75e031d2923f5c33f2bcad95183b1d254a77838ae",
