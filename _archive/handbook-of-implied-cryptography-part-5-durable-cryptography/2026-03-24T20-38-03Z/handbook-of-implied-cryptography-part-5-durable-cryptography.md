@@ -12,7 +12,7 @@ permalink: /implied-cryptography/durable-cryptography/
 ---
 
 # Handbook of Implied Cryptography  
-## Part V — A Legible System
+## Part V: A Legible System
 
 By spring, the old tin boat is still the same boat.
 
@@ -40,8 +40,7 @@ More of it simply lives in the design.
 
 That is what durable systems do.
 
-They do not eliminate responsibility.
-
+They do not eliminate responsibility.  
 They relocate it.
 
 What used to depend on remembered handling becomes part of the platform.  
