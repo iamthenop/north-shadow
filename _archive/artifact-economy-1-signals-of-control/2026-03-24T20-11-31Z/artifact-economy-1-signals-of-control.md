@@ -24,19 +24,19 @@ Bathroom.
 
 The panel looks organized. At a glance, it gives the impression that the system is understood.
 
-The breaker marked “Bathroom” is switched off to do a small repair. The outlet is still live.
+So the breaker marked “Bathroom” is switched off to do a small repair. The outlet is still live.
 
 Fortunately the GFCI trips.
 
 The label described the system.
 
-The mechanism protected the circuit it governs.
+The mechanism protected the person.
 
 ---
 
 ## Labels
 
-A label is useful. It helps a system become legible. It suggests that the work of understanding what connects to what has already been done.
+A label is useful. It helps a person navigate the system. It suggests that someone has already done the work of understanding what connects to what.
 
 That suggestion may be true. It may also be the only thing that is true.
 
@@ -50,9 +50,11 @@ Order on the surface creates confidence. The same thing happens elsewhere. A spr
 
 The surface appears maintained. The underlying system may not be.
 
-This is the quiet trade. The artifact becomes easier to trust than the mechanism.
+This is the quiet trade.
 
-## Signals of Control
+The artifact becomes easier to trust than the mechanism.
+
+## Signals
 
 Organizations produce these surfaces constantly. They produce signals that suggest control.
 
@@ -68,7 +70,7 @@ Observation is not regulation.
 
 ## Evidence
 
-Compliance frameworks depend on evidence, and evidence must be reviewable.
+Compliance frameworks depend on evidence. Evidence must be reviewable.
 
 A label can be checked. A screenshot can be archived. A report can be signed.
 
@@ -86,10 +88,12 @@ Mechanisms take longer. A circuit has to be traced. A boundary has to be verifie
 
 So the organization produces artifacts first. The surface improves. The system remains largely unchanged.
 
----
-
 ## Structural Reality
 
 Artifacts describe a system.
 
 They do not change how it behaves.
+
+---
+
+Next: Why Artifacts Multiply
