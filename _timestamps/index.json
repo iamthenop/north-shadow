@@ -74,6 +74,12 @@
       "revision": 2
     },
     {
+      "post": "_posts/boring-pqc-1-pumpkin.md",
+      "proof": "_timestamps/boring-pqc-1-pumpkin.md.proof.json",
+      "proof_sha256": "4b4fc5db0b9d6cd6841ae097948c2194ed8f9dee071addf25e18cdfcf80e4b3f",
+      "revision": 2
+    },
+    {
       "post": "_posts/careless-whispers-1-language-drift.md",
       "proof": "_timestamps/careless-whispers-1-language-drift.md.proof.json",
       "proof_sha256": "fd3e09cf0420ac0023a452b75e031d2923f5c33f2bcad95183b1d254a77838ae",
