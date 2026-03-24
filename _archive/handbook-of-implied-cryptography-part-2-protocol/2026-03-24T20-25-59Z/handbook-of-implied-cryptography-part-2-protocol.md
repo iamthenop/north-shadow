@@ -19,7 +19,7 @@ By the time most people see the old tin boat, the sequence has already hardened.
 The motor has to be in neutral.  
 The choke has to sit in the right place.  
 The cover comes off and goes back on halfway.  
-The gas tank gets a light kick. Two claps follow.
+Someone gives the gas tank a light kick and claps twice.
 
 None of this appears in the shape of the boat itself.
 
@@ -27,8 +27,7 @@ From the shoreline, it is still just a boat.
 
 That is how implementation becomes protocol.
 
-The visible system remains simple.
-
+The visible system remains simple.  
 The real structure moves into sequence, assumption, and inherited handling.
 
 ---
@@ -43,9 +42,7 @@ A helper function can generate IVs differently.
 
 At that stage, the decision is still local. One team can revise it, test it, and ship the change without disturbing much else.
 
-That is what implementation feels like.
-
-It stays close to the code that made the choice.
+That is what implementation feels like. It is close to the code that made the choice.
 
 ---
 
@@ -55,13 +52,7 @@ A protocol is different.
 
 A protocol defines how systems interpret data across a boundary. It shapes payloads, token formats, encrypted fields, and assumptions about what the next system will receive.
 
-Once that structure leaves a single service, multiple systems begin to rely on it.
-
-Clients parse it.  
-Databases store it.  
-APIs return it.  
-Monitoring systems log it.  
-Integration code quietly learns its shape.
+Once that structure leaves a single service, multiple systems begin to rely on it. Clients parse it. Databases store it. APIs return it. Monitoring systems log it. Integration code quietly learns its shape.
 
 That is when a local decision stops being local.
 
@@ -79,18 +70,13 @@ From the outside, it appears simple. One field in the request. One value in the 
 
 It only looks simple.
 
-Inside that field, structure still exists. Algorithm choice, mode, IV, authentication tag, version assumptions, and key selection all remain present in some form. They have not disappeared.
+Inside that field, structure still exists. Algorithm choice, mode, IV, authentication tag, version assumptions, and key selection all remain present in some form. They have not disappeared. They have merely been packed together.
 
-They have been packed together.
-
-That is why opaque payloads are so useful and so dangerous at the same time. They move easily through interfaces because they compress detail into something transportable.
-
-But the detail is still there, waiting to be interpreted correctly by the next system that touches it.
+That is why opaque payloads are so useful and so dangerous at the same time. They move easily through interfaces because they compress detail into something transportable. But the detail is still there, waiting to be interpreted correctly by the next system that touches it.
 
 The boat works the same way.
 
-From the shoreline, it is only a boat.
-
+From the shoreline, it is only a boat.  
 The real structure lives in everything you have to know before you touch the cord.
 
 ---
@@ -108,9 +94,7 @@ Over time, that shape becomes familiar to the systems that already depend on it.
 
 But familiarity is not the same thing as clarity.
 
-The structure is still there.
-
-It is simply no longer visible in a way that invites inspection.
+The structure is still there. It is simply no longer visible in a way that invites inspection.
 
 ---
 
@@ -124,11 +108,7 @@ A length that always appears.
 A flag that no one sets.  
 A segment of the payload that gets copied forward without interpretation.
 
-They search the codebase for its purpose.
-
-Often they do not find a real answer.
-
-What they find instead is repetition.
+They search the codebase for its purpose. Often they do not find a real answer. What they find instead is repetition.
 
 The protocol simply remembers a decision that was never completed.
 
@@ -138,13 +118,7 @@ The protocol simply remembers a decision that was never completed.
 
 Implementation patterns spread faster than design.
 
-A helper function encrypts a payload.  
-Another service copies it.  
-A third team wraps it in a shared utility.
-
-Before long, the pattern is no longer one implementation among many.
-
-It is the way the organization does that kind of work.
+A helper function encrypts a payload. Another service copies it. A third team wraps it in a shared utility. Before long, the pattern is no longer one implementation among many. It is the way the organization does that kind of work.
 
 That spread feels efficient.
 
@@ -166,13 +140,9 @@ A token becomes an identifier.
 A blob becomes a reference.  
 A string becomes something the system passes around without interpretation.
 
-This is a subtle shift.
+This is a subtle shift, but an important one.
 
-It is also an important one.
-
-Once the payload is treated primarily as an identifier, its internal structure disappears from everyday thought. The application no longer sees a cryptographic object with conditions and metadata.
-
-It sees a thing that can be stored, copied, compared, and returned.
+Once the payload is treated primarily as an identifier, its internal structure disappears from everyday thought. The application no longer sees a cryptographic object with conditions and metadata. It sees a thing that can be stored, copied, compared, and returned.
 
 The visible system becomes simpler.
 
@@ -201,7 +171,7 @@ Redesigning the whole system would have been too expensive, too disruptive, or s
 
 So the platform stayed the same.
 
-The sequence absorbed the difference.
+The sequence carried the change.
 
 ---
 
@@ -216,8 +186,6 @@ A shared utility shapes a payload.
 A payload travels across a boundary.  
 Another system learns to depend on it.
 
-Eventually the original choice is no longer remembered as a choice.
-
-It is treated as the natural shape of the system.
+Eventually the original choice is no longer remembered as a choice. It is treated as the natural shape of the system.
 
 By then, the sequence has become part of the boat.
