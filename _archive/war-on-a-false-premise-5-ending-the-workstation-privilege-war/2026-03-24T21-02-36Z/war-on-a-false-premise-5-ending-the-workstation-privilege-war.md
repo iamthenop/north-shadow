@@ -15,7 +15,7 @@ permalink: /war-on-a-false-premise/ending-the-workstation-privilege-war
 
 For years, workstation security has been framed as a fight over administrator privileges.
 
-Security teams remove them. Developers request them. Operations manages the exceptions.
+Security teams remove them. Developers request them. Support teams manage the exceptions.
 
 Policies are written. Tools are deployed. Dashboards track the number of remaining administrators.
 
@@ -29,13 +29,13 @@ And yet the conflict never ends.
 
 The workstation privilege war is not a technical failure.
 
-Security identified the risk of administrator privileges correctly, and the industry deployed controls to reduce it. The problem is not that nothing was done. The problem is that the model underneath the controls did not change.
+Security teams correctly identified the risk of administrator privileges, and they deployed controls to reduce it. The problem is not that the industry failed to act. The problem is that the security model never changed.
 
 Modern systems are operated primarily by software.
 
 Yet workstation security still assigns authority to users.
 
-Until that changes, the war will continue.
+Until that model shifts, the war will continue.
 
 ---
 
@@ -43,13 +43,13 @@ Until that changes, the war will continue.
 
 Endpoint privilege management tools attempt to manage this conflict.
 
-Just-in-time elevation grants temporary authority. Approval workflows authorize exceptions. Policies attempt to limit exposure. These controls reduce real risk. They also create activity, and activity is easy to mistake for progress.
+Just-in-time elevation grants temporary authority. Approval workflows authorize exceptions. Policies attempt to limit exposure. Each of these controls creates activity, and activity is easy to mistake for progress.
 
 Dashboards improve. Reports accumulate. Exceptions are tracked.
 
 The conflict remains.
 
-Developers still need privileged operations. Operations still struggles to keep environments current. Security still enforces the policy.
+Developers still need privileged operations. Support teams still struggle to keep environments current. Security teams continue to enforce the policy.
 
 The organization manages the symptoms of a flawed model.
 
@@ -83,9 +83,7 @@ Who should be allowed to elevate?
 
 It is the wrong question.
 
-Modern systems are not defined by which users hold power. They are defined by which software is trusted to perform privileged operations.
-
-Once that shift is understood, the control plane changes with it.
+Modern systems are not defined by which users hold power. They are defined by which software is trusted to perform privileged operations. Once that shift is understood, the control plane changes with it.
 
 Privilege no longer belongs to the user.
 
@@ -104,10 +102,6 @@ These signals establish machine identity anchored to trusted software artifacts.
 Authority can now be granted to the software performing the action.
 
 Not to the human who launched it.
-
-The growing use of dev containers, ephemeral environments, and virtual development workstations does not contradict this shift.
-
-It makes it easier to see.
 
 ---
 
@@ -146,7 +140,9 @@ Ending the workstation privilege war is not a tooling decision.
 
 It is a leadership decision about how authority is modeled within the organization.
 
-For two decades, the industry attempted to manage this conflict by restricting users. The conflict persisted because the underlying model remained unchanged. Security continued defending the line around human identity while the actual work shifted toward automated software, dependency chains, and machine-executed actions.
+For two decades, the industry attempted to win this conflict by restricting users. The conflict persisted because the boundary that mattered was never moved. Security continued defending the line around human identity while the actual work shifted toward automated software, dependency chains, and machine-executed actions.
+
+The result is the system organizations live with now: human-centered controls attempting to govern software-centered operations.
 
 That mismatch is what leadership must correct.
 
@@ -158,9 +154,7 @@ For years, security programs measured maturity by a simple metric.
 
 How many users still have administrator privileges?
 
-It is an understandable metric.
-
-It is also incomplete.
+It is an understandable metric. It is also incomplete.
 
 Maturity is not a number on a dashboard.
 
