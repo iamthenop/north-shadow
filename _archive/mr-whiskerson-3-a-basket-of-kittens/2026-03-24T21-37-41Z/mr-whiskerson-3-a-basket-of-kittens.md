@@ -44,7 +44,7 @@ They climbed over each other and fell asleep in a pile. They wandered only a few
 
 That was part of what made it hard to call any of it a problem.
 
-A small shelter, a bulk bag of food, and a visible place to gather made the whole arrangement feel more stable than it was.
+What was fragile could still look lively. What was unsustainable could still look warm. A small shelter, a bulk bag of food, and a visible place to gather were enough to make the whole arrangement feel more stable than it was.
 
 For a while, that feeling held.
 
