@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Automating PKI at Scale: An Architectural Perspective"
-subtitle: "Part VII: Agility Is Not Optional"
+subtitle: "Part 7: Automation Is a Prerequisite for Cryptographic Agility"
 date: 2026-03-27
 author: "Penuel Lascano"
 categories: [pki, automation, architecture]
@@ -11,7 +11,7 @@ series_number: 7
 permalink: /automating-pki-at-scale/part-7-agility/
 ---
 
-# Part VII: Agility Is Not Optional
+# Part 7: Automation Is a Prerequisite for Cryptographic Agility
 ### Automating PKI at Scale: An Architectural Perspective
 
 Certificate lifetime reduction forces renewal to happen more often.
@@ -23,9 +23,9 @@ That exposes:
 - Authority design flaws
 - Inspection hierarchy fragility
 
-But renewal cadence is not the end state.
+But renewal cadence is not the real end state.
 
-Cryptographic agility is.
+Algorithm transition is.
 
 Sooner or later, the question will not be:
 
@@ -37,7 +37,7 @@ It will be:
 
 ## Changing Algorithms Is an Infrastructure Event
 
-Changing an algorithm is not a checkbox in a CA console.
+Changing a key algorithm is not a checkbox in a CA console.
 
 It affects:
 
@@ -50,14 +50,10 @@ It affects:
 
 If renewal is fragile, algorithm change will be more fragile.
 
-Renewal increases operational frequency.  
-Algorithm change increases structural complexity.
+Renewal increases operational frequency.
+Algorithm shifts increase structural complexity.
 
 Those pressures compound.
-
-Post-quantum cryptography is one future example.
-
-It is not the only one.
 
 ## Renewal Automation Is the Rehearsal
 
@@ -72,14 +68,17 @@ Then you already have the mechanics required for algorithm transition.
 
 If renewal still requires coordination and ceremony, algorithm change will amplify that friction.
 
-Renewal cadence is rehearsal.  
+Renewal cadence is rehearsal.
 Agility is the performance.
 
 ## Boundaries Determine Blast Radius
 
-Flat authority models concentrate risk.  
-Root-coupled systems expand blast radius.  
+Flat authority models concentrate risk.
+Root-coupled systems expand blast radius.
 Layered authority contains it.
+
+Post-quantum cryptography is one future example.
+It is not the only one.
 
 The same principles apply whether the change is:
 
@@ -88,23 +87,8 @@ The same principles apply whether the change is:
 - Classical → hybrid
 - Hybrid → post-quantum
 
-Frequency revealed operational weaknesses.  
+Frequency revealed operational weaknesses.
 Algorithm change will test architectural ones.
-
-## Structural Reality
-
-Certificate lifetime reduction is not the destination.  
-It is pressure.
-
-Pressure reveals system design.
-
-If lifecycle automation is incomplete, agility is illusion.  
-If authority boundaries are unclear, transition is destabilizing.
-
-Automation is not about speed.  
-It is about control.
-
-And control is what makes cryptographic change survivable.
 
 ## Where to Begin
 
@@ -120,12 +104,27 @@ Start with five questions:
 - When will renewal occur?
 - Why would the process fail at all?
 
-Discovery answers the first.  
-Deployment testing reveals the second.  
-Operators expose the third.  
-Change discipline governs the fourth.  
-Architecture resolves the fifth.
+Discovery helps answer the first.
+Deployment testing reveals the second.
+Operators expose the third.
+Change discipline governs the fourth.
+Architecture addresses the fifth.
 
 When those answers are clear, certificate renewal stops being a project.
 
 It becomes infrastructure behavior.
+
+## Structural Reality
+
+Certificate lifetime reduction is not the destination.
+It is pressure.
+
+Pressure reveals system design.
+
+If lifecycle automation is incomplete, agility is illusion.
+If authority boundaries are unclear, transition is destabilizing.
+
+Automation is not about speed.
+It is about control.
+
+And control is what makes cryptographic change survivable.
