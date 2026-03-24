@@ -14,9 +14,7 @@ permalink: /mr-whiskerson/two-baskets-of-kittens/
 # Part IV: Two Baskets of Kittens
 ### Mr. Whiskerson
 
-By the time there were two baskets of kittens, the argument was already behind the condition.
-
-What had begun as a familiar presence, then a second cat, then a local act of care, had already changed class by the time it could be counted. The visible scale arrived late. The structure had been there earlier.
+That is how a local exception becomes a system condition.
 
 ## Assumed Constraint
 
@@ -24,7 +22,11 @@ A system does not need to be understood in order to feel stable.
 
 It only needs to remain familiar long enough that no one feels pressure to test the assumptions around it. A known presence is treated as bounded because nothing visible contradicts the belief. The absence of immediate consequence begins to stand in for control.
 
+That is how classification drifts.
+
 What begins as a guess becomes a description. What begins as description becomes operating fact. After enough time passes, people stop remembering which parts were observed and which parts were inferred.
+
+The distinction matters more than it seems.
 
 A boundary that has never been tested is still only a boundary in theory. It may hold. It may not. The longer the environment stays quiet, the easier it becomes to confuse calm with verification.
 
@@ -46,7 +48,11 @@ No one is claiming the system. No one is redesigning it. No one is agreeing to k
 
 That distinction feels meaningful at the time.
 
+Structurally, it is often less meaningful than people think.
+
 Resources are still resources. Continuity is still continuity. Support does not need to be called ownership in order to sustain a condition. It only needs to arrive often enough, and predictably enough, that the system can begin to organize itself around it.
+
+That is the part people underestimate.
 
 A system does not need formal approval to persist. It only needs conditions that make persistence easier than resolution.
 
@@ -56,15 +62,17 @@ By the time something becomes countable, it has usually already changed class.
 
 That change is easy to miss when it happens gradually. One more exception does not feel like scale. One more workaround does not feel like drift. One more tolerated condition does not feel like a new operating model.
 
-Systems do not wait for recognition.
+But systems do not wait for recognition.
 
 They continue under the rules that actually govern them, not under the language used to describe them. If provision is present, the system adjusts to provision. If ownership is absent, the burden does not disappear. It disperses. It moves through side conversations, local accommodations, inherited assumptions, and whatever forms of care or labor happen to keep the condition from collapsing outright.
 
-For a time, that can look sustainable enough.
+For a time, that can look surprisingly sustainable.
 
-A local response can feel humane, proportionate, and practical, even while it is quietly creating the conditions for a larger and more durable problem.
+That is what makes it dangerous.
 
-That is how a local exception becomes a system condition.
+Fragile systems often remain lively long enough to invite attachment. Partial solutions often remain effective long enough to invite rationalization. A local response can feel humane, proportionate, and practical, even while it is quietly creating the conditions for a larger and more durable problem.
+
+By the time scale is visible, the argument is already behind the system it is trying to describe.
 
 ## Inspection and Use
 
@@ -88,9 +96,15 @@ Then the exception appears.
 
 What looked resolved under inspection fails under use.
 
+That is not a contradiction.
+
+It is the moment when adjacent evidence stops carrying the weight of direct validation.
+
 ## What Passed for Stability
 
 Stability is one of the easiest conditions to counterfeit.
+
+Not intentionally. Not maliciously. But structurally.
 
 A system can look stable because it is familiar. It can look stable because the burden has been distributed widely enough that no single point feels severe. It can look stable because each local accommodation seems smaller than the problem it avoids. It can look stable because the people closest to it have learned how to move around it without forcing a larger reckoning.
 
@@ -99,6 +113,8 @@ None of that means the underlying condition is bounded.
 It only means the environment has adapted to it.
 
 Adaptation is often mistaken for control.
+
+It is not the same thing.
 
 A system that survives on tolerated exceptions, inherited assumptions, and soft forms of support has not been contained. It has only been allowed to become normal at a scale small enough to ignore.
 
