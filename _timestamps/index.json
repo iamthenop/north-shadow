@@ -80,6 +80,12 @@
       "revision": 2
     },
     {
+      "post": "_posts/boring-pqc-2-squirrel.md",
+      "proof": "_timestamps/boring-pqc-2-squirrel.md.proof.json",
+      "proof_sha256": "4f352701861e4e07dcad8a2c5b697ac2a34d677375f7a7a855982709526dbba5",
+      "revision": 2
+    },
+    {
       "post": "_posts/careless-whispers-1-language-drift.md",
       "proof": "_timestamps/careless-whispers-1-language-drift.md.proof.json",
       "proof_sha256": "fd3e09cf0420ac0023a452b75e031d2923f5c33f2bcad95183b1d254a77838ae",
