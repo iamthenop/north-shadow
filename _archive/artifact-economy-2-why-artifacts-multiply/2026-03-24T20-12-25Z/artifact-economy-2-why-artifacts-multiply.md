@@ -32,7 +32,7 @@ NIST SSDF.
 
 Each framework asks for evidence, and each one wants its own description of the system. A report. An attestation. A diagram. A review record.
 
-The mechanisms underneath these frameworks are often the same. Device identity, key management, network segmentation, and cryptographic boundaries may all be shared. Different assessments may still be asking about the same underlying control.
+The mechanisms underneath these frameworks are often the same. Device identity, key management, network segmentation, and cryptographic boundaries may all be shared. Different audits may still be asking about the same underlying control.
 
 Five artifacts may describe the same mechanism.
 
@@ -58,13 +58,13 @@ A guessed label must be protected forever.
 
 ## Narrative Work
 
-Over time artifact maintenance becomes its own operational surface. Reports must remain consistent with inventories. Inventories must match diagrams. Diagrams must match policies. Policies must still align with what the last assessment accepted.
+Over time artifact maintenance becomes its own operational surface. Reports must remain consistent with inventories. Inventories must match diagrams. Diagrams must match policies. Policies must still align with what the last audit accepted.
 
 This creates a new kind of work. The work is no longer understanding the system. The work is maintaining agreement between descriptions of the system.
 
 Energy shifts toward maintaining the description. The system itself may remain only partially understood.
 
-Coherence is not the same as control.
+This is where organizations begin to confuse coherence with control.
 
 ## Evaluation Pressure
 
@@ -76,16 +76,16 @@ That distinction matters. When evaluation becomes explicit, artifacts multiply n
 
 The artifact exists. The review is complete. The report is signed. The evidence package is assembled.
 
-The assessment passes. That outcome feels like success, and in one sense it is. The organization has successfully produced what the evaluation required.
+The audit passes. That outcome feels like success, and in one sense it is. The organization has successfully produced what the assessment required.
 
 But the assessment validated the artifact. It did not necessarily validate the mechanism.
 
 A labeled panel can still be wrong. A clean evidence package can still describe a weak system.
-
----
 
 ## Structural Reality
 
 Artifacts can be maintained indefinitely.
 
 Mechanisms must be built.
+
+Next: Mechanisms
