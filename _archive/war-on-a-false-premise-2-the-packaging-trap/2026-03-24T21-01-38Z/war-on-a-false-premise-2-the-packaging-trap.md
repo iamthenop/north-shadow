@@ -15,7 +15,7 @@ permalink: /war-on-a-false-premise/the-packaging-trap
 
 For nearly twenty years, the United Kingdom and Iceland fought a series of confrontations known as the Cod Wars.
 
-The dispute centered on fishing rights, but the deeper problem was that the rules governing the sea no longer matched the realities of industrial fishing. As fishing technology advanced, Iceland repeatedly expanded its territorial fishing limits in an attempt to regain control of local waters. Each expansion triggered diplomatic disputes, naval escorts, and new enforcement efforts.
+The dispute centered on fishing rights, but the deeper problem was that the rules governing the sea no longer matched the realities of industrial fishing. As technology advanced, Iceland repeatedly expanded its territorial fishing limits in an attempt to regain control of local waters. Each expansion triggered diplomatic disputes, naval escorts, and new enforcement efforts.
 
 The issue was not the fishermen.
 
@@ -29,11 +29,7 @@ Modern software packaging faces a similar problem.
 
 ## The Obvious Solution
 
-Centralized packaging provides real value.
-
-It reduces drift. It improves consistency. It helps support teams keep common software manageable at scale.
-
-That is why most organizations reach for it first.
+Most organizations try to solve the workstation privilege problem in the same way.
 
 Remove local administrator rights. Then make software available through centralized packaging.
 
@@ -93,7 +89,7 @@ They are stacks made of runtimes, package managers, container systems, framework
 
 The number of possible permutations grows quickly.
 
-Packaging pipelines are not designed to manage thousands of moving combinations. They are designed to distribute stable applications, and that model works well when the software being deployed remains relatively fixed.
+Packaging pipelines are not designed to manage thousands of moving combinations. They are designed to distribute stable applications across large fleets. That model works well when the software being deployed is relatively fixed.
 
 Developer ecosystems behave differently.
 
@@ -148,6 +144,8 @@ It is execution.
 
 Once software runs, it inherits the privileges of the user. That changes the nature of the problem entirely, because the operational question is no longer whether a tool was packaged correctly. The real question is what happens when that tool begins to act inside a privileged context.
 
-Some organizations now respond by moving development work into dev containers, ephemeral environments, and virtual dev boxes. These approaches reduce pressure on the workstation, but they reinforce the same lesson. The privileged actor is increasingly the environment and the software within it, not the human user alone.
-
 That is where the next conflict begins.
+
+---
+
+Next: Borrowed Privilege
