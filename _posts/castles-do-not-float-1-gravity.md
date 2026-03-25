@@ -14,70 +14,48 @@ permalink: /castles-do-not-float/gravity/
 # Castles Do Not Float
 ### Part I: Gravity
 
-Long before the cloud, systems had weight.
+One more log on the fire before bedtime.
 
-They sat on the ground and demanded attention. Machines had to be maintained.  
-Processes had to be followed. People had to understand what they were operating.
+A glass of scotch rests nearby, and *Les Misérables* fills the room. The cottage is quiet. Nothing is demanding attention.
 
-Nothing ran itself.
+The music is not quiet.
 
----
-## Heavy Institutions
+It carries institutions in it. The law. The church. The city. Not as abstractions, but as structures held in place by labor, routine, memory, and consequence.
 
-In *Les Misérables*, institutions are heavy.
+They do not float above society. They are carried by it.
 
-The law.  
-The church.  
-The city.
+Floors are swept. Records are kept. Machinery is tended. The work is constant, whether anyone notices it or not. That constancy is what allows the structure to endure.
 
-They do not float above society.  
-They are carried by it.  
-Maintained by people who sweep floors, keep records, and tend machinery that cannot stop running.
-
-The work is constant.  
-The systems endure because someone keeps them standing.
-
----
 ## Operational Discipline
 
-Critical infrastructure has always worked the same way.
+Critical systems work the same way.
 
-Operators maintain the machinery.  
-Governance follows procedure.  
-Authority is exercised carefully.
+They are not maintained by optimism. They are maintained by operators who know where the machinery lives, by routines that survive boredom, and by procedures that continue when conditions worsen.
 
-These are not inconveniences. They are disciplines.
+Governance follows the same pattern. Authority is exercised carefully because the system will not forgive casual handling.
 
-Systems that matter require people who understand where responsibility lives and how the structure holds together.
+These are not inconveniences added by habit or bureaucracy. They are the disciplines that keep the structure standing.
 
----
 ## The Weight of Cryptography
 
-Cryptographic systems are among the heaviest of all.
+Cryptographic systems are among the clearest examples.
 
-They require custodians.  
-They require ceremony.  
-They require specialists who understand that some operations must never become casual.
+They exist to control authority. Because of that, they cannot afford to be casual.
+
+Custodians exist for a reason. Ceremony exists for a reason. Deliberate friction exists for a reason. Some operations are intentionally difficult, not because inefficiency is admirable, but because uncontrolled authority is worse.
 
 Keys are not merely configuration.
 
-They represent authority.
+They represent authority, and authority demands care.
 
-And authority demands care.
-
----
 ## Structural Reality
 
-All of this makes such systems expensive. Slow. Inconvenient.
+That weight is expensive. It is slow. It is inconvenient.
 
-But it also makes them understandable.
+But it is also legible.
 
-The structure is visible.  
-The machinery is visible.  
-The people responsible for keeping the system running are visible.
+The structure is visible. The machinery is visible. The people responsible for keeping the system running are visible. Nothing about the system pretends to be effortless.
 
-Nothing about the system pretends to be effortless.
+The weight is obvious.
 
-In those days, no one imagined the castle could float.
-
-It stood firmly on the ground — heavy, complicated, and undeniably real.
+Castles do not float.
