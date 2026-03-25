@@ -2,7 +2,7 @@
 layout: post
 title: "The Artifact Economy"
 subtitle: "Part III: Mechanisms"
-date: YYYY-MM-DD
+date: 2026-03-20
 author: "Penuel Lascano"
 categories: [security, architecture, governance]
 tags: [security-architecture, compliance, systems, governance, operations]
@@ -16,7 +16,7 @@ permalink: /artifact-economy/mechanisms/
 
 Mechanisms change how systems behave. They regulate behavior rather than describe it.
 
-Automation is a mechanism. Cryptographic constraints are mechanisms. Operational procedures can also function as mechanisms when they are embedded in a control loop and reliably shape behavior.
+Automation is a mechanism. Cryptographic constraints are mechanisms. Operational procedures can also act as mechanisms when they reliably shape behavior.
 
 The important distinction is not whether a control is manual or automatic. The important distinction is whether it actually governs the system.
 
@@ -27,8 +27,6 @@ The important distinction is not whether a control is manual or automatic. The i
 Strong mechanisms produce artifacts naturally. A certificate authority produces an inventory. An HSM produces key lifecycle logs. An identity system produces access reviews.
 
 In these systems, the artifact is not maintained as a separate story. It is derived from the current state of the mechanism.
-
-External review still depends on artifacts. The problem begins when those artifacts replace internal understanding rather than reflect it.
 
 That changes the burden of maintenance. The organization no longer has to protect the description from reality. It only has to maintain the system that produces it.
 
@@ -49,8 +47,6 @@ This is where architecture begins to reduce work instead of multiplying it. One 
 Well-regulated systems often appear quiet. Incidents decline. Dashboards stabilize. Reports show little change.
 
 Quiet systems are sometimes mistaken for inactivity. In reality the mechanism is doing its work.
-
-Quiet can also mean the mechanism is failing silently, which is why derived evidence still matters.
 
 This is one reason artifact-heavy cultures drift toward the wrong conclusion. When the report is dramatic, the work feels visible. When the system is quiet, the work disappears into the mechanism.
 
