@@ -64,9 +64,13 @@ This creates a new kind of work. The work is no longer understanding the system.
 
 Energy shifts toward maintaining the description. The system itself may remain only partially understood.
 
-Some standards shape how systems are built and operated. Others shape how systems are evaluated. That distinction matters. When evaluation becomes explicit, artifacts multiply naturally. The system becomes easier to assess. It does not automatically become easier to trust.
-
 Coherence is not the same as control.
+
+## Evaluation Pressure
+
+Not every domain is trained this way. Some standards shape how systems are built and operated. Others shape how systems are evaluated.
+
+That distinction matters. When evaluation becomes explicit, artifacts multiply naturally. The system becomes easier to assess. It does not automatically become easier to trust.
 
 ## Audit Success
 
