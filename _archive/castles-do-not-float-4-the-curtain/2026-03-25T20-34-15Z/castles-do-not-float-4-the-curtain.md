@@ -68,6 +68,6 @@ It cannot remove them.
 
 The lord of the castle is still the lord of the castle whether it stands on the ground or appears to float in the sky.
 
-Accountability does not disappear with altitude.
+Responsibility does not disappear with altitude.
 
 Because castles do not float.
