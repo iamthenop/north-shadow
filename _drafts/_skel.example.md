@@ -161,6 +161,3 @@ areas for future exploration.
 ------------------------------------------------------------------------
 
 \<If series: Next: `<preview sentence for next article>`{=html}\>
-\n\n\n\n\n
-\n\n\n\n\n
-\n\n\n\n\n

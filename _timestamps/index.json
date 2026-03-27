@@ -258,6 +258,12 @@
       "proof_sha256": "a9e0d84229393a415b7efa37a4583875417834561f8a36f0e3d76c31d3ebf3cf"
     },
     {
+      "post": "_posts/stewing-workarounds-1-edible.md",
+      "proof": "_timestamps/stewing-workarounds-1-edible.md.proof.json",
+      "proof_sha256": "0dfe8ea1c34007133bbccb9b5265e7b7bcce2a7f945ffa6929b193f1bbd2c18f",
+      "revision": 2
+    },
+    {
       "post": "_posts/war-on-a-false-premise-1-battle-of-the-sovereign-workstation.md",
       "proof": "_timestamps/war-on-a-false-premise-1-battle-of-the-sovereign-workstation.md.proof.json",
       "proof_sha256": "0df2a2f0c9744dd1cb8ab815cee357e8697472c8e47ebdbd4cc647f4f6b2b77e",
