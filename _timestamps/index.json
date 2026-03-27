@@ -264,6 +264,12 @@
       "revision": 2
     },
     {
+      "post": "_posts/stewing-workarounds-2-the-omission.md",
+      "proof": "_timestamps/stewing-workarounds-2-the-omission.md.proof.json",
+      "proof_sha256": "31fb54961e88214a4db946a13b9202d6e6ca6eb0d8607ea8e01acb3cb12d8978",
+      "revision": 2
+    },
+    {
       "post": "_posts/war-on-a-false-premise-1-battle-of-the-sovereign-workstation.md",
       "proof": "_timestamps/war-on-a-false-premise-1-battle-of-the-sovereign-workstation.md.proof.json",
       "proof_sha256": "0df2a2f0c9744dd1cb8ab815cee357e8697472c8e47ebdbd4cc647f4f6b2b77e",
