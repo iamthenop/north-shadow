@@ -16,7 +16,12 @@ permalink: /automating-pki-at-scale/part-7-agility/
 
 Certificate lifetime reduction forces renewal to happen more often.
 
-That exposes ownership gaps, deployment weaknesses, authority design flaws, and inspection hierarchy fragility.
+That exposes:
+
+- Ownership gaps
+- Deployment weaknesses
+- Authority design flaws
+- Inspection hierarchy fragility
 
 But renewal cadence is not the end state.
 
@@ -34,7 +39,14 @@ It will be:
 
 Changing an algorithm is not a checkbox in a CA console.
 
-It reaches everything downstream of trust.
+It affects:
+
+- How certificates are requested
+- Where keys are generated
+- What hardware is involved
+- What applications can support
+- What inspection devices understand
+- What trust stores accept
 
 If renewal is fragile, algorithm change will be more fragile.
 
@@ -49,7 +61,14 @@ It is not the only one.
 
 ## Renewal Automation Is the Rehearsal
 
-If your environment can issue certificates automatically, deploy them safely, validate them after installation, and rotate within defined authority boundaries, then you already have the mechanics required for algorithm transition.
+If your environment can:
+
+- Issue certificates automatically
+- Deploy them safely
+- Validate them after installation
+- Rotate within defined authority boundaries
+
+Then you already have the mechanics required for algorithm transition.
 
 If renewal still requires coordination and ceremony, algorithm change will amplify that friction.
 
@@ -95,16 +114,16 @@ It begins with clarity.
 
 Start with five questions:
 
-- Who is accountable for the service when the certificate lifecycle fails?
-- What are the consequences if the service fails?
-- Where should automation focus first to reduce the most risk with the least ambiguity?
-- When should the process escalate to human intervention?
-- Why does this control still depend on manual coordination?
+- Who is accountable for each endpoint?
+- What happens if the automation fails?
+- Where should automation focus first?
+- When will renewal occur?
+- Why would the process fail at all?
 
 Discovery answers the first.  
-Impact analysis clarifies the second.  
-Operations exposes the third.  
-Governance defines the fourth.  
+Deployment testing reveals the second.  
+Operators expose the third.  
+Change discipline governs the fourth.  
 Architecture resolves the fifth.
 
 When those answers are clear, certificate renewal stops being a project.
