@@ -224,6 +224,12 @@
       "revision": 2
     },
     {
+      "post": "_posts/insufficient-material.md",
+      "proof": "_timestamps/insufficient-material.md.proof.json",
+      "proof_sha256": "9ec631eb8c16ea06b0075b1803e194f45fe4148e6537fb1db4dc8f0628e334c1",
+      "revision": 2
+    },
+    {
       "post": "_posts/mr-whiskerson-1-mr-whiskerson.md",
       "proof": "_timestamps/mr-whiskerson-1-mr-whiskerson.md.proof.json",
       "proof_sha256": "8f08bc7591ff466c477cfbe0d2498339eb75964f0c9ee8d1d25fc82f86091c4c",
