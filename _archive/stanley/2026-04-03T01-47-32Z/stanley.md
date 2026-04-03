@@ -99,7 +99,7 @@ Survival is not the same as health.
 
 Familiarity is not the same as understanding. A known route, a visible return, a weathered coat, and a long history at the edge can make suffering look ordinary.
 
-The condition may not have begun at that edge.
+The condition may not have begun there.
 
 It became harder to carry there.
 
