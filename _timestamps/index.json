@@ -164,6 +164,12 @@
       "revision": 2
     },
     {
+      "post": "_posts/entropy-theatre.md",
+      "proof": "_timestamps/entropy-theatre.md.proof.json",
+      "proof_sha256": "6e6c39fee23059a6eed41acdb1df5890d77b41237a593c190a8376e58393c560",
+      "revision": 2
+    },
+    {
       "post": "_posts/evergreen-is-not-a-project-1-the-promise.md",
       "proof": "_timestamps/evergreen-is-not-a-project-1-the-promise.md.proof.json",
       "proof_sha256": "f415e869d835f42bc79e0a6e670d8075bbe11ac367270e9315b489a4a308dd5c",
